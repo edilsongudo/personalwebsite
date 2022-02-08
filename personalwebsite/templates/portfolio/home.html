@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Edilson Gudo | Portfolio - Web Developer</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/libraries/aos-master/dist/aos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/libraries/devicon-master/devicon.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/libraries/materialize/css/materialize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/libraries/fontawesome-free-5.15.2-web/css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/portfolio.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/audioPlayer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/preloading.css' %}">
+</head>
+<body>
+    <div class="preloading">
+        <div>
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+        </div>
+    </div>
+    <div class="music-player-modal">
+        <div class="music-container" id="music-container">
+            <button id="close-player">
+                <i class="fal fa-chevron-down"></i>
+            </button>
+
+          <div class="img-container">
+            <div id="music-icon"><i class="fas fa-music"></i></div>
+            <img src="" alt="music-cover" id="cover" />
+          </div>
+
+          <div class="music-info">
+            <h4 id="title"></h4>
+            <div class="progress-container" id="progress-container">
+              <div class="progress" id="progress"></div>
+                <div id="progress-time">
+                    <span class="current"></span>
+                    <span class="duration"></span>
+                </div>
+            </div>
+          </div>
+
+          <div class="navigation">
+            <button id="prev" class="action-btn">
+              <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+              <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+              <i class="fas fa-forward"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div id="colorpickersection">
+            <div id="colorpickercontainer">
+                <span class="fal fa-palette top-icon" id="toggle-theme-picker"></span>
+                <span class="theme-picker">
+                    <span id="color2" class="color"
+                        data-color1="#BE98D0" data-color2="#319CBF"
+                        style="background: linear-gradient(#BE98D0, #319CBF)">
+                    </span>
+                    <span id="color3" class="color"
+                        data-color1="#1cd8d2" data-color2="#93edc7"
+                        style="background: linear-gradient(#1cd8d2, #93edc7)">
+                    </span>
+                    <span id="color4" class="color"
+                        data-color1="#de6262" data-color2="#ffb88c"
+                        style="background: linear-gradient(#de6262, #ffb88c)">
+                    </span>
+                </span>
+            </div>
+        </div>
+        <i id="volume-mute" class="fal fa-volume top-icon"></i>
+        <i id="togglesong" class="fal fa-headphones-alt top-icon"></i>
+        <i id="toggledark" class="fal fa-sun top-icon"></i>
+    </div>
+
+    <a class="btn btn-floating pulse" href="mailto:edilsongudo@gmail.com">
+        <i class="fal fa-pen"></i>
+    </a>
+    <section class="first-section">
+        <div data-aos="fade-up" class="container">
+            <div class="">
+                <div class="profile-img">
+                    <img src="{% static 'portfolio/images/Edilson.jpg' %}">
+                </div>
+            </div>
+            <h1 class="title">I'm Edilson :)</h1>
+            <h2 class="secondary-title">Web Developer</h2>
+            <p>
+                I <i class="fal fa-heart"></i> developing interactive web apps with Django and Vue.js.
+                <br>
+                If you are seeking quality, good communication,
+                and a result that you will <i class="fal fa-heart"></i>,
+                you can't be wrong by considering me for your next project :)
+            </p>
+            <div class="socialmedias">
+                <a href="https://linkedin.com/in/cristiangudo"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/edilsongudo"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/mentalidade_de_homem"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="call-to-action-container">
+                <!-- <a class="call-to-action waves-effect" href="mailto:edilsongudo@gmail.com">
+                    Send Email
+                    <i class="fal fa-envelope"></i>
+                </a> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="second-section" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
+            <h2 data-aos="fade-up" class="title">Some Projects</h2>
+            <div>
+                <div class="portfolio-gallery">
+                    <!-- Project -->
+                    <div data-aos="fade-up" class="portfolio-gallery-item">
+                        <div>
+                            <h5>Music Social Media</h5>
+                            <p>A music streaming platform built with django and javascript</p>
+                            <button class="tellmore" id="tm1">Read more</button>
+                            <div class="portfolio-gallery-item-image">
+                                <img class="materialboxed" height="300" src="{% static 'portfolio/images/image3.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project -->
+                    <div data-aos="fade-up" class="portfolio-gallery-item">
+                        <div>
+                            <h5>Linktr.ee & Bit.ly clone</h5>
+                            <p>Link In Bio Plaform + URL Shortner Service</p>
+                            <button class="tellmore" id="tm2">Read more</button>
+                            <div class="portfolio-gallery-item-image">
+                                <img class="materialboxed" height="300" src="{% static 'portfolio/images/selflink.gif' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project -->
+                    <div data-aos="fade-up" class="portfolio-gallery-item">
+                        <div>
+                            <h5>Password Manager</h5>
+                            <p>Store encrypted passwords using a master password</p>
+                            <button class="tellmore" id="tm3">Read more</button>
+                            <div class="portfolio-gallery-item-image">
+                                <img class="materialboxed" height="300" src="{% static 'portfolio/images/pm.gif' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="third-section">
+      <div data-aos="fade-up" class="container">
+        <h3>Why Me?</h3>
+        <ul>
+          <li>
+            <p>
+              I am a good communicator. I will update you daily,
+              and I am open to talking with you at any moment during the day
+              in the platform of your choice about the progress of the job;
+            </p>
+          </li>
+          <li>
+            <p>
+              I will make how many revisions are necessary.
+              I will only stop working on the project when you are 100% satisfied;
+            </p>
+          </li>
+          <li>
+            <p>
+              I have good technical skills but most importantly I am a hard worker;
+            </p>
+          </li>
+          <li>
+            <p>
+              I will commit more than 3 hours per day to your project (freelancing);
+            </p>
+          </li>
+          <li>
+            <p>
+              I take great care to accept an offer. I only accept projects
+              I am very confident that I can finish successfully;
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section data-aos="fade-up">
+      <div class="container" data-aos="fade-up">
+          <h3 data-aos="fade-up">Stacks</h3>
+          <p>Combination of powerful technologies that I am not limited to, but I like to use them to develop amazing things</p>
+          <div class="flex">
+            <div class="icon-container"><i class="devicon-python-plain  stack_icon"></i><div>Python</div></div>
+            <div class="icon-container"><i class="devicon-django-plain  stack_icon"></i><div>Django</div></div>
+            <div class="icon-container"><i class="devicon-flask-plain  stack_icon"></i><div>Flask</div></div>
+            <div class="icon-container"><i class="devicon-javascript-plain  stack_icon"></i><div>Javascript</div></div>
+            <div class="icon-container"><i class="devicon-vuejs-plain  stack_icon"></i><div>Vue</div></div>
+            <div class="icon-container"><i class="devicon-nodejs-plain  stack_icon"></i><div>Node js</div></div>
+            <div class="icon-container"><i class="devicon-jquery-plain  stack_icon"></i><div>Jquery</div></div>
+            <div class="icon-container"><i class="devicon-css3-plain  stack_icon"></i><div>CSS3</div></div>
+            <div class="icon-container"><i class="devicon-github-plain  stack_icon"></i><div>Github</div></div>
+            <div class="icon-container"><i class="devicon-git-plain  stack_icon"></i><div>Git</div></div>
+            <div class="icon-container"><i class="devicon-linux-plain  stack_icon"></i><div>Linux</div></div>
+            <div class="icon-container"><i class="devicon-docker-plain  stack_icon"></i><div>Docker</div></div>
+          </div>
+            <p>Got questions? Click the floating pen icon to send me an email :)</p>
+      </div>
+    </section>
+   <footer>
+        <div>Made with <i class="fal fa-heart"></i> by Edilson Gudo
+          <br> © 2022
+        </div>
+    </footer>
+    <script type="text/javascript">$SCRIPT_ROOT = "{{ request.scheme }}://{{ request.get_host }}";</script>
+    <script type="text/javascript" src="{% static 'portfolio/libraries/jquery/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/libraries/sweet-alert/sweetalert.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/libraries/aos-master/dist/aos.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/libraries/materialize/js/materialize.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/js/utils.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/js/audioPlayer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/js/playsongs.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/js/tellmore.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/js/darkmode.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/js/themepicker.js' %}"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            offset: 250,
+        });
+
+        $(document).ready(function(){
+            $('.materialboxed').materialbox();
+        });
+
+        $(window).on('load', function () {
+            $('.preloading').fadeOut('slow')
+        })
+    </script>
+</body>
+</html>
