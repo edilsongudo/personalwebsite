@@ -1,6 +1,7 @@
 # Project Specific
 personalwebsite/media/audio/
 personalwebsite/media/albumArts/
+personalwebsite/config.ini
 
 # Django #
 *.log

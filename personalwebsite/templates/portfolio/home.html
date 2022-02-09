@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Edilson Gudo | Portfolio - Web Developer</title>
-    <!--<link rel="stylesheet" type="text/css" href="{% static 'portfolio/libraries/aos-master/dist/aos.css' %}">-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/libraries/devicon-master/devicon.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/libraries/materialize/css/materialize.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'portfolio/libraries/fontawesome-free-5.15.2-web/css/all.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/portfolio.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/audioPlayer.css' %}">
@@ -222,11 +221,10 @@
         </div>
     </footer>
     <script type="text/javascript">$SCRIPT_ROOT = "{{ request.scheme }}://{{ request.get_host }}";</script>
-    <script type="text/javascript" src="{% static 'portfolio/libraries/jquery/jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'portfolio/libraries/sweet-alert/sweetalert.min.js' %}"></script>
-    <!--<script type="text/javascript" src="{% static 'portfolio/libraries/aos-master/dist/aos.js' %}"></script>-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="text/javascript" src="{% static 'portfolio/libraries/materialize/js/materialize.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="{% static 'portfolio/js/utils.js' %}"></script>
     <script type="text/javascript" src="{% static 'portfolio/js/audioPlayer.js' %}"></script>
     <script type="text/javascript" src="{% static 'portfolio/js/playsongs.js' %}"></script>
