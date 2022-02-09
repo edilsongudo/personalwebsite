@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-cmn3=04vgtj$&^c@g#^qmp1qycsg=+%6wpu9h=7jvl-n%tx5j8
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'edilsongudo.pythonanywhere.com/'
+    'edilsongudo.pythonanywhere.com'
 ]
 
 
