@@ -3,10 +3,10 @@ var rot = 360
 var theme = localStorage.getItem('theme')
 var html = document.querySelector("html")
 
-if (theme === 'light') {
-    toggleLightMode(html)
-} else {
+if (theme === 'dark') {
     toggleDarkMode(html)
+} else {
+    toggleLightMode(html)
 }
 
 checkbox.addEventListener('click', function() {
