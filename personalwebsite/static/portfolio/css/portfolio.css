@@ -3,8 +3,8 @@
   --bgcolor2: var(--bgcolor1);
   --bodytext: grey;
   --titlecolor: #3B3B3B;
-  --buttonbg1: #de6262;
-  --buttonbg2: #ffb88c;
+  --buttonbg1: #1cd8d2;
+  --buttonbg2: #93edc7;
   --buttontext: #fff;
   --iconcolor: var(--buttonbg);
 }
@@ -16,6 +16,16 @@
   --iconcolor: #ededed;
 }
 
+@font-face {
+    font-family: 'Averta';
+    src: url('../fonts/averta/AvertaDemoPECuttedDemo-Regular.otf')
+}
+
+@font-face {
+    font-family: 'Heaters';
+    src: url('../fonts/Heaters/Heaters.otf')
+}
+
 button {
   border: transparent;
   background: transparent;
@@ -25,6 +35,7 @@ a {
   display: inline-block;
   color: var(--buttonbg)
 }
+
 
 h1, h2, h3, h4, h5, h6 {
 /*  background: -webkit-linear-gradient(var(--buttonbg1), var(--buttonbg2));
@@ -48,10 +59,6 @@ section {
     align-items: center;
 }
 
-@font-face {
-    font-family: 'Custom';
-    src: url('../fonts/averta/AvertaDemoPECuttedDemo-Regular.otf')
-}
 
 body {
   background:linear-gradient(
@@ -61,7 +68,7 @@ body {
   background: var(--bgcolor1);
   background-size: contain;
   color: var(--bodytext);
-  font-family: 'Custom', sans-serif;
+  font-family: 'Averta', sans-serif;
   word-wrap: break-word;
   padding: 0;
   margin: 0;
@@ -152,12 +159,16 @@ body {
 
 
 .title {
-    font-size: 3rem;
-    font-weight: 900;
+    /*font-size: 3rem;*/
+    /*font-weight: 900;*/
+    font-family: 'Heaters', sans-serif;
+    font-size: 5rem;
 }
 
 .secondary-title {
-  font-size: 1.25rem;
+  /*font-size: 1.25rem;*/
+  font-size: 2rem;
+  font-family: 'Heaters', sans-serif;
 }
 
 
@@ -226,6 +237,8 @@ body {
   background: var(--buttonbg2);
   border-radius: 5px;
   color: var(--buttontext);
+  padding: 10px;
+  font-family: "Averta";
 }
 
 .top-icon {
