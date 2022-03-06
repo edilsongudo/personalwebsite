@@ -3,6 +3,9 @@ import os
 
 
 def get_only_meta(file):
+    """
+    Get metadata from a audio file
+    """
 
     meta = music_tag.load_file(file)
 
@@ -21,6 +24,10 @@ def get_only_meta(file):
 
 
 def get_meta(folder, album_dest, file):
+    """
+    Get metadata from audio file
+    and save the album artwork
+    """
 
     if not os.path.isdir(album_dest):
         os.mkdir(album_dest)
@@ -30,7 +37,7 @@ def get_meta(folder, album_dest, file):
 
     try:
         image_data = meta['artwork'].first.data
-        filename = file.split('.')[0] + '.jpg'
+        filename = os.path.splitext(file)[0] + '.jpg'
         with open(f'{album_dest}/{filename}', 'wb') as f:
             f.write(image_data)
             artwork = filename
@@ -43,3 +50,10 @@ def get_meta(folder, album_dest, file):
         'title': meta['tracktitle'].value,
         'filename': file, 'artwork': artwork
     }
+
+
+def create_dir(dir_path):
+    try:
+        os.makedirs(dir_path)
+    except FileExistsError:
+        pass

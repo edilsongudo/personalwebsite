@@ -143,14 +143,4 @@ if DEBUG:
     STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
-def create_dir(dir_path):
-    try:
-        os.makedirs(dir_path)
-    except FileExistsError:
-        pass
-
-
-create_dir('media/audio')
-create_dir('media/albumArts')
-
 STATIC_ROOT = '/home/edilsongudo/personalwebsite/personalwebsite/static'
