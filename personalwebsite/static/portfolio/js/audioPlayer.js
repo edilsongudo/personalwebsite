@@ -41,7 +41,8 @@ getSongs().then(response => {
     // Update song details
     function loadSong(song) {
 
-      audio.src = `media/audio/${song}`;
+      // audio.src = `media/audio/${song}`;
+      audio.src = `audio/${song}`;
       song = remove_extension(song)
       title.innerText = song;
       let albumArtURL = `media/albumArts/${song}.jpg`
