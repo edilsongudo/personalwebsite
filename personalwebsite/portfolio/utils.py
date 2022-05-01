@@ -1,5 +1,6 @@
-import music_tag
 import os
+
+import music_tag
 
 
 def get_only_meta(file):
@@ -13,13 +14,14 @@ def get_only_meta(file):
         image_data = meta['artwork'].first.data
         artwork = image_data
     except Exception as e:
-        artwork = ""
+        artwork = ''
 
     return {
         'album': meta['album'].value,
         'artist': meta['artist'].value,
         'title': meta['tracktitle'].value,
-        'filename': file, 'artwork': artwork
+        'filename': file,
+        'artwork': artwork,
     }
 
 
@@ -42,13 +44,14 @@ def get_meta(folder, album_dest, file):
             f.write(image_data)
             artwork = filename
     except (AttributeError, KeyError):
-        artwork = ""
+        artwork = ''
 
     return {
         'album': meta['album'].value,
         'artist': meta['artist'].value,
         'title': meta['tracktitle'].value,
-        'filename': file, 'artwork': artwork
+        'filename': file,
+        'artwork': artwork,
     }
 
 

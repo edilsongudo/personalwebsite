@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Edilson Gudo | Portfolio - Python Developer</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'portfolio/favicon-96x96.png' %}"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <link rel="stylesheet" type="text/css" href="{% static 'portfolio/libraries/fontawesome-free-5.15.2-web/css/all.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/portfolio.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/audioPlayer.css' %}">
@@ -22,7 +26,7 @@
             <div class="dot dot3"></div>
         </div>
     </div>
-    <div class="music-player-modal">
+    <div class="music-player-modal show">
       <div class="wrapper">
           <div class="music-container" id="music-container">
             <button id="close-player">
@@ -76,13 +80,13 @@
             </div>
         </div>
         <i id="volume-mute" class="fal fa-volume top-icon"></i>
-        <i id="togglesong" class="fal fa-headphones-alt top-icon"></i>
-        <i id="toggledark" class="fal fa-sun top-icon"></i>
+        <!-- <i id="togglesong" class="fal fa-headphones-alt top-icon"></i> -->
+        <i id="toggledark" class="fal fa-moon top-icon"></i>
     </div>
 
-    <a class="btn btn-floating pulse" href="mailto:edilsongudo@gmail.com">
+<!--     <a class="btn btn-floating pulse" href="mailto:edilsongudo@gmail.com?body=I%came%from%your%portfolio">
         <i class="fal fa-pen"></i>
-    </a>
+    </a> -->
     <section class="first-section">
         <div data-aos="fade-up" class="container">
             <div class="">
@@ -102,7 +106,8 @@
             <div class="socialmedias">
                 <a href="https://linkedin.com/in/cristiangudo"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/edilsongudo"><i class="fab fa-github"></i></a>
-                <a href="https://instagram.com/mentalidade_de_homem"><i class="fab fa-instagram"></i></a>
+                <!-- <a href="https://instagram.com/mentalidade_de_homem"><i class="fab fa-instagram"></i></a> -->
+                <a href="https://www.youtube.com/watch?v=XE4ime8hCxE&t=0s"><i class="fab fa-youtube"></i></a>
             </div>
             <div class="call-to-action-container">
                 <!-- <a class="call-to-action waves-effect" href="mailto:edilsongudo@gmail.com">
@@ -115,81 +120,69 @@
 
     <section class="second-section" data-aos="fade-up">
         <div class="container" data-aos="fade-up">
-            <h2 data-aos="fade-up" class="title">Some Projects</h2>
-            <div>
-                <div class="portfolio-gallery">
-                    <!-- Project -->
-                    <div data-aos="fade-up" class="portfolio-gallery-item">
-                        <div>
-                            <h5>Music Social Media</h5>
-                            <p>A music streaming platform built with django and javascript</p>
-                            <button class="tellmore" id="tm1">Read more</button>
-                            <div class="portfolio-gallery-item-image">
-                                <img class="materialboxed" height="300" src="{% static 'portfolio/images/image3.jpg' %}">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project -->
-                    <div data-aos="fade-up" class="portfolio-gallery-item">
-                        <div>
-                            <h5>Linktr.ee & Bit.ly clone</h5>
-                            <p>Link In Bio Plaform + URL Shortner Service</p>
-                            <button class="tellmore" id="tm2">Read more</button>
-                            <div class="portfolio-gallery-item-image">
-                                <img class="materialboxed" height="300" src="{% static 'portfolio/images/selflink.gif' %}">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project -->
-                    <div data-aos="fade-up" class="portfolio-gallery-item">
-                        <div>
-                            <h5>Password Manager</h5>
-                            <p>Store encrypted passwords using a master password</p>
-                            <button class="tellmore" id="tm3">Read more</button>
-                            <div class="portfolio-gallery-item-image">
-                                <img class="materialboxed" height="300" src="{% static 'portfolio/images/pm.gif' %}">
-                            </div>
-                        </div>
-                    </div>
+            <h2 data-aos="fade-up" class="title">Portfolio</h2>
+
+            <!-- Project -->
+            <div class="project" data-aos="fade-up">
+                <h5>Instagram link-in-bio app</h5>
+                <p>Link In Bio Plaform + URL Shortner Service</p>
+                <button class="tellmore" id="tm2">Read more</button>
+                <div>
+                    <div class="embed">
+                        <iframe width="100%" height="100%" frameborder=0 src="https://www.youtube.com/embed/NAZWxgDNPwo"
+                        title="Youtube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>     
                 </div>
             </div>
+            <!-- End of Project -->
+
+            <!-- Project -->
+            <div class="project" data-aos="fade-up">
+                <h5>Password Manager</h5>
+                <p>Store encrypted passwords using a master password</p>
+                <button class="tellmore" id="tm3">Read more</button>
+                <div>
+                    <div class="embed">
+                        <video id="player" playsinline controls>
+                          <source src="https://django-assemblyai.s3.eu-central-1.amazonaws.com/20220430_222026.mp4" type="video/mp4" />
+                        </video>
+                    </div>     
+                </div>
+            </div>
+            <!-- End of Project -->
+
+            <!-- Project -->
+            <div class="project" data-aos="fade-up">
+                <h5>Chat App</h5>
+                <p>A terminal based chatroom with encryption and a database</p>
+                <button class="tellmore" id="tm4">Read more</button>
+                <div>
+                    <div class="embed">
+                        <video id="player2" playsinline controls>
+                          <source src="https://django-assemblyai.s3.amazonaws.com/tcpchatvideo1.mp4" type="video/mp4" />
+                        </video>
+                    </div>     
+                </div>
+            </div>
+            <!-- End of Project -->
+
         </div>
     </section>
 
     <section class="third-section">
       <div data-aos="fade-up" class="container">
         <h2 class="title">Why Me</h2>
-        <ul>
-          <li>
-            <p>
-              I am a good communicator. I will update you daily,
-              and I am open to talking with you at any moment during the day
-              in the platform of your choice about the progress of the job;
-            </p>
-          </li>
-          <li>
-            <p>
-              I will make how many revisions are necessary.
+        <div>
+          <p>
+              <i class="fal fa-heart"></i> I will make how many revisions are necessary.
               I will only stop working on the project when you are 100% satisfied;
-            </p>
-          </li>
-          <li>
-            <p>
-              I have good technical skills but most importantly I am a hard worker;
-            </p>
-          </li>
-          <li>
-            <p>
-              I will commit more than 3 hours per day to your project (freelancing);
-            </p>
-          </li>
-          <li>
-            <p>
-              I take great care to accept an offer. I only accept projects
+          </p>
+          <p>
+              <i class="fal fa-heart"></i> I take great care to accept an offer. I only accept projects
               I am very confident that I can finish successfully;
-            </p>
-          </li>
-        </ul>
+          </p>
+        </div>
       </div>
     </section>
     <section data-aos="fade-up">
@@ -210,19 +203,31 @@
             <div class="icon-container"><i class="devicon-linux-plain  stack_icon"></i><div>Linux</div></div>
             <div class="icon-container"><i class="devicon-docker-plain  stack_icon"></i><div>Docker</div></div>
           </div>
-            <p>Got questions? Click the floating pen icon to send me an email :)</p>
       </div>
+    </section>
+    <section>
+        <div class="container" data-aos="fade-up">
+            <h2 class="title">Contact Me</h2>
+            <p>Got questions? Send me a message, I will get in touch with you soon :)</p>
+            <form method="post" data-aos="fade-up">
+               {% csrf_token %}
+               {{ form|crispy }}
+               <button class="tellmore" type="submit">Send <i class="fal fa-paper-plane"></i></button>
+            </form>
+        </div>
     </section>
    <footer>
         <div>Made with <i class="fal fa-heart"></i> by Edilson Gudo
           <br> © 2022
         </div>
     </footer>
+    <script src="https://cdn.plyr.io/3.7.2/plyr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script type="text/javascript">$SCRIPT_ROOT = "{{ request.scheme }}://{{ request.get_host }}";</script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <script type="text/javascript" src="{% static 'portfolio/js/utils.js' %}"></script>
     <script type="text/javascript" src="{% static 'portfolio/js/audioPlayer.js' %}"></script>
     <script type="text/javascript" src="{% static 'portfolio/js/playsongs.js' %}"></script>
@@ -231,17 +236,23 @@
     <script type="text/javascript" src="{% static 'portfolio/js/themepicker.js' %}"></script>
     <script>
         AOS.init({
-            duration: 700,
+            duration: 1500,
             offset: 250,
         });
 
-        $(document).ready(function(){
-            $('.materialboxed').materialbox();
-        });
+        const player = new Plyr('#player');
+        const player2 = new Plyr('#player2');
 
-        $(window).on('load', function () {
-            $('.preloading').fadeOut('slow')
-        })
+        // $(document).ready(function(){
+        //     $('.materialboxed').materialbox();
+        // });
+
+        // $(window).on('load', function () {
+        //     $('.preloading').fadeOut('slow')
+        // })
+
+        $('.preloading').fadeOut('slow')
+
     </script>
 </body>
 </html>

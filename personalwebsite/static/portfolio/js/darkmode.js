@@ -20,8 +20,8 @@ checkbox.addEventListener('click', function() {
 })
 
 function toggleLightMode(html) {
-    checkbox.classList.remove('fa-moon')
-    checkbox.classList.add('fa-sun')
+    checkbox.classList.remove('fa-sun')
+    checkbox.classList.add('fa-moon')
     html.classList.remove('dark-mode')
     checkbox.style.transform = "rotate(" + rot + "deg)"
     rot += 360
@@ -29,8 +29,8 @@ function toggleLightMode(html) {
 }
 
 function toggleDarkMode(html) {
-    checkbox.classList.remove('fa-sun')
-    checkbox.classList.add('fa-moon')
+    checkbox.classList.remove('fa-moon')
+    checkbox.classList.add('fa-sun')
     html.classList.add('dark-mode')
     checkbox.style.transform = "rotate(" + rot + "deg)"
     rot += 360
