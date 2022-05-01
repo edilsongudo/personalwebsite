@@ -145,16 +145,19 @@ body {
 }
 
 .profile-img {
+  background: url(../images/Edilson.jpg);
   height: 50px;
+  width: 50px;
+  margin: 0 auto;
+  background-size: contain;
   display: flex;
   justify-content: center;
-  width: 100%;
+  border: 1px solid var(--buttonbg2);
+  border-radius: 50%;
 }
 
 .profile-img img {
-  border: 1px solid var(--buttonbg2);
-  height: 100%;
-  border-radius: 50%;
+
 }
 
 .first-section {

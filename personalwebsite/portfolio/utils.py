@@ -1,6 +1,8 @@
+import io
 import os
 
 import music_tag
+from PIL import Image
 
 
 def get_only_meta(file):
@@ -34,15 +36,16 @@ def get_meta(folder, album_dest, file):
     if not os.path.isdir(album_dest):
         os.mkdir(album_dest)
 
-    song = os.path.join(f'{folder}/{file}')
+    song = os.path.join(folder, file)
     meta = music_tag.load_file(song)
 
     try:
-        image_data = meta['artwork'].first.data
         filename = os.path.splitext(file)[0] + '.jpg'
-        with open(f'{album_dest}/{filename}', 'wb') as f:
-            f.write(image_data)
-            artwork = filename
+        image_data = meta['artwork'].first.data
+        image = Image.open(io.BytesIO(image_data))
+        image.thumbnail((500, 500), Image.ANTIALIAS)
+        image.save(os.path.join(album_dest, filename))
+        artwork = filename
     except (AttributeError, KeyError):
         artwork = ''
 

@@ -1,7 +1,7 @@
 import os
 
 from django.conf import settings
-from django.http import HttpResponse, FileResponse, JsonResponse
+from django.http import FileResponse, HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
@@ -16,8 +16,8 @@ def home(request):
         if form.is_valid():
             form.save()
             return HttpResponse(
-                '''Message sent successfully.
-                Thank you, I will get in touch with you soon.'''
+                """Message sent successfully.
+                Thank you, I will get in touch with you soon."""
             )
     context = {'form': form}
     return render(request, 'portfolio/home.html', context)
@@ -25,6 +25,8 @@ def home(request):
 
 def get_songs(request):
     songs = os.listdir('media/audio')
+    for song in songs:
+        get_meta('media/audio', 'media/albumArts', song)
     return JsonResponse({'songs': songs})
 
 
