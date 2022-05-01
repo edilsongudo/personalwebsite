@@ -43,6 +43,9 @@ getSongs().then(response => {
 
       // audio.src = `media/audio/${song}`;
       audio.src = `audio/${song}`;
+      if (localStorage.currentTime) {
+        audio.currentTime = JSON.parse(localStorage.currentTime)
+      }
       song = remove_extension(song)
       title.innerText = song;
       let albumArtURL = `media/albumArts/${song}.jpg`
@@ -80,6 +83,7 @@ getSongs().then(response => {
 
     // Previous song
     function prevSong() {
+      localStorage.currentTime = 0
       songIndex--;
 
       if (songIndex < 0) {
@@ -94,6 +98,7 @@ getSongs().then(response => {
 
     // Next song
     function nextSong() {
+      localStorage.currentTime = 0
       songIndex++;
 
       if (songIndex > songs.length - 1) {
@@ -109,6 +114,8 @@ getSongs().then(response => {
     // Update progress bar
     function updateProgress(e) {
       const { duration, currentTime } = e.srcElement;
+      console.log(currentTime)
+      localStorage.currentTime = JSON.stringify(currentTime)
 
       var minutes = Math.floor(currentTime / 60)
       var seconds = Math.floor(currentTime % 60)
