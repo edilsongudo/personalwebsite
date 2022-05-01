@@ -132,7 +132,8 @@ getSongs().then(response => {
     }
 
     // Event listeners
-    playBtn.addEventListener('click', () => {
+    playBtn.addEventListener('click', (e) => {
+      e.stopPropagation()
       const isPlaying = musicContainer.classList.contains('play');
 
       if (isPlaying) {
@@ -143,8 +144,8 @@ getSongs().then(response => {
     });
 
     // Change song
-    prevBtn.addEventListener('click', prevSong);
-    nextBtn.addEventListener('click', nextSong);
+    prevBtn.addEventListener('click', (e) => {e.stopPropagation(); prevSong()});
+    nextBtn.addEventListener('click', (e) => {e.stopPropagation(); nextSong()});
 
     // Time/song update
     audio.addEventListener('timeupdate', updateProgress);

@@ -365,5 +365,3 @@ video {
 }
 
 .plyr--video.plyr--stopped .plyr__controls { display: none; }
-
-.plyr--video.plyr--paused .plyr__controls { display: none; }
