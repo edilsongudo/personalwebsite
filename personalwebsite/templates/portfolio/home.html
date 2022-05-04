@@ -26,7 +26,7 @@
             <div class="dot dot3"></div>
         </div>
     </div>
-    <div class="music-player-modal show">
+    <div class="music-player-modal collapsed">
       <div class="wrapper">
           <div class="music-container" id="music-container">
             <button id="close-player">
@@ -41,7 +41,14 @@
           <div class="music-info">
             <h4 id="title"></h4>
             <div class="progress-container" id="progress-container">
-              <div class="progress" id="progress"></div>
+              <!-- <div class="progress" id="progress"></div> -->
+              <!-- <input type="range" id="seek-slider"> -->
+                <div class="middle">
+                    <div class="slider-container">
+                        <span class="bar"><span class="fill"></span></span>
+                        <input id="seek-slider" class="slider" type="range" min="0" max="100" value="50">
+                    </div>
+                </div>
                 <div id="progress-time">
                     <span class="current"></span>
                     <span class="duration"></span>

@@ -33,6 +33,6 @@ def get_songs(request):
 @csrf_exempt
 def StaticAudioView(request, filename):
     response = FileResponse(
-        open(os.path.join(settings.MEDIA_ROOT, 'audio/', filename), 'rb')
+        open(os.path.join(settings.MEDIA_ROOT, 'audio', filename), 'rb')
     )
     return response

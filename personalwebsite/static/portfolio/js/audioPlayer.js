@@ -7,13 +7,13 @@ const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 
 const audio = document.querySelector('audio');
-const progress = document.getElementById('progress');
 const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 const currentTimeDiv = document.querySelector('.current')
 const durationDiv = document.querySelector('.duration')
 const musicIcon = document.querySelector('#music-icon')
+const seekSlider = document.getElementById('seek-slider');
 
 
 async function getSongs() {
@@ -46,6 +46,19 @@ getSongs().then(response => {
       if (localStorage.currentTime) {
         audio.currentTime = JSON.parse(localStorage.currentTime)
       }
+
+      // Update Seek Slider
+      const setSliderMax = () => {
+        seekSlider.max = Math.floor(audio.duration);
+      }
+      if (audio.readyState > 0) {
+        setSliderMax();
+      } else {
+        audio.addEventListener('loadedmetadata', () => {
+          setSliderMax();
+        });
+      }
+
       song = remove_extension(song)
       title.innerText = song;
       let albumArtURL = `media/albumArts/${song}.jpg`
@@ -126,17 +139,27 @@ getSongs().then(response => {
       durationDiv.innerHTML = `${('0' + minutes2).slice(-2)}:${('0' + seconds2).slice(-2)}`
 
       const progressPercent = (currentTime / duration) * 100;
-      progress.style.width = `${progressPercent}%`;
     }
 
     // Set progress bar
-    function setProgress(e) {
-      const width = this.clientWidth;
-      const clickX = e.offsetX;
-      const duration = audio.duration;
+    seekSlider.addEventListener('change', () => {
+      audio.currentTime = seekSlider.value;
+    });
 
-      audio.currentTime = (clickX / width) * duration;
-    }
+    audio.addEventListener('timeupdate', () => {
+      seekSlider.value = Math.floor(audio.currentTime);
+      var $fill = $(".bar .fill");
+      $fill.css("width", Math.floor(((audio.currentTime / audio.duration)) * 100) + "%");
+    });
+
+    // Handle Slider Input in Real Time
+    seekSlider.addEventListener('input', () => {
+      var $fill = $(".bar .fill");
+      $fill.css("width", Math.floor(((seekSlider.value / audio.duration)) * 100) + "%");
+      var minutes = Math.floor(seekSlider.value / 60)
+      var seconds = Math.floor(seekSlider.value % 60)
+      currentTimeDiv.innerHTML = `${('0' + minutes).slice(-2)}:${('0' + seconds).slice(-2)}`
+    })
 
     // Event listeners
     playBtn.addEventListener('click', (e) => {
@@ -158,10 +181,8 @@ getSongs().then(response => {
     audio.addEventListener('timeupdate', updateProgress);
 
     // Click on progress bar
-    progressContainer.addEventListener('click', setProgress);
 
     // Song ends
     audio.addEventListener('ended', nextSong);
 
 })
-

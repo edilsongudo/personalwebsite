@@ -10,6 +10,9 @@
   --boxshadowcolor: rgba(213, 221, 236, 0.4) 20px 20px 20px 20px;
 
   --plyr-color-main: rgba(0, 0, 0, 0.5);
+
+  --music-player-progress-color: var(--buttonbg1);
+  --music-player-progress-thumb-color: var(--buttonbg2);
 }
 
 .dark-mode:root {
