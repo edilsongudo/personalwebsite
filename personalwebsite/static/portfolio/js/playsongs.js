@@ -29,3 +29,21 @@ volumeBtn.addEventListener('click', (e) => {
 document.body.addEventListener('click', () => {
     volumeModal.style.transform = 'translateY(-1000px)'
 })
+
+//Randomize
+randomBtn = document.querySelector('#randomize')
+if (localStorage.randomize === 'true') {
+    randomBtn.style.color = getComputedStyle(document.documentElement)
+    .getPropertyValue('--buttonbg2');
+}
+
+randomBtn.addEventListener('click', () => {
+    if (localStorage.randomize != 'true') {
+        randomBtn.style.color = getComputedStyle(document.documentElement)
+        .getPropertyValue('--buttonbg2');
+        localStorage.randomize = "true"
+    } else {
+        randomBtn.style.color = 'grey'
+        localStorage.randomize = "false"
+    }
+})

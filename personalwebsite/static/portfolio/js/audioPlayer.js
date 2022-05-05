@@ -15,6 +15,8 @@ const musicIcon = document.querySelector('#music-icon')
 const seekSlider = document.getElementById('seek-slider');
 const $fill = $('.progress-container .bar .fill');
 
+let songPlaying = undefined
+
 const volumeInput = document.querySelector('#volume')
 const $volumeFill = $('.volume-popup-modal .bar .fill');
 volumeInput.value = audio.volume * 100
@@ -37,13 +39,16 @@ getSongs().then(response => {
     // Song titles
     const songs = response
 
-    // Keep track of song
-    let songIndex = Number(localStorage.getItem('songIndex'));
-    console.log(songIndex)
-    if (songIndex === null) {
-        songIndex = 0
+    //Shuffle Songs
+    if (localStorage.randomize === 'true') {
+      shuffle(songs)
     }
 
+    // Keep track of song
+    let songIndex = songs.indexOf(localStorage.songPlaying)
+    if (songIndex === -1) {
+        songIndex = 0
+    }
 
     // Initially load song details into DOM
     loadSong(songs[songIndex]);
@@ -51,8 +56,12 @@ getSongs().then(response => {
     // Update song details
     function loadSong(song) {
 
+      songPlaying = song
+      localStorage.songPlaying = songPlaying
+
       // audio.src = `media/audio/${song}`;
       audio.src = `audio/${song}`;
+
       if (localStorage.currentTime) {
         audio.currentTime = JSON.parse(localStorage.currentTime)
       }
@@ -117,7 +126,6 @@ getSongs().then(response => {
       loadSong(songs[songIndex]);
 
       playSong();
-      localStorage.setItem('songIndex', songIndex)
     }
 
     // Next song
@@ -133,13 +141,11 @@ getSongs().then(response => {
       loadSong(songs[songIndex]);
 
       playSong();
-      localStorage.setItem('songIndex', songIndex)
     }
 
     // Update progress bar
     function updateProgress(e) {
       const { duration, currentTime } = e.srcElement;
-      console.log(currentTime)
       localStorage.currentTime = JSON.stringify(currentTime)
 
       var minutes = Math.floor(currentTime / 60)
