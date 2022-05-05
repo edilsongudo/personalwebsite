@@ -9,12 +9,16 @@ const nextBtn = document.getElementById('next');
 const audio = document.querySelector('audio');
 const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
-const cover = document.getElementById('cover');
 const currentTimeDiv = document.querySelector('.current')
 const durationDiv = document.querySelector('.duration')
 const musicIcon = document.querySelector('#music-icon')
 const seekSlider = document.getElementById('seek-slider');
+const $fill = $('.progress-container .bar .fill');
 
+const volumeInput = document.querySelector('#volume')
+const $volumeFill = $('.volume-popup-modal .bar .fill');
+volumeInput.value = audio.volume * 100
+$volumeFill.css('width', audio.volume * 100 + '%')
 
 async function getSongs() {
     let response = await fetch(`${$SCRIPT_ROOT}/songs`)
@@ -23,6 +27,12 @@ async function getSongs() {
 }
 
 getSongs().then(response => {
+
+    const imageContainer = document.querySelector('.img-container')
+    cover = document.createElement('img')
+    cover.id = 'cover'
+    imageContainer.appendChild(cover)
+
 
     // Song titles
     const songs = response
@@ -97,6 +107,7 @@ getSongs().then(response => {
     // Previous song
     function prevSong() {
       localStorage.currentTime = 0
+      $fill.css("width", "0%");
       songIndex--;
 
       if (songIndex < 0) {
@@ -112,6 +123,7 @@ getSongs().then(response => {
     // Next song
     function nextSong() {
       localStorage.currentTime = 0
+      $fill.css("width", "0%");
       songIndex++;
 
       if (songIndex > songs.length - 1) {
@@ -148,17 +160,30 @@ getSongs().then(response => {
 
     audio.addEventListener('timeupdate', () => {
       seekSlider.value = Math.floor(audio.currentTime);
-      var $fill = $(".bar .fill");
       $fill.css("width", Math.floor(((audio.currentTime / audio.duration)) * 100) + "%");
     });
 
     // Handle Slider Input in Real Time
     seekSlider.addEventListener('input', () => {
-      var $fill = $(".bar .fill");
       $fill.css("width", Math.floor(((seekSlider.value / audio.duration)) * 100) + "%");
       var minutes = Math.floor(seekSlider.value / 60)
       var seconds = Math.floor(seekSlider.value % 60)
       currentTimeDiv.innerHTML = `${('0' + minutes).slice(-2)}:${('0' + seconds).slice(-2)}`
+    })
+
+    // Handle Volume change
+    volumeInput.addEventListener('input', ()=> {
+        audio.volume = volumeInput.value / 100
+        $volumeFill.css('width', audio.volume * 100 + '%')
+
+        volumeIcon = document.querySelector('#volume-icon')
+        if (audio.volume === 0) {
+          volumeIcon.classList.remove('fa-volume')
+          volumeIcon.classList.add('fa-volume-slash')
+        } else {
+          volumeIcon.classList.add('fa-volume')
+          volumeIcon.classList.remove('fa-volume-slash')
+        }
     })
 
     // Event listeners

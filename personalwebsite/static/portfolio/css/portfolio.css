@@ -3,8 +3,8 @@
   --bgcolor2: var(--bgcolor1);
   --bodytext: grey;
   --titlecolor: #3B3B3B;
-  --buttonbg1: #1cd8d2;
-  --buttonbg2: #93edc7;
+  --buttonbg1: rgba(147, 237, 199, 1);
+  --buttonbg2: rgba(147, 237, 199, 1);
   --buttontext: #fff;
   --iconcolor: var(--buttonbg);
   --boxshadowcolor: rgba(213, 221, 236, 0.4) 20px 20px 20px 20px;
@@ -218,7 +218,8 @@ body {
 
 .socialmedias {
   font-size: 2rem;
-  background: -webkit-linear-gradient(0deg, var(--buttonbg1), var(--buttonbg2));
+  /*background: -webkit-linear-gradient(0deg, var(--buttonbg1), var(--buttonbg2));*/
+  background: var(--buttonbg2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -264,7 +265,8 @@ body {
 }
 
 .top-icon {
-  background: -webkit-linear-gradient(0deg, var(--buttonbg1), var(--buttonbg2));
+  /*background: -webkit-linear-gradient(0deg, var(--buttonbg1), var(--buttonbg2));*/
+  background: var(--buttonbg2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -325,7 +327,8 @@ footer {
 .stack_icon {
   /*color: var(--iconcolor);*/
   font-size: 5rem;
-  background: -webkit-linear-gradient(0deg, var(--buttonbg1), var(--buttonbg2));
+  /*background: -webkit-linear-gradient(0deg, var(--buttonbg1), var(--buttonbg2));*/
+  background: var(--buttonbg2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

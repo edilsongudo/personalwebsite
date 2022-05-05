@@ -17,3 +17,15 @@ closeBtn.addEventListener('click', function (e) {
     document.body.style.position = ''
     document.body.style.top = ''
 })
+
+//Volume
+let volumeBtn = document.querySelector('.fa-volume')
+let volumeModal = document.querySelector('.volume-popup-modal')
+volumeBtn.addEventListener('click', (e) => {
+    e.stopPropagation()
+    volumeModal.style.transform = 'none'
+})
+
+document.body.addEventListener('click', () => {
+    volumeModal.style.transform = 'translateY(-1000px)'
+})
