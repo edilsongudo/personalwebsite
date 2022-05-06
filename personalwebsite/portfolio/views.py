@@ -1,6 +1,5 @@
 import io
 import os
-import time
 
 from django.core.files.images import ImageFile
 from django.conf import settings
@@ -29,16 +28,15 @@ def home(request):
 
 
 def get_songs(request):
-    t1 = time.time()
-    # songs = os.listdir('media/audio')
     songs = []
     objects = Song.objects.all()
     for obj in objects:
-        songs.append(os.path.basename(obj.file.name))
-    # for song in songs:
-    #     get_meta('media/audio', 'media/albumArts', song)
-    t2 = time.time()
-    print(t2 - t1)
+        song = {}
+        song['filename'] = os.path.basename(obj.file.name)
+        song['title'] = obj.title
+        song['artist'] = obj.artist
+        song['album'] = obj.album
+        songs.append(song)
     return JsonResponse({'songs': songs})
 
 
@@ -71,7 +69,7 @@ def upload_song(request):
             form.instance.filename = filename
             form.instance.artwork = artwork
             form.save()
-            return redirect('home')
+            return redirect('upload-song')
     context = {'form': form}
     return render(request, 'portfolio/upload_song.html', context)
 

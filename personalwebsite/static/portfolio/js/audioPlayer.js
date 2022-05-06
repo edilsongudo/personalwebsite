@@ -45,9 +45,9 @@ getSongs().then(response => {
     }
 
     // Keep track of song
-    let songIndex = songs.indexOf(localStorage.songPlaying)
-    if (songIndex === -1) {
-        songIndex = 0
+    let songIndex = 0
+    if (localStorage.songPlaying) {
+      songIndex = songs.findIndex(item => item.filename === JSON.parse(localStorage.songPlaying).filename);
     }
 
     // Initially load song details into DOM
@@ -56,11 +56,12 @@ getSongs().then(response => {
     // Update song details
     function loadSong(song) {
 
+      const filename = song['filename']
       songPlaying = song
-      localStorage.songPlaying = songPlaying
+      localStorage.songPlaying = JSON.stringify(songPlaying)
 
       // audio.src = `media/audio/${song}`;
-      audio.src = `audio/${song}`;
+      audio.src = `audio/${filename}`;
 
       if (localStorage.currentTime) {
         audio.currentTime = JSON.parse(localStorage.currentTime)
@@ -78,9 +79,9 @@ getSongs().then(response => {
         });
       }
 
-      song = remove_extension(song)
-      title.innerText = song;
-      let albumArtURL = `media/albumArts/${song}.jpg`
+      filename_trimed_extension = remove_extension(filename)
+      title.innerText = filename_trimed_extension;
+      let albumArtURL = `media/albumArts/${filename_trimed_extension}.jpg`
       var img = new Image()
       img.src = albumArtURL
       img.onload = function () {
@@ -94,9 +95,9 @@ getSongs().then(response => {
       }
 
       navigator.mediaSession.metadata = new MediaMetadata({
-        title: 'Mystery is back',
-        artist: 'Mystery',
-        album: 'Back in 2032',
+        title: song['title'],
+        artist: song['artist'],
+        album: song['album'],
         artwork: [{src: albumArtURL}]
       })      
 
