@@ -33,6 +33,8 @@ def get_songs(request):
     for obj in objects:
         song = {}
         song['filename'] = os.path.basename(obj.file.name)
+        song['artwork'] = obj.artwork.url
+        song['file'] = obj.file.url
         song['title'] = obj.title
         song['artist'] = obj.artist
         song['album'] = obj.album

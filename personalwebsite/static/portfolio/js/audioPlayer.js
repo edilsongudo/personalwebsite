@@ -61,7 +61,7 @@ getSongs().then(response => {
       localStorage.songPlaying = JSON.stringify(songPlaying)
 
       // audio.src = `media/audio/${song}`;
-      audio.src = `audio/${filename}`;
+      audio.src = song['file'];
 
       if (localStorage.currentTime) {
         audio.currentTime = JSON.parse(localStorage.currentTime)
@@ -81,7 +81,7 @@ getSongs().then(response => {
 
       filename_trimed_extension = remove_extension(filename)
       title.innerText = filename_trimed_extension;
-      let albumArtURL = `media/albumArts/${filename_trimed_extension}.jpg`
+      let albumArtURL = song['artwork']
       var img = new Image()
       img.src = albumArtURL
       img.onload = function () {

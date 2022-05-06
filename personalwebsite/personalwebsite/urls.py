@@ -23,5 +23,6 @@ from portfolio.views import StaticAudioView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('portfolio.urls')),
-    path('audio/<str:filename>', StaticAudioView),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns.append(path('media/audio/<str:filename>', StaticAudioView))
