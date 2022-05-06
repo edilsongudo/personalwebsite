@@ -93,6 +93,13 @@ getSongs().then(response => {
         musicIcon.style.display = "block"
       }
 
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: 'Mystery is back',
+        artist: 'Mystery',
+        album: 'Back in 2032',
+        artwork: [{src: albumArtURL}]
+      })      
+
     }
 
     // Play song

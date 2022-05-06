@@ -22,6 +22,7 @@ def get_only_meta(file):
         'album': meta['album'].value,
         'artist': meta['artist'].value,
         'title': meta['tracktitle'].value,
+        'genre': meta['genre'].value,
         'filename': file,
         'artwork': artwork,
     }
@@ -38,6 +39,8 @@ def get_meta(folder, album_dest, file):
 
     song = os.path.join(folder, file)
     meta = music_tag.load_file(song)
+    # print(meta)
+    # print('')
 
     try:
         filename = os.path.splitext(file)[0] + '.jpg'
@@ -54,6 +57,7 @@ def get_meta(folder, album_dest, file):
         'album': meta['album'].value,
         'artist': meta['artist'].value,
         'title': meta['tracktitle'].value,
+        'genre': meta['genre'].value,
         'filename': file,
         'artwork': artwork,
     }

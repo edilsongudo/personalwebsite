@@ -1,12 +1,17 @@
+import io
 import os
+import time
 
+from django.core.files.images import ImageFile
 from django.conf import settings
 from django.http import FileResponse, HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
+from PIL import Image
 
-from .forms import ContactForm
-from .utils import get_meta
+from .forms import ContactForm, SongForm
+from .models import Song
+from .utils import get_meta, get_only_meta
 
 
 def home(request):
@@ -24,10 +29,51 @@ def home(request):
 
 
 def get_songs(request):
-    songs = os.listdir('media/audio')
-    for song in songs:
-        get_meta('media/audio', 'media/albumArts', song)
+    t1 = time.time()
+    # songs = os.listdir('media/audio')
+    songs = []
+    objects = Song.objects.all()
+    for obj in objects:
+        songs.append(os.path.basename(obj.file.name))
+    # for song in songs:
+    #     get_meta('media/audio', 'media/albumArts', song)
+    t2 = time.time()
+    print(t2 - t1)
     return JsonResponse({'songs': songs})
+
+
+def upload_song(request):
+    form = SongForm()
+    if request.method == 'POST':
+        form = SongForm(request.POST, request.FILES)
+        if form.is_valid():
+            file = request.FILES['file'].temporary_file_path()
+            filename = request.FILES['file'].name
+            artist = get_only_meta(file)['artist']
+            album = get_only_meta(file)['album']
+            title = get_only_meta(file)['title']
+            genre = get_only_meta(file)['genre']
+            artwork = get_only_meta(file)['artwork']
+            artwork_filename = os.path.splitext(filename)[0] + '.jpg'
+            if isinstance(artwork, bytes):
+                artwork = Image.open(io.BytesIO(artwork))
+                artwork = artwork.convert('RGB')
+                artwork.thumbnail((500, 500), Image.ANTIALIAS)
+                artwork_byte_arr = io.BytesIO()
+                artwork.save(artwork_byte_arr, format='JPEG')
+                artwork_byte_arr = artwork_byte_arr.getvalue()
+                artwork = ImageFile(io.BytesIO(artwork_byte_arr), name=artwork_filename)
+            form.save(commit=False)
+            form.instance.title = title
+            form.instance.artist = artist
+            form.instance.genre = genre
+            form.instance.album = album
+            form.instance.filename = filename
+            form.instance.artwork = artwork
+            form.save()
+            return redirect('home')
+    context = {'form': form}
+    return render(request, 'portfolio/upload_song.html', context)
 
 
 @csrf_exempt

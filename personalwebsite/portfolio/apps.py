@@ -1,8 +1,8 @@
+import socket
+
 from django.apps import AppConfig
 
 from .utils import create_dir
-
-import socket
 
 
 class PortfolioConfig(AppConfig):
