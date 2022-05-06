@@ -9,6 +9,7 @@ const nextBtn = document.getElementById('next');
 const audio = document.querySelector('audio');
 const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
+const artist = document.getElementById('artist');
 const currentTimeDiv = document.querySelector('.current')
 const durationDiv = document.querySelector('.duration')
 const musicIcon = document.querySelector('#music-icon')
@@ -80,7 +81,8 @@ getSongs().then(response => {
       }
 
       filename_trimed_extension = remove_extension(filename)
-      title.innerText = filename_trimed_extension;
+      title.innerText = song['title']
+      artist.innerText = song['artist']
       let albumArtURL = song['artwork']
       var img = new Image()
       img.src = albumArtURL

@@ -46,9 +46,24 @@
   left: 20px;
 }
 
+.music-info {
+  margin-top: 10px;
+}
+
+.music-info .songs-title-and-artist {
+  height: 50px;
+  margin-bottom: 20px;
+}
 
 .music-info #title {
   font-size: 1rem;
+  height: 30px;
+}
+
+.music-info #artist {
+  margin-top: 10px;
+  font-size: 0.7rem;
+  height: 20px;
 }
 
 .img-container {
@@ -70,10 +85,6 @@
   background-color: rgba(255,255,255, 0.1);
   color: var(--bodytext);
   font-size: 18rem;
-}
-
-.music-container #title {
-    height: 50px;
 }
 
 #progress-time {
@@ -171,7 +182,11 @@
 }
 
 .collapsed #title {
-    font-size: 10px;
+    font-size: 0.6rem;
+}
+
+.collapsed #artist {
+  font-size: 0.4rem;
 }
 
 .collapsed .navigation {
@@ -186,7 +201,6 @@
 .collapsed .volume-popup-modal {
   display: none;
 }
-
 
 
 .middle {

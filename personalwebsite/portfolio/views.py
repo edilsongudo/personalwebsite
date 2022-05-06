@@ -31,6 +31,7 @@ def get_songs(request):
     songs = []
     objects = Song.objects.all()
     for obj in objects:
+        print(obj.genre)
         song = {}
         song['filename'] = os.path.basename(obj.file.name)
         song['artwork'] = obj.artwork.url
@@ -71,7 +72,7 @@ def upload_song(request):
             form.instance.filename = filename
             form.instance.artwork = artwork
             form.save()
-            return redirect('upload-song')
+            return redirect('home')
     context = {'form': form}
     return render(request, 'portfolio/upload_song.html', context)
 
