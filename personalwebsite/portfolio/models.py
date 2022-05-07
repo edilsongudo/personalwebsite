@@ -11,13 +11,13 @@ class Contact(models.Model):
 
 
 class Song(models.Model):
-    filename = models.CharField(max_length=200)
+    filename = models.CharField(max_length=255)
     title = models.CharField(max_length=200, null=True)
     album = models.CharField(max_length=200, null=True)
     artist = models.CharField(max_length=200, null=True)
     genre = models.CharField(max_length=200, null=True)
-    artwork = models.ImageField(upload_to='albumArts', null=True)
-    file = models.FileField(upload_to='audio')
+    artwork = models.ImageField(upload_to='albumArts', max_length=255, null=True)
+    file = models.FileField(upload_to='audio', max_length=255)
 
     def __str__(self):
         return f'{self.filename}'

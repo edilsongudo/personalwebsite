@@ -102,11 +102,19 @@
   font-size: 1.5rem;
 }
 
+.navigation #randomize {
+  transition-duration: 0.5s;
+}
+
 .music-player-modal button {
   border: transparent;
   color: var(--bodytext);
   font-size: 2rem;
   background: transparent;
+}
+
+.button-active {
+  color: var(--buttonbg2);
 }
 
 @media (max-width: 440px) {

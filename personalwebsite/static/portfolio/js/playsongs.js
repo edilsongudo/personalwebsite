@@ -33,17 +33,15 @@ document.body.addEventListener('click', () => {
 //Randomize
 randomBtn = document.querySelector('#randomize')
 if (localStorage.randomize === 'true') {
-    randomBtn.style.color = getComputedStyle(document.documentElement)
-    .getPropertyValue('--buttonbg2');
+    randomBtn.classList.add('button-active')
 }
 
 randomBtn.addEventListener('click', () => {
     if (localStorage.randomize != 'true') {
-        randomBtn.style.color = getComputedStyle(document.documentElement)
-        .getPropertyValue('--buttonbg2');
+        randomBtn.classList.add('button-active')
         localStorage.randomize = "true"
     } else {
-        randomBtn.style.color = 'grey'
+        randomBtn.classList.remove('button-active')
         localStorage.randomize = "false"
     }
 })
