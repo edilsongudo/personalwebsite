@@ -34,9 +34,7 @@ SECRET_KEY = config['site']['SECRET_KEY']
 
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    'edilsongudo.pythonanywhere.com'
-]
+ALLOWED_HOSTS = ['edilsongudo.pythonanywhere.com']
 
 
 # Application definition
