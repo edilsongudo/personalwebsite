@@ -96,13 +96,15 @@ getSongs().then(response => {
         musicIcon.style.display = "block"
       }
 
-      navigator.mediaSession.metadata = new MediaMetadata({
-        title: song['title'],
-        artist: song['artist'],
-        album: song['album'],
-        artwork: [{src: albumArtURL}]
-      })      
-
+      if ('mediaSession' in navigator) {
+          navigator.mediaSession.metadata = new MediaMetadata({
+          title: song['title'],
+          artist: song['artist'],
+          album: song['album'],
+          artwork: [{src: albumArtURL}]
+        })
+      }
+      
     }
 
     // Play song
