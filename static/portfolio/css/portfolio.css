@@ -84,10 +84,6 @@ section {
 
 
 body {
-  background:linear-gradient(
-    rgba(0,0,0,0.2),
-    rgba(0,0,0,0.2)),
-    url(../images/pexels-asad-photo-maldives-1198839.jpg);
   background: var(--bgcolor1);
   background-size: contain;
   color: var(--bodytext);
