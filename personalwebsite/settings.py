@@ -29,7 +29,7 @@ SECRET_KEY = (
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ.get('DEBUG') else False
 
 ALLOWED_HOSTS = [
     'edilsongudo.herokuapp.com',
