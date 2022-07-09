@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 
-import django_heroku
+# import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -89,12 +90,8 @@ WSGI_APPLICATION = 'personalwebsite.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config()
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -167,4 +164,15 @@ AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 AWS_S3_ADDRESSING_STYLE = 'virtual'
 
-django_heroku.settings(locals())
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    # CSRF_COOKIE_SECURE = True
+    # SESSION_COOKIE_SECURE = True
+    # SECURE_REFERRER_POLICY = "strict-origin"
+    # SECURE_BROWSER_XSS_FILTER = True
+    # SECURE_CONTENT_TYPE_NOSNIFF = True
+    # SECURE_HSTS_SECONDS = 86400
+    # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    # SECURE_HSTS_PRELOAD = True
+
+# django_heroku.settings(locals())

@@ -1,8 +1,7 @@
 $('#tm1').click(function() {
     swal(`
-        A Music streaming social media with purpose of connecting people with same music tastes and discover songs based on what with people with the same favourite songs are listening
-        Users are able to upload songs, search and follow users, search and discover users, songs and genres and create a online playlist to share with the world and much more. Still in development
-        `)
+        Users can Drag and Drop a file and download the text spoken. 
+        Built with modern stacks such as Django, Vue.js, Celery, Redis and AWS.`)
 })
 
 $('#tm2').click(function() {
