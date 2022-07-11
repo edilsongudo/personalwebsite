@@ -1,0 +1,159 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Edilson Gudo | 10 dicas para melhorar o seu Curriculo Vitae</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'portfolio/favicon-96x96.png' %}"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/libraries/fontawesome-free-5.15.2-web/css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/portfolio.css' %}?a=2">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/dez_dicas_cv.css' %}?a=2">
+</head>
+<body>
+    <div class="navbar">
+        <div class="hamburger">
+            <label class="bars" for="check">
+              <input type="checkbox" id="check"/> 
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </label>
+        </div>
+        <div class="nav">
+            <div id="colorpickersection">
+                <div id="colorpickercontainer">
+                    <span class="fal fa-palette top-icon" id="toggle-theme-picker"></span>
+                    <span class="theme-picker">
+                        <span id="color3" class="color"
+                            data-color1="#93edc7" data-color2="#93edc7"
+                            style="background: linear-gradient(#93edc7, #93edc7)">
+                        </span>
+                        <span id="color4" class="color"
+                            data-color1="#ffb88c" data-color2="#ffb88c"
+                            style="background: linear-gradient(#ffb88c, #ffb88c)">
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div id="toggledark"><i class="fal fa-moon top-icon"></i></div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>10 dicas para melhorar o seu Curriculo Vitae e conseguir mais entrevistas de emprego</h1>
+        <img class="banner" src="{% static 'portfolio/images/pexels-cottonbro-5989933.jpg' %}">
+        <p>Neste artigo você verá dez dicas que pode usar para triplicar as chances de conseguir entrevistas de emprego.</p>
+        <p>Neste artigo você aprenderá:
+            <ul>
+                <li>O que escrever no currículo mesmo sem ter experiência</li>
+                <li>Que informações deixar em destaque no seu currículo</li>
+                <li>Informações que você pode ocultar do seu currículo</li>
+                <li>Como fazer um currículo visualmente atraente e chamativo</li>
+                <li>Como melhorar a legibilidade do seu currículo</li>
+                <li>Como ter um currículo que prende a atenção dos recrutadores</li>
+            </ul>
+        </p>
+        <div class="dica">
+            <h2>Dica 1: Menos significa mais</h2>
+            <p>Quando escrevemos um currículo, muitas vezes pensamos que quanto mais adicionamos coisas melhor será. Mas não é bem assim. A maioria das pessoas infelizmente tem preguiça de ler. E o que dizer do recrutador que olha dezenas senão centenas de currículos diariamente?</p>
+            <p>Os recrutadores não leem todos os currículos mas escaneam em poucos segundos por informações que indiquem que valha a pena escolher determinados currículos para uma avaliação mais cautelosa.</p>
+            <p>Faça o possível para facilitar o recrutador, tendo um currículo muito bem resumido.</p>
+            <p>Se possível evite fazer um currículo de três, quatro ou cinco páginas. Muitas vezes uma página é suficiente.</p>
+            <div class="image"><img src="{% static 'portfolio/images/foto_cv.jpg' %}">Imagem: CV bem resumido</div>           
+        </div>
+
+        <div class="dica">
+            <h2>Dica 2: Poupe informações que causam pré-julgamentos</h2>
+            <p>Porque gastar o espaço adicioando o seu gênero se ele já está implicito em seu nome? Ou por que escrever a sua idade sendo que ela pode pesar contra você?</p>
+            <p>Do mesmo modo não há a necessidade escrever o número da casa onde você reside porque ninguém se interessa em saber.</p>
+        </div>
+
+        <div class="dica">
+            <h2>Dica 3: Escreva na terceira pessoa</h2>
+            <p>O que tem mais impacto? Aquilo que você fala sobre você mesmo? Ou aquilo que terceiros falam a seu respeito?</p>
+            <p>Escrever em terceira pessoa, no currículo cai melhor do que escrever na primeira.</p>
+        </div>
+
+        <div class="dica">
+            <h2>Dica 4: Use um layout que facilite escanear informações</h2>
+            <p>A leitura do seu currículo deve ser fácil.</p>
+            <p>Caso a leitura do seu CV demande muita concentração, os recrutadores terão maior tendência a descarta-lo sem dá-lo uma chance. Por isso, evite organizar as informações em fluxo contínuo como num livro, mas faça o bom uso de espaços vazios e de colunas.</p> 
+        </div>
+
+        <div class="dica">
+            <h2>Dica 5: Use templates</h2>
+            <p>Elaborar um currículo visualmente atrativo é uma tarefa difícil para 99% das pessoas. Por isso você pode fazer o uso de templates.</p>
+            <p>Você pode encontrar gratuitamente centenas de templates editáveis no site <a class="link" href="https://canva.com">Canva.</a></p>
+        </div>
+
+        <div class="dica">
+            <h2>Dica 6: Aparente profissionalismo na foto</h2>
+            <p>Caso opte por colocar uma foto no seu currículo, certifique-se que ela transmita profissionalismo e confiança, pois a primeira impressão conta.</p>
+            <p>Evite selfies extravagantes e tenha cuidado com o seu traje e o fundo da foto.</p>
+            <p>Prefira fotos profissionais e em que está trajado como tal. Esteja em um fundo bom e pouco sugestivo.</p>
+        </div>
+
+        <div class="dica">
+            <h2>Dica 7: Adapte o CV para a vaga que deseja ocupar</h2>
+            <p>É comum em currículos as pessoas falarem na maior parte, de experiências passadas que nada tem a ver com o novo cargo que desejam ocupar.</p> 
+            <p>A pessoa que deseja contratar no entanto, está muito mais interessada em saber suas qualificações para a vaga em questão.</p>
+        </div>
+
+        <div class="dica">
+            <h2>Dica 8: Tenha algo que prenda a atenção</h2>
+            <p>Tenha um CV visualmente atraente e com algo prenda a atenção. Analise como as pessoas na sua região tem feito os seus CVs e faça algo de diferente para se destacar.</p>
+            <p>Pode ser usando cores diferentes, um layout mais simples ou mais extravagante ou, um corte de papel diferente. Pense fora da caixa.</p>
+            <p>Existe uma garota chamada Emily Vu, que chamou a atenção dos recrutadores do Spotify por ter criado um CV com a mesma paleta cores e identidade visual da empresa.</p>
+            <div>
+                <div class="image"><img alt="Emily Vu Cv" src="{% static 'portfolio/images/EmilyVu.jpg' %}">Imagem: CV da Emily Vu com a identidade visual do Spotify</div>
+            </div>
+        </div>
+
+        <div class="dica">
+            <h2>Dica 9: Busque experiência por conta própria</h2>
+            <p>Não sabe o que colocar no CV por falta de experiência? Em algumas áreas não é preciso primeiro ser contratado para obter experiência relevante. Alguns exemplos dessas áreas são tecnlogia, marketing, design ou contabilidade.<p>
+            <p>Você pode criar suas próprias ideas e aplicar seu conhecimento e assim obter alguma experiência na área.</p>
+            <p>Ou pode prestar serviços para outras pessoas de graça ou a um custo baixo de forma a obter experiência para adicionar no CV, caso nunca tenha sido contratado.</p>
+        </div>
+
+        <div class="dica">
+            <h2>Dica 10: Atualize o seu CV com frequência</h2>
+            <p>Visite o seu CV de tempos em tempos para perceber o que pode ser melhorado. As vezes, um erro de gramática passou despecebido. Ou pode ser que você adquiriu novas experiências desde a última vez que editou seu CV. Ou pode ser que o design ainda não está bom.</p> <p>Faça revisões contantes, ao menos duas vezes por ano.</p>
+        </div>
+
+        <p></p>
+        <div class="deseja-cv">
+            <h4>Quer um cv totalmente personalizado?</h4>
+            <p>Eu e minha equipa conversaremos com você, analizaremos seu CV e indicaremos melhorias.<br>Caso deseje, criaremos um CV totalmente personalizado para você por apenas R$24,90.</p>
+            <a class="cta" href="https://wa.link/53dg7i">Quero o meu CV personalizado <i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+   <footer>
+        <div>Escrito com <i class="fal fa-heart"></i> por Edilson Gudo
+          <br> © 2022
+        </div>
+    </footer>
+    <script src="https://cdn.plyr.io/3.7.2/plyr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script type="text/javascript">$SCRIPT_ROOT = "{{ request.scheme }}://{{ request.get_host }}";</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="{% static 'portfolio/js/utils.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/js/darkmode.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/js/themepicker.js' %}"></script>
+    <script>
+        const navcheckbox = document.querySelector('input[type="checkbox"]')
+        navcheckbox.addEventListener('change', () => {
+            if (navcheckbox.checked) {
+                document.querySelector('.navbar').classList.add('navbar-active')
+            } else {
+                document.querySelector('.navbar').classList.remove('navbar-active')
+            }
+        })
+    </script>
+</body>
+</html>

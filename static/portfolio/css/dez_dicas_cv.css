@@ -1,0 +1,30 @@
+.container {
+	text-align: left;
+	margin: 0 auto;
+	max-width: 90%;
+}
+
+img.banner {
+	width: 100%;
+	margin: 30px 0;
+}
+
+.dica {
+	margin: 50px 0;
+}
+
+.image{
+	font-size: 0.7rem;
+	text-align: center;
+}
+
+.dica img {
+	width: 300px;
+	display: block;
+	margin: 10px auto;
+}
+
+.deseja-cv {
+	margin: 100px 0;
+	text-align: center;
+}

@@ -83,3 +83,17 @@ def StaticAudioView(request, filename):
         open(os.path.join(settings.MEDIA_ROOT, 'audio', filename), 'rb')
     )
     return response
+
+
+def dez_dicas_cv(request):
+    form = ContactForm()
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse(
+                """Message sent successfully.
+                Thank you, I will get in touch with you soon."""
+            )
+    context = {'form': form}
+    return render(request, 'portfolio/dez_dicas_cv.html', context)
