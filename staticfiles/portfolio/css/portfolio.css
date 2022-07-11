@@ -45,7 +45,7 @@ form {
   margin: 0 auto;
 }
 
-button {
+button, .cta {
   border: transparent;
   background: transparent;
   border-color: transparent;
@@ -55,6 +55,11 @@ button {
   color: var(--buttontext);
   padding: 10px;
   font-family: "Averta";
+}
+
+button, .cta {
+  font-size: 1.25rem;
+  text-decoration: none;
 }
 
 a {
