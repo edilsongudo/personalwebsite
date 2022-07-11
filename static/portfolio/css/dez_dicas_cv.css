@@ -19,9 +19,15 @@ img.banner {
 }
 
 .dica img {
-	width: 300px;
+	width: 70%;
 	display: block;
 	margin: 10px auto;
+}
+
+@media only screen and (max-width: 600px) {
+	.dica img {
+		width: 100%;
+	}
 }
 
 .deseja-cv {
