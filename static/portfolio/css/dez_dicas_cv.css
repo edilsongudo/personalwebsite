@@ -1,3 +1,7 @@
+.feature i {
+	color: var(--buttonbg2);
+}
+
 .container {
 	text-align: left;
 	margin: 0 auto;
@@ -33,4 +37,9 @@ img.banner {
 .deseja-cv {
 	margin: 100px 0;
 	text-align: center;
+}
+
+.deseja-cv img {
+	width: 300px;
+	margin-bottom: 20px;
 }
