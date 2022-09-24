@@ -10,7 +10,7 @@ from PIL import Image
 
 from .forms import ContactForm, SongForm
 from .models import Song
-from .utils import get_meta, get_only_meta
+from .utils import get_only_meta
 
 
 def home(request):
@@ -59,7 +59,7 @@ def upload_song(request):
             if isinstance(artwork, bytes):
                 artwork = Image.open(io.BytesIO(artwork))
                 artwork = artwork.convert('RGB')
-                artwork.thumbnail((500, 500), Image.ANTIALIAS)
+                artwork.thumbnail((400, 400), Image.ANTIALIAS)
                 artwork_byte_arr = io.BytesIO()
                 artwork.save(artwork_byte_arr, format='JPEG')
                 artwork_byte_arr = artwork_byte_arr.getvalue()

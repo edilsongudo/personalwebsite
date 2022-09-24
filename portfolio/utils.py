@@ -47,7 +47,7 @@ def get_meta(folder, album_dest, file):
         image_data = meta['artwork'].first.data
         image = Image.open(io.BytesIO(image_data))
         image = image.convert('RGB')
-        image.thumbnail((500, 500), Image.ANTIALIAS)
+        image.thumbnail((300, 300), Image.ANTIALIAS)
         image.save(os.path.join(album_dest, filename))
         artwork = filename
     except (AttributeError, KeyError):
