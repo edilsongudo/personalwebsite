@@ -11,7 +11,7 @@
         audio: null,
         songIndex: 0,
         isPlaying: false,
-        server_base_url: 'http://localhost:8000',
+        server_base_url: import.meta.env.VITE_HOST,
       }
     },
     methods: {

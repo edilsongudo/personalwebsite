@@ -9,11 +9,8 @@
             </div>
             <h1 class="title">Edilson Gudo</h1>
             <h2 class="secondary-title">Fullstack Developer</h2>
-            <p>
-                I <i class="fas fa-heart"></i> developing amazing solutions with Django, Vue.js and Celery.
-                <br>
-                If you seek quality and commitment, you can't be wrong by considering me for your next project :)
-            </p>
+            <p>Hi, I am a developer with vast experience developing web applications from the backend to the frontend.</p>
+            <p>If you are looking for a responsive, beautiful, otimized web application, or discuss any other thing, drop me a message, I am available to schedule call with you today. </p>
             <div class="socialmedias">
                 <a href="https://linkedin.com/in/cristiangudo"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/edilsongudo"><i class="fab fa-github"></i></a>
@@ -28,9 +25,9 @@
 
             <!-- Project -->
             <div class="project" data-aos="fade-up">
-                <h5>Audio to Text Online</h5>
-                <p>A web app that allows users to upload an audio or video file and download the transcripted file as a word document</p>
-                <button class="tellmore" id="tm1">Read more</button>
+                <h5>Online Transcription Tool</h5>
+                <p>A web app that allows users to drag and drop an audio or video file and export the transcription. Built with Vue.js, Celery and Django</p>
+                <!-- <button class="tellmore" id="tm1">Read more</button> -->
                 <div>
                     <div class="embed">
                         <iframe width="100%" height="100%" frameborder=0 src="https://www.youtube.com/embed/hKqjzEPljdI"
@@ -44,9 +41,9 @@
 
             <!-- Project -->
             <div class="project" data-aos="fade-up">
-                <h5>Instagram link-in-bio app</h5>
-                <p>Link In Bio Plaform + URL Shortner Service</p>
-                <button class="tellmore" id="tm2">Read more</button>
+                <h5>Linktree clone</h5>
+                <p>A powerful link in bio platform powered by Django backend and that integrates with PayPal Subscritions API</p>
+                <!-- <button class="tellmore" id="tm2">Read more</button> -->
                 <div>
                     <div class="embed">
                         <iframe width="100%" height="100%" frameborder=0 src="https://www.youtube.com/embed/EZ2W-aZiDW8"
@@ -60,8 +57,9 @@
             <!-- Project -->
             <div class="project" data-aos="fade-up">
                 <h5>Password Manager</h5>
-                <p>Store encrypted passwords using a master password</p>
-                <button class="tellmore" id="tm3">Read more</button>
+                <p>An app where users only need to create and remember one master password to safely store other ones. 
+                <br>Uses AES encryption. Built with Vue.js and Django.</p>
+                <!-- <button class="tellmore" id="tm3">Read more</button> -->
                 <div>
                     <div class="embed">
                         <iframe width="100%" height="100%" frameborder=0 src="https://www.youtube.com/embed/s1PJQxotdJA"
@@ -78,10 +76,14 @@
       <div data-aos="fade-up" class="container">
         <h2 class="title">Why Me</h2>
         <div>
-          <p><i class="fas fa-heart"></i> I will make how many revisions are necessary;</p>
+          <p><i class="fas fa-heart"></i>  I will update you daily. I am open to have online meets with you at any moment of the day at the platform of your choice about the progress of the job;</p>
           <p>
               <i class="fas fa-heart"></i>
-              I will only stop working on the project when you are 100% satisfied;
+              I will do how many revisions are necessary. I will only stop working on the project when you are 100% satisfied;
+          </p>
+          <p>
+            <i class="fas fa-heart"></i>
+            I will dedicate at least 21 hours per week to your project.
           </p>
         </div>
       </div>

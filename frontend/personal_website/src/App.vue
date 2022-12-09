@@ -1,6 +1,8 @@
 <template>
-  <MusicPlayer/>
-  <router-view/>
+  <div>
+    <MusicPlayer/>
+    <router-view/>
+  </div>
 </template>
 
 <script>
@@ -8,7 +10,7 @@
   export default {
     name: 'App',
     components: {
-      MusicPlayer
+      MusicPlayer,
     }
   }
 </script>
