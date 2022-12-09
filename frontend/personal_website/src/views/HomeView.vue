@@ -10,7 +10,7 @@
             <h1 class="title">Edilson Gudo</h1>
             <h2 class="secondary-title">Fullstack Developer</h2>
             <p>Hi, I am a developer with vast experience developing web applications from the backend to the frontend.</p>
-            <p>If you are looking for a responsive, beautiful, otimized web application, or discuss any other thing, drop me a message, I am available to schedule call with you today. </p>
+            <p>If you are looking for a responsive, beautiful, otimized web application, or would like to discuss about other thing, drop me a message, I am available to schedule call with you today. </p>
             <div class="socialmedias">
                 <a href="https://linkedin.com/in/cristiangudo"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/edilsongudo"><i class="fab fa-github"></i></a>
@@ -29,10 +29,11 @@
                 <p>A web app that allows users to drag and drop an audio or video file and export the transcription. Built with Vue.js, Celery and Django</p>
                 <!-- <button class="tellmore" id="tm1">Read more</button> -->
                 <div>
-                    <div class="embed">
-                        <iframe width="100%" height="100%" frameborder=0 src="https://www.youtube.com/embed/hKqjzEPljdI"
-                        title="Youtube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                        </iframe>
+                    <div>
+                      <video width="320" height="240" controls>
+                        <source src="../assets/portfolio/videos/199839219-45d0fc04-f5a5-4123-93cc-5fd119af3075.mp4">
+                        Your browser does not support the video tag.
+                      </video> 
                     </div>     
                 </div>
             </div>
@@ -42,13 +43,15 @@
             <!-- Project -->
             <div class="project" data-aos="fade-up">
                 <h5>Linktree clone</h5>
-                <p>A powerful link in bio platform powered by Django backend and that integrates with PayPal Subscritions API</p>
+                <p>
+                  A powerful link in bio platform powered by Django backend and that integrates with PayPal Subscritions API
+                  <br><a href="https://selflink.co/" target="_blank" rel="">Live link</a>
+                  <br><a href="https://selflink.co/to/c8d69/" target="_blank" rel="">Project Demo</a>
+                </p>
                 <!-- <button class="tellmore" id="tm2">Read more</button> -->
                 <div>
                     <div class="embed">
-                        <iframe width="100%" height="100%" frameborder=0 src="https://www.youtube.com/embed/EZ2W-aZiDW8"
-                        title="Youtube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                        </iframe>
+                      <img src="../assets/portfolio/images/selflink.webp" alt="selflink.co banner">
                     </div>     
                 </div>
             </div>
@@ -57,14 +60,15 @@
             <!-- Project -->
             <div class="project" data-aos="fade-up">
                 <h5>Password Manager</h5>
-                <p>An app where users only need to create and remember one master password to safely store other ones. 
-                <br>Uses AES encryption. Built with Vue.js and Django.</p>
+                <p>
+                  An app where users only need to create and remember one master password to safely store other ones. 
+                  <br>Uses AES encryption. Built with Vue.js and Django.
+                  <br><a href="https://selflink.co/to/928de/" target="_blank" rel="">Project Demo</a>
+                </p>
                 <!-- <button class="tellmore" id="tm3">Read more</button> -->
                 <div>
-                    <div class="embed">
-                        <iframe width="100%" height="100%" frameborder=0 src="https://www.youtube.com/embed/s1PJQxotdJA"
-                        title="Youtube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                        </iframe>
+                    <div>
+                        <img src="../assets/portfolio/images/pass_manager.webp" alt="Password Manager App">
                     </div>     
                 </div>
             </div>
@@ -287,7 +291,7 @@ body {
 }
 
 .profile-img {
-  background: url(../assets/portfolio/images/Edilson.jpg);
+  background: url(../assets/portfolio/images/Edilson.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -455,6 +459,15 @@ video {
 
 .project {
   margin-top: 100px;
+}
+
+.project img {
+  width: 100%;
+}
+
+.project a {
+  /* text-decoration-color: var(--buttonbg1);
+  text-decoration-thickness: 2px; */
 }
 
 .plyr--video.plyr--stopped .plyr__controls { display: none; }
