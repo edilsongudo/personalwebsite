@@ -37,13 +37,13 @@
         this.song = this.songs[this.songIndex]
 
         const filename = this.song['filename']
-        this.audio.src = this.server_base_url + this.song['file'];
+        this.audio.src = this.song['file'];
 
         const title = document.getElementById('title');
         const artist = document.getElementById('artist');
         const cover = document.querySelector('#cover');
         const musicIcon = document.querySelector('#music-icon');
-        const albumArtURL = this.server_base_url + this.song['artwork']
+        const albumArtURL = this.song['artwork']
 
         title.innerText = this.song['title']
         artist.innerText = this.song['artist']

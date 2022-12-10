@@ -1,7 +1,14 @@
 <script>
+  import PreLoading from '@/components/PreLoading';
+  export default {
+    components: {
+      PreLoading,
+    }
+  }
 </script>
 
 <template>
+    <PreLoading/>
     <section class="first-section">
         <div data-aos="fade-up" class="container">
             <div class="">
@@ -10,7 +17,7 @@
             <h1 class="title">Edilson Gudo</h1>
             <h2 class="secondary-title">Fullstack Developer</h2>
             <p>Hi, I am a developer with vast experience developing web applications from the backend to the frontend.</p>
-            <p>If you are looking for a responsive, beautiful, otimized web application, or would like to discuss about other thing, drop me a message, I am available to schedule call with you today. </p>
+            <p>If you are looking for a responsive, beautiful, otimized web application, please drop me a message, I am available to schedule call with you today. </p>
             <div class="socialmedias">
                 <a href="https://linkedin.com/in/cristiangudo"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/edilsongudo"><i class="fab fa-github"></i></a>
@@ -222,11 +229,6 @@
 @font-face {
     font-family: 'Averta';
     src: url('../assets/portfolio/fonts/averta/AvertaDemoPECuttedDemo-Regular.otf')
-}
-
-@font-face {
-    font-family: 'Heaters';
-    src: url('../assets/portfolio/fonts/Heaters/Heaters.otf')
 }
 
 form {
