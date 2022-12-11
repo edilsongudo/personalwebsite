@@ -213,7 +213,7 @@
   --titlecolor: rgba(255, 255, 255, 0.87);
   --bodytext: rgba(255, 255, 255, 0.87);
   --iconcolor: rgba(255, 255, 255, 0.87);
-  --boxshadowcolor: rgba(213, 221, 236, 0.4) 1px 1px 1px 1px;
+  --boxshadowcolor: rgba(213, 221, 236, 0.1) 1px 1px 1px 1px;
 }
 
 @font-face {

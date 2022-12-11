@@ -19,5 +19,8 @@ class Song(models.Model):
     artwork = models.ImageField(upload_to='albumArts', max_length=255, null=True)
     file = models.FileField(upload_to='audio', max_length=255)
 
+    class Meta:
+        ordering = ['title']
+
     def __str__(self):
         return f'{self.filename}'

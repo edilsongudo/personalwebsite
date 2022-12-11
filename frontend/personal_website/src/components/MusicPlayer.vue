@@ -49,10 +49,10 @@
         artist.innerText = this.song['artist']
         
         cover.src = albumArtURL
+        musicIcon.style.display = "none"
         cover.onload = function () {
           cover.style.display = "block"
           cover.src = albumArtURL;
-          musicIcon.style.display = "none"
         }
         cover.onerror = function() {
           cover.style.display = "none"
@@ -384,12 +384,13 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 60px;
   box-shadow: var(--boxshadowcolor);
   z-index: 1000;
   transition-duration: 0s;
   background-image: linear-gradient(90deg, var(--bgcolor2), var(--bgcolor2));
   color: var(--bodytext);
+  border-radius: 50px;
 }
 
 .collapsed .music-container {
@@ -398,7 +399,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 50px;
+  height: 60px;
 }
 
 .collapsed .img-container {
@@ -409,9 +410,9 @@
 
 .collapsed img#cover {
   margin: 0 auto;
-  height: 40px;
-  width: 40px;
-  border-radius: 6px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
 }
 
 .collapsed #music-icon i {
