@@ -57,13 +57,13 @@ def upload_song(request):
             title = get_only_meta(file)['title']
             genre = get_only_meta(file)['genre']
             artwork = get_only_meta(file)['artwork']
-            artwork_filename = os.path.splitext(filename)[0] + '.jpg'
+            artwork_filename = os.path.splitext(filename)[0] + '.webp'
             if isinstance(artwork, bytes):
                 artwork = Image.open(io.BytesIO(artwork))
                 artwork = artwork.convert('RGB')
                 artwork.thumbnail((400, 400), Image.ANTIALIAS)
                 artwork_byte_arr = io.BytesIO()
-                artwork.save(artwork_byte_arr, format='JPEG')
+                artwork.save(artwork_byte_arr, format='webp')
                 artwork_byte_arr = artwork_byte_arr.getvalue()
                 artwork = ImageFile(io.BytesIO(artwork_byte_arr), name=artwork_filename)
             form.save(commit=False)

@@ -4,9 +4,9 @@
   
   export default {
     setup() {
-      document.fonts.load(' 5rem "Hey_August"').then((e)=> {
+      document.fonts.ready.then(() => {
         document.querySelector('.preloading').style.display = 'none';
-        AOS.init()
+        AOS.init()        
       })
     }
   }
