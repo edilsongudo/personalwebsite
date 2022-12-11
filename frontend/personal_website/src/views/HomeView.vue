@@ -10,7 +10,7 @@
 <template>
     <PreLoading/>
     <section class="first-section">
-        <div data-aos="fade-up" class="container">
+        <div data-aos="zoom-out" data-aos-duration="1000" class="container">
             <div class="">
                 <div class="profile-img"></div>
             </div>

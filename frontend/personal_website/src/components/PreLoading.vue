@@ -1,8 +1,12 @@
 <script>
+  import AOS from 'aos';
+  import 'aos/dist/aos.css';
+  
   export default {
     setup() {
       document.fonts.load(' 5rem "Hey_August"').then((e)=> {
         document.querySelector('.preloading').style.display = 'none';
+        AOS.init()
       })
     }
   }
@@ -10,15 +14,11 @@
 
 <template>
     <div class="preloading">
-        <div>
-            <div class="dot dot1"></div>
-            <div class="dot dot2"></div>
-            <div class="dot dot3"></div>
-        </div>
+        <div class="lds-heart"><div></div></div>
     </div>
 </template>
 
-<style scoped>
+<style>
 .preloading {
     background: var(--bgcolor1);
     position: fixed;
@@ -34,34 +34,58 @@
     align-items: center;
 }
 
-.dot {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    background-color: white;
-    border-radius: 50%;
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
 }
-
-.dot1 {
-    background-color: #1abc9c;
-    animation: jump-up 1s 0.1s linear infinite;
+.lds-heart div {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: rgba(147, 237, 199, 1);
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-
-.dot2 {
-    background-color: #ffd64a;
-    animation: jump-up 1s 0.2s linear infinite;
-
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: rgba(147, 237, 199, 1);
 }
-
-.dot3 {
-    background-color: #e067af;
-    animation: jump-up 1s 0.3s linear infinite;
-
+.lds-heart div:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
 }
-
-@Keyframes jump-up {
-    50% {
-        transform: translate(0, 15px);
-    }
+.lds-heart div:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
 }
 </style>
