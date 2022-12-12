@@ -24,4 +24,4 @@ class Song(models.Model):
         ordering = ['title']
 
     def __str__(self):
-        return f'{self.filename}'
+        return f'{self.filename} | Show: {self.show}'

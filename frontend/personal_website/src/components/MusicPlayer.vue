@@ -1,5 +1,7 @@
 <script>
   import axios from 'axios';
+
+  import ColorThief from 'colorthief/dist/color-thief.mjs';
   
   export default {
     setup() {
@@ -25,6 +27,7 @@
         // Create Cover Image element
         const imageContainer = document.querySelector('.img-container')
         const cover = document.createElement('img')
+        cover.setAttribute('crossOrigin', '');
         cover.id = 'cover'
         imageContainer.appendChild(cover)
         // Create audio element
@@ -53,7 +56,23 @@
         musicIcon.style.display = "none"
         cover.onload = function () {
           cover.style.display = "block"
-          cover.src = albumArtURL;
+
+          const colorThief = new ColorThief();
+          const palette = colorThief.getPalette(cover)
+          console.log(palette)
+
+          function arrayToRgb(value) {
+            const r = value[0]
+            const g = value[1]
+            const b = value[2]
+            const color =  `rgb(${r},${g},${b})`
+            return color
+          }
+
+          const rgbArrays = colorThief.getColor(cover)
+          const color1 = arrayToRgb(rgbArrays)
+          const r = document.querySelector(':root');
+          r.style.setProperty('--playercolor', color1);          
         }
         cover.onerror = function() {
           cover.style.display = "none"
@@ -217,7 +236,7 @@
         </div>
 
         <div class="navigation">
-          <button id="" class="action-btn">
+          <button id="" class="action-btn not-implemented">
             <i id="randomize" class="fas fa-random"></i>
           </button>
           <div>
@@ -225,13 +244,13 @@
                 <i class="fas fa-backward"></i>
               </button>
               <button @click.stop="playOrPauseSong" id="play" class="action-btn action-btn-big">
-                <i :class="classObject"></i>
+                <span class="play-icon-container"><i :class="classObject"></i></span>
               </button>
               <button @click.stop="nextSong" id="next" class="action-btn">
                 <i class="fas fa-forward"></i>
               </button>                
           </div>
-          <button id="" class="action-btn">
+          <button id="" class="action-btn not-implemented">
             <i id="volume-icon" class="fas fa-volume-up"></i>
           </button>
         </div>
@@ -268,12 +287,12 @@
   box-shadow: rgba(213, 221, 236, 0.4) 20px 20px 20px 20px;
   z-index: 1000;
   transition-duration: 0.5s;
-  background-image: linear-gradient(90deg, var(--bgcolor1), var(--bgcolor1));
+  background-image: linear-gradient(0deg, var(--bgcolor1), var(--playercolor));
   color: var(--bodytext);
 }
 
 .music-container {
-  margin-top: 40px;
+  margin-top: 2vh;
   position: relative;
   border-bottom: solid 1px rgba(255, 255, 255, 0.1);
   padding: 15px;
@@ -311,6 +330,7 @@
 }
 
 .img-container {
+  margin-top: 5vh;
   background-position: center;
   background-size: cover;
   top: 0px;
@@ -361,10 +381,26 @@
   color: var(--buttonbg2);
 }
 
+.play-icon-container {
+  background: var(--bodytext);
+  color: var(--bgcolor1);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.not-implemented {
+  opacity: 0.25;
+}
+
 @media (max-width: 440px) {
   .music-container {
-    margin-top: 100px;
-      max-width: 85%;
+    margin-top: 2vh;
+      max-width: 90%;
   }
 }
 
@@ -481,7 +517,7 @@
   display: block;
   width: 0;
   height: 100%;
-  background: var(--buttonbg2);
+  background: #fff;
 }
 .slider-container .slider {
   position: relative;
@@ -497,7 +533,7 @@
   -webkit-appearance: none;
   width: 15px;
   height: 15px;
-  background: var(--buttonbg2);
+  background: #fff;
   border-radius: 50%;
   cursor: pointer;
   outline: none;
