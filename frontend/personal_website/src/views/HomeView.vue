@@ -14,10 +14,10 @@
             <div class="">
                 <div class="profile-img"></div>
             </div>
-            <h1 class="title">Edilson Gudo</h1>
+            <h1 class="title">I'm Edilson</h1>
             <h2 class="secondary-title">Fullstack Developer</h2>
-            <p>Hi, I am a developer with vast experience developing web applications from the backend to the frontend.</p>
-            <p>If you are looking for a responsive, beautiful and otimized web application, drop me a message, I am available to schedule call with you today. </p>
+            <p>Hi 👋, I am Edilson Gudo, a developer with solid experience developing web applications.</p>
+            <p>If you are looking for a responsive, beautiful, and otimized web application, contact me, I am available to schedule call with you today. </p>
             <div class="socialmedias">
                 <a href="https://linkedin.com/in/cristiangudo"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/edilsongudo"><i class="fab fa-github"></i></a>
@@ -52,8 +52,8 @@
                 <h5>Linktree clone</h5>
                 <p>
                   A powerful link in bio platform powered by Django backend and that integrates with PayPal Subscritions API
-                  <br><a href="https://selflink.co/" target="_blank" rel="">Live link</a>
-                  <br><a href="https://selflink.co/to/c8d69/" target="_blank" rel="">Project Demo</a>
+                  <br><a href="https://selflink.co/" target="_blank" rel="">Live link 🔗</a>
+                  <br><a href="https://selflink.co/to/c8d69/" target="_blank" rel="">Project Demo 🔗</a>
                 </p>
                 <!-- <button class="tellmore" id="tm2">Read more</button> -->
                 <div>
@@ -70,7 +70,7 @@
                 <p>
                   An app where users only need to create and remember one master password to safely store other ones. 
                   <br>Uses AES encryption. Built with Vue.js and Django.
-                  <br><a href="https://selflink.co/to/928de/" target="_blank" rel="">Project Demo</a>
+                  <br><a href="https://selflink.co/to/928de/" target="_blank" rel="">Project Demo 🔗</a>
                 </p>
                 <!-- <button class="tellmore" id="tm3">Read more</button> -->
                 <div>
@@ -327,7 +327,7 @@ body {
     /*font-size: 3rem;*/
     /*font-weight: 900;*/
     font-family: 'Hey_August', sans-serif;
-    font-size: 5rem;
+    font-size: 4rem;
 }
 
 .secondary-title {

@@ -18,6 +18,7 @@ class Song(models.Model):
     genre = models.CharField(max_length=200, null=True)
     artwork = models.ImageField(upload_to='albumArts', max_length=255, null=True)
     file = models.FileField(upload_to='audio', max_length=255)
+    show = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['title']

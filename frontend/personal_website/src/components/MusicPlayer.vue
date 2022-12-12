@@ -34,6 +34,7 @@
         console.log('initial setup ran.')
       },
       loadSong() {
+        this.reset()
         this.song = this.songs[this.songIndex]
 
         const filename = this.song['filename']
@@ -123,6 +124,10 @@
         this.seekSlider.value = Math.floor(this.audio.currentTime);
         this.fill.style.width = `${Math.floor(((this.audio.currentTime / this.audio.duration)) * 100)}%`;
       },
+      reset() {
+        this.seekSlider.value = 0;
+        this.fill.style.width = `0%`;
+      },
       showPlayerFullScreen() {
         const playerModal = document.querySelector('.music-player-modal')
         if (playerModal.classList.contains('collapsed')) {
@@ -140,13 +145,13 @@
     },
     mounted() {
       this.fetchSongs().then(res=> {
-        this.initialSetup()
-        this.loadSong()
-
         const seekSlider = document.getElementById('seek-slider');
         const fill = document.querySelector('.progress-container .bar .fill');
         this.seekSlider = seekSlider
         this.fill = fill
+
+        this.initialSetup()
+        this.loadSong()
 
         seekSlider.addEventListener('input', ()=> {
           this.audio.currentTime = this.seekSlider.value;
@@ -390,7 +395,7 @@
   transition-duration: 0s;
   background-image: linear-gradient(90deg, var(--bgcolor2), var(--bgcolor2));
   color: var(--bodytext);
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 .collapsed .music-container {
@@ -410,9 +415,9 @@
 
 .collapsed img#cover {
   margin: 0 auto;
-  height: 50px;
-  width: 50px;
-  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
 }
 
 .collapsed #music-icon i {
@@ -465,11 +470,11 @@
   position: absolute;
   z-index: 1;
   left: 2px;
-  top: 7px;
+  top: 10px;
   width: 100%;
-  height: 10px;
+  height: 5px;
   border-radius: 5px;
-  background: rgba(127, 127, 127, 1);
+  background: rgba(127, 127, 127, 0.7);
   overflow: hidden;
 }
 .slider-container .bar .fill {
@@ -490,8 +495,8 @@
 }
 .slider-container .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   background: var(--buttonbg2);
   border-radius: 50%;
   cursor: pointer;
@@ -504,8 +509,8 @@
   box-shadow: 0 0 0 0 rgba(98,0,238,.1);
   transition: .3s ease-in-out;
   border: 1px solid var(--buttonbg2);
-  height: 30px;
-  width: 30px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
   background: var(--buttonbg2);
   cursor: pointer;

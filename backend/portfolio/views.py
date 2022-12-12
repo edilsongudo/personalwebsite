@@ -29,7 +29,7 @@ def home(request):
 
 def get_songs(request):
     songs = []
-    objects = Song.objects.all()
+    objects = Song.objects.filter(show=True)
     for obj in objects:
         song = {}
         try:
