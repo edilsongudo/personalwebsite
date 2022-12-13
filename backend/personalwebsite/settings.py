@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'storages',
     'corsheaders',
+    'adminsortable2',
 ]
 
 MIDDLEWARE = [

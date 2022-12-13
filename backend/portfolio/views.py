@@ -74,7 +74,7 @@ def upload_song(request):
             form.instance.filename = filename
             form.instance.artwork = artwork
             form.save()
-            return redirect('home')
+            return JsonResponse({'success': True})
     context = {'form': form}
     return render(request, 'portfolio/upload_song.html', context)
 

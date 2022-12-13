@@ -19,9 +19,15 @@ class Song(models.Model):
     artwork = models.ImageField(upload_to='albumArts', max_length=255, null=True)
     file = models.FileField(upload_to='audio', max_length=255)
     show = models.BooleanField(default=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        db_index=True,
+        blank=False,
+        null=False,
+    )
 
     class Meta:
-        ordering = ['title']
+        ordering = ['my_order', 'show', 'title']
 
     def __str__(self):
-        return f'{self.filename} | Show: {self.show}'
+        return f'{self.title} | Show: {self.show}'
