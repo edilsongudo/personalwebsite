@@ -10,3 +10,4 @@ admin.site.register(Contact)
 @admin.register(Song)
 class SongAdmin(SortableAdminMixin, admin.ModelAdmin):
 	list_display = ['title', 'show', 'my_order']
+	list_editable=['show']

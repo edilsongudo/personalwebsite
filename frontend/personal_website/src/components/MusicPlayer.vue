@@ -34,14 +34,30 @@
         const audio = document.createElement('audio')
         document.body.appendChild(audio)
         this.audio = audio
+
+        if (localStorage.songPlaying) {
+          console.log('Searching localstorage...')
+          const index = this.songs.findIndex(item => item.filename === JSON.parse(localStorage.songPlaying).filename);
+          if (index) {
+            this.songIndex = index
+            console.log('Loadied last song from localstorage...')
+          }
+        }
+        
         console.log('initial setup ran.')
       },
       loadSong() {
         this.reset()
         this.song = this.songs[this.songIndex]
 
+        localStorage.songPlaying = JSON.stringify(this.song)
+
         const filename = this.song['filename']
         this.audio.src = this.song['file'];
+
+        if (localStorage.currentTime) {
+          this.audio.currentTime = JSON.parse(localStorage.currentTime)
+        }
 
         const title = document.getElementById('title');
         const artist = document.getElementById('artist');
@@ -109,6 +125,7 @@
         if (this.songIndex < 0) {
           this.songIndex = this.songs.length - 1;
         }
+        localStorage.currentTime = 0
         this.loadSong()
       },
       nextSong() {
@@ -116,11 +133,12 @@
         if (this.songIndex > this.songs.length - 1) {
           this.songIndex = 0;
         }
+        localStorage.currentTime = 0
         this.loadSong()
       },
       updateProgress() {
         const { duration, currentTime } = this.audio;
-        // localStorage.currentTime = JSON.stringify(currentTime)
+        localStorage.currentTime = JSON.stringify(currentTime)
 
         const currentTimeDiv = document.querySelector('.current')
         const durationDiv = document.querySelector('.duration')
@@ -544,11 +562,11 @@
   outline: none;
   box-shadow: 0 0 0 0 rgba(98,0,238,.1);
   transition: .3s ease-in-out;
-  border: 1px solid var(--buttonbg2);
+  border: 1px solid #fff;
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  background: var(--buttonbg2);
+  background: #fff);
   cursor: pointer;
 }
 /*.slider-container .slider::-webkit-slider-thumb:hover {
