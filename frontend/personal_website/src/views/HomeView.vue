@@ -211,7 +211,7 @@
   --bgcolor1: #121212;
   --bgcolor2: #212121;
   --titlecolor: rgba(255, 255, 255, 0.87);
-  --bodytext: rgba(255, 255, 255, 0.87);
+  --bodytext: #a9a9b3;
   --iconcolor: rgba(255, 255, 255, 0.87);
   --playercolor: #212121;
   --boxshadowcolor: rgba(213, 221, 236, 0.1) 1px 1px 1px 1px;
