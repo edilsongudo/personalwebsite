@@ -1,16 +1,16 @@
 <template>
   <div>
-    <MusicPlayer/>
-    <router-view/>
+    <MusicPlayer />
+    <router-view />
   </div>
 </template>
 
 <script>
-  import MusicPlayer from '@/components/MusicPlayer';
-  export default {
-    name: 'App',
-    components: {
-      MusicPlayer,
-    }
-  }
+import MusicPlayer from "@/components/MusicPlayer";
+export default {
+  name: "App",
+  components: {
+    MusicPlayer,
+  },
+};
 </script>

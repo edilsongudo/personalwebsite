@@ -1,200 +1,283 @@
 <script>
-  import PreLoading from '@/components/PreLoading';
-  export default {
-    components: {
-      PreLoading,
-    }
-  }
+import PreLoading from "@/components/PreLoading";
+export default {
+  components: {
+    PreLoading,
+  },
+};
 </script>
 
 <template>
-    <PreLoading/>
-    <section class="first-section">
-        <div class="container">
-            <div class="">
-                <div class="profile-img"></div>
-            </div>
-            <h1 class="title">I'm Edilson</h1>
-            <h2 class="secondary-title">Fullstack Developer</h2>
-            <p>Hi 👋, I am Edilson Gudo, a developer with solid experience developing web applications.</p>
-            <p>If you are looking for a responsive, beautiful, and otimized web application, contact me, I am available to schedule call with you today. </p>
-            <div class="socialmedias">
-                <a href="https://linkedin.com/in/cristiangudo"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/edilsongudo"><i class="fab fa-github"></i></a>
-                <a href="https://www.youtube.com/watch?v=XE4ime8hCxE&t=0s"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </section>
+  <PreLoading />
+  <section class="first-section">
+    <div class="container">
+      <div class="">
+        <div class="profile-img"></div>
+      </div>
+      <h1 class="title">I'm Edilson</h1>
+      <h2 class="secondary-title">Fullstack Developer</h2>
+      <p>
+        Hi 👋, I am Edilson Gudo, a developer with solid experience developing
+        web applications.
+      </p>
+      <p>
+        If you are looking for a responsive, beautiful, and otimized web
+        application, contact me, I am available to schedule call with you today.
+      </p>
+      <div class="socialmedias">
+        <a href="https://linkedin.com/in/cristiangudo"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/edilsongudo"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://www.youtube.com/watch?v=XE4ime8hCxE&t=0s"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
+    </div>
+  </section>
 
-    <section class="second-section">
-        <div class="container" data-aos="fade-up">
-            <h2 class="title">Portfolio</h2>
+  <section class="second-section">
+    <div class="container" data-aos="fade-up">
+      <h2 class="title">Portfolio</h2>
 
-            <!-- Project -->
-            <div class="project" data-aos="fade-up">
-                <h5>Online Transcription Tool</h5>
-                <p>A web app that allows users to drag and drop an audio or video file and export the transcription. Built with Vue.js, Celery and Django</p>
-                <!-- <button class="tellmore" id="tm1">Read more</button> -->
-                <div>
-                    <div>
-                      <video width="320" height="240" controls>
-                        <source src="../assets/portfolio/videos/199839219-45d0fc04-f5a5-4123-93cc-5fd119af3075.mp4">
-                        Your browser does not support the video tag.
-                      </video> 
-                    </div>     
-                </div>
-            </div>
-            <!-- End of Project -->
-
-
-            <!-- Project -->
-            <div class="project" data-aos="fade-up">
-                <h5>Linktree clone</h5>
-                <p>
-                  A powerful link in bio platform powered by Django backend and that integrates with PayPal Subscritions API
-                  <br><a href="https://selflink.co/" target="_blank" rel="">Live link 🔗</a>
-                  <br><a href="https://selflink.co/to/c8d69/" target="_blank" rel="">Project Demo 🔗</a>
-                </p>
-                <!-- <button class="tellmore" id="tm2">Read more</button> -->
-                <div>
-                    <div class="embed">
-                      <img src="../assets/portfolio/images/selflink.webp" alt="selflink.co banner">
-                    </div>     
-                </div>
-            </div>
-            <!-- End of Project -->
-
-            <!-- Project -->
-            <div class="project" data-aos="fade-up">
-                <h5>Password Manager</h5>
-                <p>
-                  An app where users only need to create and remember one master password to safely store other ones. 
-                  <br>Uses AES encryption. Built with Vue.js and Django.
-                  <br><a href="https://selflink.co/to/928de/" target="_blank" rel="">Project Demo 🔗</a>
-                </p>
-                <!-- <button class="tellmore" id="tm3">Read more</button> -->
-                <div>
-                    <div>
-                        <img src="../assets/portfolio/images/pass_manager.webp" alt="Password Manager App">
-                    </div>     
-                </div>
-            </div>
-            <!-- End of Project -->
-        </div>
-    </section>
-
-    <section class="third-section">
-      <div data-aos="fade-up" class="container">
-        <h2 class="title">Why Me</h2>
+      <!-- Project -->
+      <div class="project" data-aos="fade-up">
+        <h5>Online Transcription Tool</h5>
+        <p>
+          A web app that allows users to drag and drop an audio or video file
+          and export the transcription. Built with Vue.js, Celery and Django
+        </p>
+        <!-- <button class="tellmore" id="tm1">Read more</button> -->
         <div>
-          <p><i class="fas fa-heart"></i>  I will update you daily. I am open to have online meets with you at any moment of the day at the platform of your choice about the progress of the job;</p>
-          <p>
-              <i class="fas fa-heart"></i>
-              I will do how many revisions are necessary. I will only stop working on the project when you are 100% satisfied;
-          </p>
-          <p>
-            <i class="fas fa-heart"></i>
-            I will dedicate at least 21 hours per week to your project.
-          </p>
+          <div>
+            <video width="320" height="240" controls>
+              <source
+                src="../assets/portfolio/videos/199839219-45d0fc04-f5a5-4123-93cc-5fd119af3075.mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
-    </section>
+      <!-- End of Project -->
 
-    <section class="third-section">
-      <div data-aos="fade-up" class="container">
-        <h2 class="title">Testimonials</h2>
-        <div class="testimonial">
-          <div class="title">Completed Sucessfully!</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+      <!-- Project -->
+      <div class="project" data-aos="fade-up">
+        <h5>Linktree clone</h5>
+        <p>
+          A powerful link in bio platform powered by Django backend and that
+          integrates with PayPal Subscritions API
+          <br /><a href="https://selflink.co/" target="_blank" rel=""
+            >Live link 🔗</a
+          >
+          <br /><a href="https://selflink.co/to/c8d69/" target="_blank" rel=""
+            >Project Demo 🔗</a
+          >
+        </p>
+        <!-- <button class="tellmore" id="tm2">Read more</button> -->
+        <div>
+          <div class="embed">
+            <img
+              src="../assets/portfolio/images/selflink.webp"
+              alt="selflink.co banner"
+            />
           </div>
-          <div class="message">
-            "Takes his time but is relentless till the work is completed. Will definitely be hiring him in the future for more projects. High quality work, independent and good communication skills - ideal qualities in a freelancer."
-          </div>
-          <div class="author">Upwork Client</div>
-        </div>
-        <div class="testimonial">
-          <div class="title">Completed Sucessfully!</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <div class="message">
-            "Edilson was great to work with, he brings new ideas to the project and goes out of the box to implement the features in the requirements specified. Would definitely work with him again."
-          </div>
-          <div class="author">Upwork Client</div>
-        </div>
-        <div class="testimonial">
-          <div class="title">Completed Sucessfully!</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <div class="message">
-            "Edilson Gudo was super to work with, he was always available and added his own ideas and initiatives to the work to deliver a superior end product. He was also a joy to work with and I cant wait to work with him again."
-          </div>
-          <div class="author">Upwork Client</div>
-        </div>
-        <div class="testimonial">
-          <div class="title">Completed Sucessfully!</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <div class="message">
-            "Delivered the requested deliverables and kept us well updated on each step....would hire again!"
-          </div>
-          <div class="author">Upwork Client</div>
         </div>
       </div>
-    </section>
+      <!-- End of Project -->
 
-    <section data-aos="fade-up">
-      <div class="container" data-aos="fade-up">
-          <h2 data-aos="fade-up" class="title">Stacks</h2>
-          <p>Combination of some technologies I like to use</p>
-          <div class="flex">
-            <div class="icon-container"><i class="devicon-python-plain  stack_icon"></i><div>Python</div></div>
-            <div class="icon-container"><i class="devicon-django-plain  stack_icon"></i><div>Django</div></div>
-            <div class="icon-container"><i class="devicon-flask-plain  stack_icon"></i><div>Flask</div></div>
-            <div class="icon-container"><i class="devicon-javascript-plain  stack_icon"></i><div>Javascript</div></div>
-            <div class="icon-container"><i class="devicon-vuejs-plain  stack_icon"></i><div>Vue</div></div>
-            <div class="icon-container"><i class="devicon-nodejs-plain  stack_icon"></i><div>Node js</div></div>
-            <div class="icon-container"><i class="devicon-jquery-plain  stack_icon"></i><div>Jquery</div></div>
-            <div class="icon-container"><i class="devicon-css3-plain  stack_icon"></i><div>CSS3</div></div>
-            <div class="icon-container"><i class="devicon-github-plain  stack_icon"></i><div>Github</div></div>
-            <div class="icon-container"><i class="devicon-git-plain  stack_icon"></i><div>Git</div></div>
-            <div class="icon-container"><i class="devicon-linux-plain  stack_icon"></i><div>Linux</div></div>
-            <div class="icon-container"><i class="devicon-docker-plain  stack_icon"></i><div>Docker</div></div>
+      <!-- Project -->
+      <div class="project" data-aos="fade-up">
+        <h5>Password Manager</h5>
+        <p>
+          An app where users only need to create and remember one master
+          password to safely store other ones.
+          <br />Uses AES encryption. Built with Vue.js and Django. <br /><a
+            href="https://selflink.co/to/928de/"
+            target="_blank"
+            rel=""
+            >Project Demo 🔗</a
+          >
+        </p>
+        <!-- <button class="tellmore" id="tm3">Read more</button> -->
+        <div>
+          <div>
+            <img
+              src="../assets/portfolio/images/pass_manager.webp"
+              alt="Password Manager App"
+            />
           </div>
-      </div>
-    </section>
-    <footer>
-        <div>Developed with <i class="fas fa-heart"></i> by Edilson Gudo
-          <br> © 2022
         </div>
-    </footer>
+      </div>
+      <!-- End of Project -->
+    </div>
+  </section>
+
+  <section class="third-section">
+    <div data-aos="fade-up" class="container">
+      <h2 class="title">Why Me</h2>
+      <div>
+        <p>
+          <i class="fas fa-heart"></i> I will update you daily. I am open to
+          have online meets with you at any moment of the day at the platform of
+          your choice about the progress of the job;
+        </p>
+        <p>
+          <i class="fas fa-heart"></i>
+          I will do how many revisions are necessary. I will only stop working
+          on the project when you are 100% satisfied;
+        </p>
+        <p>
+          <i class="fas fa-heart"></i>
+          I will dedicate at least 21 hours per week to your project.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="third-section">
+    <div data-aos="fade-up" class="container">
+      <h2 class="title">Testimonials</h2>
+      <div class="testimonial">
+        <div class="title">Completed Sucessfully!</div>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="message">
+          "Takes his time but is relentless till the work is completed. Will
+          definitely be hiring him in the future for more projects. High quality
+          work, independent and good communication skills - ideal qualities in a
+          freelancer."
+        </div>
+        <div class="author">Upwork Client</div>
+      </div>
+      <div class="testimonial">
+        <div class="title">Completed Sucessfully!</div>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="message">
+          "Edilson was great to work with, he brings new ideas to the project
+          and goes out of the box to implement the features in the requirements
+          specified. Would definitely work with him again."
+        </div>
+        <div class="author">Upwork Client</div>
+      </div>
+      <div class="testimonial">
+        <div class="title">Completed Sucessfully!</div>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="message">
+          "Edilson Gudo was super to work with, he was always available and
+          added his own ideas and initiatives to the work to deliver a superior
+          end product. He was also a joy to work with and I cant wait to work
+          with him again."
+        </div>
+        <div class="author">Upwork Client</div>
+      </div>
+      <div class="testimonial">
+        <div class="title">Completed Sucessfully!</div>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="message">
+          "Delivered the requested deliverables and kept us well updated on each
+          step....would hire again!"
+        </div>
+        <div class="author">Upwork Client</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-aos="fade-up">
+    <div class="container" data-aos="fade-up">
+      <h2 data-aos="fade-up" class="title">Stacks</h2>
+      <p>Combination of some technologies I like to use</p>
+      <div class="flex">
+        <div class="icon-container">
+          <i class="devicon-python-plain stack_icon"></i>
+          <div>Python</div>
+        </div>
+        <div class="icon-container">
+          <i class="devicon-django-plain stack_icon"></i>
+          <div>Django</div>
+        </div>
+        <div class="icon-container">
+          <i class="devicon-flask-plain stack_icon"></i>
+          <div>Flask</div>
+        </div>
+        <div class="icon-container">
+          <i class="devicon-javascript-plain stack_icon"></i>
+          <div>Javascript</div>
+        </div>
+        <div class="icon-container">
+          <i class="devicon-vuejs-plain stack_icon"></i>
+          <div>Vue</div>
+        </div>
+        <div class="icon-container">
+          <i class="devicon-nodejs-plain stack_icon"></i>
+          <div>Node js</div>
+        </div>
+        <div class="icon-container">
+          <i class="devicon-jquery-plain stack_icon"></i>
+          <div>Jquery</div>
+        </div>
+        <div class="icon-container">
+          <i class="devicon-css3-plain stack_icon"></i>
+          <div>CSS3</div>
+        </div>
+        <div class="icon-container">
+          <i class="devicon-github-plain stack_icon"></i>
+          <div>Github</div>
+        </div>
+        <div class="icon-container">
+          <i class="devicon-git-plain stack_icon"></i>
+          <div>Git</div>
+        </div>
+        <div class="icon-container">
+          <i class="devicon-linux-plain stack_icon"></i>
+          <div>Linux</div>
+        </div>
+        <div class="icon-container">
+          <i class="devicon-docker-plain stack_icon"></i>
+          <div>Docker</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div>
+      Developed with <i class="fas fa-heart"></i> by Edilson Gudo <br />
+      © 2022
+    </div>
+  </footer>
 </template>
 
 <style>
 :root {
-  --bgcolor1: #FFFFFF;
+  --bgcolor1: #ffffff;
   --bgcolor2: var(--bgcolor1);
   --bodytext: grey;
-  --titlecolor: #3B3B3B;
+  --titlecolor: #3b3b3b;
   --buttonbg1: rgba(147, 237, 199, 1);
   --buttonbg2: rgba(147, 237, 199, 1);
   --buttontext: #fff;
@@ -210,26 +293,26 @@
 .dark-mode:root {
   --bgcolor1: #121212;
   --bgcolor2: #212121;
-  --titlecolor: rgba(255, 255, 255, 0.87);
+  --titlecolor: #a9a9b3;
   --bodytext: #a9a9b3;
-  --iconcolor: rgba(255, 255, 255, 0.87);
+  --iconcolor: #a9a9b3;
   --playercolor: #212121;
   --boxshadowcolor: rgba(213, 221, 236, 0.1) 1px 1px 1px 1px;
 }
 
 @font-face {
-    font-family: 'Hey_August';
-    src: url('../assets/portfolio/fonts/Hey_August/Hey August.otf')
+  font-family: "Hey_August";
+  src: url("../assets/portfolio/fonts/Hey_August/Hey August.otf");
 }
 
 @font-face {
-  font-family: 'francisco-serial';
-  src: url('../assets/portfolio/fonts/Francisco_Serial/francisco-serial-medium-regular.ttf')
+  font-family: "francisco-serial";
+  src: url("../assets/portfolio/fonts/Francisco_Serial/francisco-serial-medium-regular.ttf");
 }
 
 @font-face {
-    font-family: 'Averta';
-    src: url('../assets/portfolio/fonts/averta/AvertaDemoPECuttedDemo-Regular.otf')
+  font-family: "Averta";
+  src: url("../assets/portfolio/fonts/averta/AvertaDemoPECuttedDemo-Regular.otf");
 }
 
 form {
@@ -238,7 +321,8 @@ form {
   margin: 0 auto;
 }
 
-button, .cta {
+button,
+.cta {
   border: transparent;
   background: transparent;
   border-color: transparent;
@@ -250,24 +334,28 @@ button, .cta {
   font-family: "Averta";
 }
 
-button, .cta {
+button,
+.cta {
   font-size: 1.25rem;
   text-decoration: none;
 }
 
 a {
   display: inline-block;
-  color: var(--buttonbg)
+  color: var(--buttonbg);
 }
 
-
-h1, h2, h3, h4, h5, h6 {
-/*  background: -webkit-linear-gradient(var(--buttonbg1), var(--buttonbg2));
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /*  background: -webkit-linear-gradient(var(--buttonbg1), var(--buttonbg2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;*/
   color: var(--titlecolor);
 }
-
 
 /* {
   padding: 0;
@@ -275,17 +363,16 @@ h1, h2, h3, h4, h5, h6 {
 }*/
 
 section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
-
 
 body {
   background: var(--bgcolor1);
   background-size: contain;
   color: var(--bodytext);
-  font-family: 'Averta', sans-serif;
+  font-family: "Averta", sans-serif;
   word-wrap: break-word;
   padding: 0;
   margin: 0;
@@ -308,13 +395,13 @@ body {
 }
 
 .first-section {
-    align-items: center;
+  align-items: center;
 }
 
 .container {
-    margin: 0 auto;
-    width: 70%;
-    /*background: rgba(255, 255, 255, 0.1);*/
+  margin: 0 auto;
+  width: 70%;
+  /*background: rgba(255, 255, 255, 0.1);*/
 }
 
 @media only screen and (max-width: 800px) {
@@ -323,33 +410,31 @@ body {
   }
 }
 
-
 .title {
-    /*font-size: 3rem;*/
-    /*font-weight: 900;*/
-    font-family: 'Hey_August', sans-serif;
-    font-size: 4rem;
+  /*font-size: 3rem;*/
+  /*font-weight: 900;*/
+  font-family: "Hey_August", sans-serif;
+  font-size: 4rem;
 }
 
 .secondary-title {
   /*font-size: 1.25rem;*/
   font-size: 2rem;
-  font-family: 'Hey_August', sans-serif;
+  font-family: "Hey_August", sans-serif;
 }
-
 
 .call-to-action-container {
   margin-top: 10px;
 }
 
 .call-to-action {
-    background: var(--buttonbg);
-    color: var(--buttontext);
-    border-radius: 5px;
-    padding: 10px;
-    width: 200px;
-    text-decoration: none;
-    text-align: center;
+  background: var(--buttonbg);
+  color: var(--buttontext);
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  text-decoration: none;
+  text-align: center;
 }
 
 .btn-floating {
@@ -364,7 +449,7 @@ body {
   font-size: 2rem;
   color: var(--buttonbg2);
   /*background: -webkit-linear-gradient(0deg, var(--buttonbg1), var(--buttonbg2));*/
-/*  background: var(--buttonbg2);
+  /*  background: var(--buttonbg2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;*/
 }
@@ -436,23 +521,23 @@ footer {
   flex-wrap: wrap;
 }
 
-.flex>* {
+.flex > * {
 }
 
 .embed {
-    max-height: 300px;
-    margin: 10px auto;
-    text-align: center;
-    position: relative;
-    padding-bottom: 56.25%;
+  max-height: 300px;
+  margin: 10px auto;
+  text-align: center;
+  position: relative;
+  padding-bottom: 56.25%;
 }
 
 iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 video {
@@ -473,8 +558,9 @@ video {
   text-decoration-thickness: 2px; */
 }
 
-.plyr--video.plyr--stopped .plyr__controls { display: none; }
-
+.plyr--video.plyr--stopped .plyr__controls {
+  display: none;
+}
 
 /*Navbar*/
 
@@ -507,62 +593,55 @@ video {
   width: 100vw;
   height: 100vh;
   /*transition-duration: 0.5s;
-*/}
+*/
+}
 
 .navbar label.bars {
-  display:flex;
-  flex-direction:column;
-  width:70px;
-  cursor:pointer;
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  cursor: pointer;
 }
 
 .navbar label.bars .bar {
   background: var(--buttonbg2);
-  border-radius:10px;
-  height:7px;
+  border-radius: 10px;
+  height: 7px;
   margin: 7px 0;
-  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
-
-.navbar .bar:nth-of-type(1){
-  width:50%;
+.navbar .bar:nth-of-type(1) {
+  width: 50%;
 }
 
-.navbar .bar:nth-of-type(2){
-  width:100%;
+.navbar .bar:nth-of-type(2) {
+  width: 100%;
 }
 
-
-.navbar .bar:nth-of-type(3){
-  width:75%;
+.navbar .bar:nth-of-type(3) {
+  width: 75%;
 }
 
-
-.navbar input[type="checkbox"]{
-  display:none;
+.navbar input[type="checkbox"] {
+  display: none;
 }
 
-
-.navbar input[type="checkbox"]:checked ~ .bar:nth-of-type(1){
-  transform-origin:bottom;
-  transform:rotatez(45deg) translate(8px,0px)
+.navbar input[type="checkbox"]:checked ~ .bar:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(8px, 0px);
 }
 
-
-.navbar input[type="checkbox"]:checked ~ .bar:nth-of-type(2){
-  
-  transform-origin:top;
-  transform:rotatez(-45deg)
+.navbar input[type="checkbox"]:checked ~ .bar:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotatez(-45deg);
 }
 
-
-.navbar input[type="checkbox"]:checked ~ .bar:nth-of-type(3){
-  transform-origin:bottom;
-  width:50%;
-  transform: translate(30px,-11px) rotatez(45deg);
+.navbar input[type="checkbox"]:checked ~ .bar:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(30px, -11px) rotatez(45deg);
 }
-
 
 .nav {
   margin-top: 20px;
@@ -652,12 +731,11 @@ video {
 .testimonial .author {
   margin: 20px 0;
   font-size: 1.2rem;
-  font-family: 'francisco-serial', sans-serif;
+  font-family: "francisco-serial", sans-serif;
 }
 .testimonial .title {
   margin-bottom: 30px;
-  font-family: 'francisco-serial';
+  font-family: "francisco-serial";
   font-size: 2rem;
 }
-
 </style>

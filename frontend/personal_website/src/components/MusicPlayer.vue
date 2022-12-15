@@ -1,232 +1,249 @@
 <script>
-  import axios from 'axios';
+import axios from "axios";
 
-  import ColorThief from 'colorthief/dist/color-thief.mjs';
-  
-  export default {
-    setup() {
+import ColorThief from "colorthief/dist/color-thief.mjs";
+
+export default {
+  setup() {},
+  data() {
+    return {
+      songs: [],
+      song: null,
+      audio: null,
+      songIndex: 0,
+      isPlaying: false,
+      server_base_url: import.meta.env.VITE_HOST,
+    };
+  },
+  methods: {
+    async fetchSongs() {
+      console.log("fetching songs...");
+      const res = await axios.get(`${this.server_base_url}/songs/`);
+      this.songs = res.data.songs;
+      return res.data.songs;
     },
-    data() {
+    initialSetup() {
+      // Create Cover Image element
+      const imageContainer = document.querySelector(".img-container");
+      const cover = document.createElement("img");
+      cover.setAttribute("crossOrigin", "");
+      cover.id = "cover";
+      imageContainer.appendChild(cover);
+      // Create audio element
+      const audio = document.createElement("audio");
+      document.body.appendChild(audio);
+      this.audio = audio;
+
+      if (localStorage.songPlaying) {
+        console.log("Searching localstorage...");
+        const index = this.songs.findIndex(
+          (item) =>
+            item.filename === JSON.parse(localStorage.songPlaying).filename
+        );
+        if (index) {
+          this.songIndex = index;
+          console.log("Loadied last song from localstorage...");
+        }
+      }
+
+      console.log("initial setup ran.");
+    },
+    loadSong() {
+      this.reset();
+      this.song = this.songs[this.songIndex];
+
+      localStorage.songPlaying = JSON.stringify(this.song);
+
+      const filename = this.song["filename"];
+      this.audio.src = this.song["file"];
+
+      if (localStorage.currentTime) {
+        this.audio.currentTime = JSON.parse(localStorage.currentTime);
+      }
+
+      const title = document.getElementById("title");
+      const artist = document.getElementById("artist");
+      const cover = document.querySelector("#cover");
+      const musicIcon = document.querySelector("#music-icon");
+      const albumArtURL = this.song["artwork"];
+
+      title.innerText = this.song["title"];
+      artist.innerText = this.song["artist"];
+
+      cover.src = albumArtURL;
+      musicIcon.style.display = "none";
+      cover.onload = function () {
+        cover.style.display = "block";
+
+        const colorThief = new ColorThief();
+        const palette = colorThief.getPalette(cover);
+        console.log(palette);
+
+        function arrayToRgb(value) {
+          const r = value[0];
+          const g = value[1];
+          const b = value[2];
+          const color = `rgb(${r},${g},${b})`;
+          return color;
+        }
+
+        const rgbArrays = colorThief.getColor(cover);
+        const color1 = arrayToRgb(rgbArrays);
+        const r = document.querySelector(":root");
+        r.style.setProperty("--playercolor", color1);
+      };
+      cover.onerror = function () {
+        cover.style.display = "none";
+        musicIcon.style.display = "block";
+      };
+
+      if (this.isPlaying) {
+        this.playSong();
+      }
+    },
+    playSong() {
+      const playBtn = document.querySelector("#play");
+      playBtn.querySelector("i.fas").classList.remove("fa-play");
+      playBtn.querySelector("i.fas").classList.add("fa-pause");
+      this.audio.play();
+      this.isPlaying = true;
+    },
+    pauseSong() {
+      const playBtn = document.querySelector("#play");
+      playBtn.querySelector("i.fas").classList.add("fa-play");
+      playBtn.querySelector("i.fas").classList.remove("fa-pause");
+      this.audio.pause();
+      this.isPlaying = false;
+    },
+    playOrPauseSong() {
+      if (!this.isPlaying) {
+        this.playSong();
+      } else {
+        this.pauseSong();
+      }
+    },
+    previousSong() {
+      this.songIndex--;
+      if (this.songIndex < 0) {
+        this.songIndex = this.songs.length - 1;
+      }
+      localStorage.currentTime = 0;
+      this.loadSong();
+    },
+    nextSong() {
+      this.songIndex++;
+      if (this.songIndex > this.songs.length - 1) {
+        this.songIndex = 0;
+      }
+      localStorage.currentTime = 0;
+      this.loadSong();
+    },
+    updateProgress() {
+      const { duration, currentTime } = this.audio;
+      localStorage.currentTime = JSON.stringify(currentTime);
+
+      const currentTimeDiv = document.querySelector(".current");
+      const durationDiv = document.querySelector(".duration");
+
+      const minutes = Math.floor(currentTime / 60);
+      const seconds = Math.floor(currentTime % 60);
+      currentTimeDiv.innerHTML = `${("0" + minutes).slice(-2)}:${(
+        "0" + seconds
+      ).slice(-2)}`;
+
+      const minutes2 = Math.floor(duration / 60);
+      const seconds2 = Math.floor(duration % 60);
+      durationDiv.innerHTML = `${("0" + minutes2).slice(-2)}:${(
+        "0" + seconds2
+      ).slice(-2)}`;
+
+      const progressPercent = (currentTime / duration) * 100;
+    },
+    setSeekSliderMax() {
+      this.seekSlider.max = Math.floor(this.audio.duration);
+      this.seekSlider.value = this.audio.currentTime;
+    },
+    updateSeekSlider() {
+      this.seekSlider.value = Math.floor(this.audio.currentTime);
+      this.fill.style.width = `${Math.floor(
+        (this.audio.currentTime / this.audio.duration) * 100
+      )}%`;
+    },
+    reset() {
+      this.seekSlider.value = 0;
+      this.fill.style.width = `0%`;
+    },
+    showPlayerFullScreen() {
+      const playerModal = document.querySelector(".music-player-modal");
+      if (playerModal.classList.contains("collapsed")) {
+        playerModal.classList.remove("collapsed");
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${window.scrollY}px`;
+      }
+    },
+    collapsePlayer() {
+      const playerModal = document.querySelector(".music-player-modal");
+      playerModal.classList.add("collapsed");
+      document.body.style.position = "";
+      document.body.style.top = "";
+    },
+  },
+  mounted() {
+    this.fetchSongs().then((res) => {
+      const seekSlider = document.getElementById("seek-slider");
+      const fill = document.querySelector(".progress-container .bar .fill");
+      this.seekSlider = seekSlider;
+      this.fill = fill;
+
+      this.initialSetup();
+      this.loadSong();
+
+      seekSlider.addEventListener("input", () => {
+        this.audio.currentTime = this.seekSlider.value;
+        this.fill.style.width = `${Math.floor(
+          (this.seekSlider.value / this.audio.duration) * 100
+        )}%`;
+      });
+
+      this.audio.addEventListener("loadedmetadata", this.setSeekSliderMax);
+      this.audio.addEventListener("loadedmetadata", this.updateProgress);
+      this.audio.addEventListener("timeupdate", this.updateProgress);
+      this.audio.addEventListener("timeupdate", this.updateSeekSlider);
+      this.audio.addEventListener("ended", this.nextSong);
+    });
+  },
+  computed: {
+    classObject() {
       return {
-        songs: [],
-        song: null,
-        audio: null,
-        songIndex: 0,
-        isPlaying: false,
-        server_base_url: import.meta.env.VITE_HOST,
-      }
+        "fas fa-play": this.isPlaying === false,
+        "fas fa-pause": this.isPlaying === true,
+      };
     },
-    methods: {
-      async fetchSongs() {
-        console.log('fetching songs...')
-        const res = await axios.get(`${this.server_base_url}/songs/`)
-        this.songs = res.data.songs
-        return res.data.songs
-      },
-      initialSetup() {
-        // Create Cover Image element
-        const imageContainer = document.querySelector('.img-container')
-        const cover = document.createElement('img')
-        cover.setAttribute('crossOrigin', '');
-        cover.id = 'cover'
-        imageContainer.appendChild(cover)
-        // Create audio element
-        const audio = document.createElement('audio')
-        document.body.appendChild(audio)
-        this.audio = audio
-
-        if (localStorage.songPlaying) {
-          console.log('Searching localstorage...')
-          const index = this.songs.findIndex(item => item.filename === JSON.parse(localStorage.songPlaying).filename);
-          if (index) {
-            this.songIndex = index
-            console.log('Loadied last song from localstorage...')
-          }
-        }
-        
-        console.log('initial setup ran.')
-      },
-      loadSong() {
-        this.reset()
-        this.song = this.songs[this.songIndex]
-
-        localStorage.songPlaying = JSON.stringify(this.song)
-
-        const filename = this.song['filename']
-        this.audio.src = this.song['file'];
-
-        if (localStorage.currentTime) {
-          this.audio.currentTime = JSON.parse(localStorage.currentTime)
-        }
-
-        const title = document.getElementById('title');
-        const artist = document.getElementById('artist');
-        const cover = document.querySelector('#cover');
-        const musicIcon = document.querySelector('#music-icon');
-        const albumArtURL = this.song['artwork']
-
-        title.innerText = this.song['title']
-        artist.innerText = this.song['artist']
-        
-        cover.src = albumArtURL
-        musicIcon.style.display = "none"
-        cover.onload = function () {
-          cover.style.display = "block"
-
-          const colorThief = new ColorThief();
-          const palette = colorThief.getPalette(cover)
-          console.log(palette)
-
-          function arrayToRgb(value) {
-            const r = value[0]
-            const g = value[1]
-            const b = value[2]
-            const color =  `rgb(${r},${g},${b})`
-            return color
-          }
-
-          const rgbArrays = colorThief.getColor(cover)
-          const color1 = arrayToRgb(rgbArrays)
-          const r = document.querySelector(':root');
-          r.style.setProperty('--playercolor', color1);          
-        }
-        cover.onerror = function() {
-          cover.style.display = "none"
-          musicIcon.style.display = "block"
-        }
-
-        if (this.isPlaying) {
-          this.playSong()
-        }
-      },
-      playSong() {
-        const playBtn = document.querySelector('#play');
-        playBtn.querySelector('i.fas').classList.remove('fa-play');
-        playBtn.querySelector('i.fas').classList.add('fa-pause');
-        this.audio.play();
-        this.isPlaying = true
-      },
-      pauseSong() {
-        const playBtn = document.querySelector('#play');
-        playBtn.querySelector('i.fas').classList.add('fa-play');
-        playBtn.querySelector('i.fas').classList.remove('fa-pause');
-        this.audio.pause();
-        this.isPlaying = false
-      },
-      playOrPauseSong() {
-        if (!this.isPlaying) {
-          this.playSong();
-        } else {
-          this.pauseSong();
-        }
-      },
-      previousSong() {
-        this.songIndex--
-        if (this.songIndex < 0) {
-          this.songIndex = this.songs.length - 1;
-        }
-        localStorage.currentTime = 0
-        this.loadSong()
-      },
-      nextSong() {
-        this.songIndex++
-        if (this.songIndex > this.songs.length - 1) {
-          this.songIndex = 0;
-        }
-        localStorage.currentTime = 0
-        this.loadSong()
-      },
-      updateProgress() {
-        const { duration, currentTime } = this.audio;
-        localStorage.currentTime = JSON.stringify(currentTime)
-
-        const currentTimeDiv = document.querySelector('.current')
-        const durationDiv = document.querySelector('.duration')
-
-        const minutes = Math.floor(currentTime / 60)
-        const seconds = Math.floor(currentTime % 60)
-        currentTimeDiv.innerHTML = `${('0' + minutes).slice(-2)}:${('0' + seconds).slice(-2)}`
-
-        const minutes2 = Math.floor(duration / 60)
-        const seconds2 = Math.floor(duration % 60)
-        durationDiv.innerHTML = `${('0' + minutes2).slice(-2)}:${('0' + seconds2).slice(-2)}`
-
-        const progressPercent = (currentTime / duration) * 100;
-      },
-      setSeekSliderMax() {
-        this.seekSlider.max = Math.floor(this.audio.duration);
-        this.seekSlider.value = this.audio.currentTime
-      },
-      updateSeekSlider() {
-        this.seekSlider.value = Math.floor(this.audio.currentTime);
-        this.fill.style.width = `${Math.floor(((this.audio.currentTime / this.audio.duration)) * 100)}%`;
-      },
-      reset() {
-        this.seekSlider.value = 0;
-        this.fill.style.width = `0%`;
-      },
-      showPlayerFullScreen() {
-        const playerModal = document.querySelector('.music-player-modal')
-        if (playerModal.classList.contains('collapsed')) {
-                playerModal.classList.remove('collapsed')
-                document.body.style.position = 'fixed'
-                document.body.style.top = `-${window.scrollY}px`
-          }
-      },
-      collapsePlayer() {
-        const playerModal = document.querySelector('.music-player-modal')
-        playerModal.classList.add('collapsed')
-        document.body.style.position = ''
-        document.body.style.top = ''
-      }
-    },
-    mounted() {
-      this.fetchSongs().then(res=> {
-        const seekSlider = document.getElementById('seek-slider');
-        const fill = document.querySelector('.progress-container .bar .fill');
-        this.seekSlider = seekSlider
-        this.fill = fill
-
-        this.initialSetup()
-        this.loadSong()
-
-        seekSlider.addEventListener('input', ()=> {
-          this.audio.currentTime = this.seekSlider.value;
-          this.fill.style.width = `${Math.floor(((this.seekSlider.value / this.audio.duration)) * 100)}%`;
-        })
-
-        this.audio.addEventListener('loadedmetadata', this.setSeekSliderMax)
-        this.audio.addEventListener('loadedmetadata', this.updateProgress)
-        this.audio.addEventListener('timeupdate', this.updateProgress);
-        this.audio.addEventListener('timeupdate', this.updateSeekSlider);
-        this.audio.addEventListener('ended', this.nextSong);
-      })
-    },
-    computed: {
-      classObject() {
-        return {
-          'fas fa-play': this.isPlaying === false,
-          'fas fa-pause': this.isPlaying === true
-        }
-      }
-    }
-  }
+  },
+};
 </script>
 
 <template>
   <div class="music-player-modal collapsed" @click.stop="showPlayerFullScreen">
     <div class="wrapper">
-        <div class="music-container" id="music-container">
+      <div class="music-container" id="music-container">
         <div class="volume-popup-modal">
           <div class="middle">
-              <div class="slider-container">
-                  <span class="bar"><span class="fill"></span></span>
-                  <input id="volume" class="slider" type="range" min="0" max="100" value="50">
-              </div>
+            <div class="slider-container">
+              <span class="bar"><span class="fill"></span></span>
+              <input
+                id="volume"
+                class="slider"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+              />
+            </div>
           </div>
         </div>
         <button id="close-player" @click.stop="collapsePlayer">
-            <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-down"></i>
         </button>
 
         <div class="img-container">
@@ -235,21 +252,28 @@
 
         <div class="music-info">
           <div class="songs-title-and-artist">
-              <span id="title">loading songs... please wait</span>
-              <br>
-              <span id="artist"></span>       
+            <span id="title">loading songs... please wait</span>
+            <br />
+            <span id="artist"></span>
           </div>
           <div class="progress-container" id="progress-container">
-              <div class="middle">
-                  <div class="slider-container">
-                      <span class="bar"><span class="fill"></span></span>
-                      <input id="seek-slider" class="slider" type="range" min="0" max="100" value="50">
-                  </div>
+            <div class="middle">
+              <div class="slider-container">
+                <span class="bar"><span class="fill"></span></span>
+                <input
+                  id="seek-slider"
+                  class="slider"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                />
               </div>
-              <div id="progress-time">
-                  <span class="current">0:00</span>
-                  <span class="duration">0:00</span>
-              </div>
+            </div>
+            <div id="progress-time">
+              <span class="current">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
           </div>
         </div>
 
@@ -258,21 +282,26 @@
             <i id="randomize" class="fas fa-random"></i>
           </button>
           <div>
-              <button @click.stop="previousSong" id="prev" class="action-btn">
-                <i class="fas fa-backward"></i>
-              </button>
-              <button @click.stop="playOrPauseSong" id="play" class="action-btn action-btn-big">
-                <span class="play-icon-container"><i :class="classObject"></i></span>
-              </button>
-              <button @click.stop="nextSong" id="next" class="action-btn">
-                <i class="fas fa-forward"></i>
-              </button>                
+            <button @click.stop="previousSong" id="prev" class="action-btn">
+              <i class="fas fa-backward"></i>
+            </button>
+            <button
+              @click.stop="playOrPauseSong"
+              id="play"
+              class="action-btn action-btn-big"
+            >
+              <span class="play-icon-container"
+                ><i :class="classObject"></i
+              ></span>
+            </button>
+            <button @click.stop="nextSong" id="next" class="action-btn">
+              <i class="fas fa-forward"></i>
+            </button>
           </div>
           <button id="" class="action-btn not-implemented">
             <i id="volume-icon" class="fas fa-volume-up"></i>
           </button>
         </div>
-
       </div>
     </div>
   </div>
@@ -668,5 +697,4 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #2497E3;
 }*/
-  
 </style>

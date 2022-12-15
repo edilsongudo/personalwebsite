@@ -1,37 +1,37 @@
 <script>
-  import AOS from 'aos';
-  import 'aos/dist/aos.css';
-  
-  export default {
-    setup() {
-      document.fonts.ready.then(() => {
-        document.querySelector('.preloading').style.display = 'none';
-        AOS.init()        
-      })
-    }
-  }
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+export default {
+  setup() {
+    document.fonts.ready.then(() => {
+      document.querySelector(".preloading").style.display = "none";
+      AOS.init();
+    });
+  },
+};
 </script>
 
 <template>
-    <div class="preloading">
-        <div class="lds-heart"><div></div></div>
-    </div>
+  <div class="preloading">
+    <div class="lds-heart"><div></div></div>
+  </div>
 </template>
 
 <style>
 .preloading {
-    background: var(--bgcolor1);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: 3000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: var(--bgcolor1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .lds-heart {
