@@ -13,6 +13,7 @@
     "@vueup/vue-quill": "^1.0.0",
     "aos": "^2.3.4",
     "axios": "^1.2.1",
+    "color": "^4.2.3",
     "colorthief": "npm:@pioug/colorthief@^3.0.1",
     "core-js": "^3.8.3",
     "highlight.js": "^11.7.0",

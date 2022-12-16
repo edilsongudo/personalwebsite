@@ -187,6 +187,35 @@ export default {
       document.body.style.position = "";
       document.body.style.top = "";
     },
+    handleMediaSession() {
+      if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+        title: this.song['title'],
+        artist: this.song['artist'],
+        album: this.song['album'],
+        artwork: [{src: this.song['artwork']}]
+        })
+
+        const actionsAndHandlers = [
+          ['play', () => {this.playOrPauseSong()}],
+          ['pause', () => {this.playOrPauseSong()}],
+          ['previoustrack', () => {this.previousSong()}],
+          ['nexttrack', () => {this.nextSong()}],
+          // ['seekbackward', (details) => { /*...*/ }],
+          // ['seekforward', (details) => { /*...*/ }],
+          // ['seekto', (details) => { /*...*/ }],
+          // ['stop', () => { /*...*/ }]
+        ]
+      
+        for (const [action, handler] of actionsAndHandlers) {
+          try {
+            navigator.mediaSession.setActionHandler(action, handler);
+          } catch (error) {
+            console.log(`The media session action, ${action}, is not supported`);
+          }
+        }
+      }
+    }
   },
   mounted() {
     this.fetchSongs().then((res) => {
@@ -197,6 +226,10 @@ export default {
 
       this.initialSetup();
       this.loadSong();
+
+      this.audio.onplay = ()=> {
+        this.handleMediaSession()
+      }
 
       seekSlider.addEventListener("input", () => {
         this.audio.currentTime = this.seekSlider.value;
@@ -335,7 +368,7 @@ export default {
   z-index: 1000;
   transition-duration: 0.5s;
   background-image: linear-gradient(0deg, var(--bgcolor1), var(--playercolor));
-  color: var(--bodytext);
+  color: var(--iconcolor);
 }
 
 .music-container {
@@ -350,10 +383,10 @@ export default {
 }
 
 #close-player {
-  font-size: 2rem;
+  font-size: 1.5rem;
   position: absolute;
   top: -20px;
-  left: 20px;
+  left: 0px;
 }
 
 .music-info {
@@ -362,7 +395,7 @@ export default {
 
 .music-info .songs-title-and-artist {
   height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .music-info #title {
@@ -377,7 +410,7 @@ export default {
 }
 
 .img-container {
-  margin-top: 5vh;
+  margin-top: 2.5vh;
   background-position: center;
   background-size: cover;
   top: 0px;
@@ -419,7 +452,7 @@ export default {
 
 .music-player-modal button {
   border: transparent;
-  color: var(--bodytext);
+  color: var(--iconcolor);
   font-size: 2rem;
   background: transparent;
 }
@@ -429,7 +462,7 @@ export default {
 }
 
 .play-icon-container {
-  background: var(--bodytext);
+  background: var(--iconcolor);
   color: var(--bgcolor1);
   border-radius: 50%;
   width: 60px;
@@ -476,8 +509,8 @@ export default {
   box-shadow: var(--boxshadowcolor);
   z-index: 1000;
   transition-duration: 0s;
-  background-image: linear-gradient(90deg, var(--bgcolor2), var(--bgcolor2));
-  color: var(--bodytext);
+  background-image: linear-gradient(0deg, var(--playercolor2), var(--playercolor2));
+  color: var(--iconcolor);
   border-radius: 10px;
 }
 
@@ -508,7 +541,7 @@ export default {
   width: 25px;
   height: 25px;
   background-color: rgba(255,255,255, 0.1);
-  color: var(--bodytext);
+  color: var(--iconcolor);
   font-size: 1.5rem;
 }
 
@@ -553,7 +586,7 @@ export default {
   position: absolute;
   z-index: 1;
   left: 2px;
-  top: 10px;
+  top: 13px;
   width: 100%;
   height: 5px;
   border-radius: 5px;

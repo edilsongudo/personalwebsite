@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MusicPlayer from "@/components/MusicPlayer";
+import MusicPlayer from "@/components/MusicPlayer/index.vue";
 export default {
   name: "App",
   components: {

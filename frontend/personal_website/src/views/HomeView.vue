@@ -22,7 +22,7 @@ export default {
       </p>
       <p>
         If you are looking for a responsive, beautiful, and otimized web
-        application, contact me, I am available to schedule call with you today.
+        application, contact me, I am available to schedule a call with you today.
       </p>
       <div class="socialmedias">
         <a href="https://linkedin.com/in/cristiangudo"
@@ -292,11 +292,12 @@ export default {
 
 .dark-mode:root {
   --bgcolor1: #121212;
-  --bgcolor2: #212121;
+  --bgcolor2: var(--bgcolor1);
   --titlecolor: #a9a9b3;
   --bodytext: #a9a9b3;
-  --iconcolor: #a9a9b3;
+  --iconcolor: rgba(255, 255, 255, 0.87);
   --playercolor: #212121;
+  --playercolor2: #212121;
   --boxshadowcolor: rgba(213, 221, 236, 0.1) 1px 1px 1px 1px;
 }
 
@@ -377,7 +378,7 @@ body {
   padding: 0;
   margin: 0;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.15rem;
 }
 
 .profile-img {
