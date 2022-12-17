@@ -17,12 +17,9 @@ export default {
       <h1 class="title">I'm Edilson</h1>
       <h2 class="secondary-title">Fullstack Developer</h2>
       <p>
-        Hi 👋, I am Edilson Gudo, a developer with solid experience developing
-        web applications.
-      </p>
-      <p>
-        If you are looking for a responsive, beautiful, and otimized web
-        application, contact me, I am available to schedule a call with you today.
+        "Edilson is a great and humble fullstack developer, always eagle to learn new technologies.
+        He is a master of Vue and python and, utilizes Django as backend framework. 
+        " - <a href="https://www.linkedin.com/in/renzi-fidele-4886151bb">Renzi Fidele</a>
       </p>
       <div class="socialmedias">
         <a href="https://linkedin.com/in/cristiangudo"
@@ -38,10 +35,19 @@ export default {
     </div>
   </section>
 
+  <section>
+    <div class="container">
+      <h2 class="secondary-title"></h2>
+      <p>Everything is much better with music so built a music player for this website 
+        so you can enjoy some of my favourite songs.</p>
+      <p>My favourite music genre is dance/electronica.</p>
+    </div>
+  </section>
+
   <section class="second-section">
     <div class="container" data-aos="fade-up">
       <h2 class="title">Portfolio</h2>
-
+      <p>Here you can get to know some of my past works</p>
       <!-- Project -->
       <div class="project" data-aos="fade-up">
         <h5>Online Transcription Tool</h5>
@@ -67,7 +73,7 @@ export default {
       <div class="project" data-aos="fade-up">
         <h5>Linktree clone</h5>
         <p>
-          A powerful link in bio platform powered by Django backend and that
+          selflink.co is powerful link in bio platform powered by Django backend and that
           integrates with PayPal Subscritions API
           <br /><a href="https://selflink.co/" target="_blank" rel=""
             >Live link 🔗</a
@@ -80,7 +86,37 @@ export default {
         <div>
           <div class="embed">
             <img
-              src="../assets/portfolio/images/selflink.webp"
+              src="../assets/portfolio/images/selflink-selenagomez.webp"
+              alt="selflink.co banner"
+            />
+          </div>
+          <div class="embed">
+            <img
+              src="../assets/portfolio/images/selflink-customize.webp"
+              alt="selflink.co banner"
+            />
+          </div>
+          <div class="embed">
+            <img
+              src="../assets/portfolio/images/selflink-settings.webp"
+              alt="selflink.co banner"
+            />
+          </div>
+          <div class="embed">
+            <img
+              src="../assets/portfolio/images/selflink-dash.webp"
+              alt="selflink.co banner"
+            />
+          </div>
+          <div class="embed">
+            <img
+              src="../assets/portfolio/images/selflink-dash2.webp"
+              alt="selflink.co banner"
+            />
+          </div>
+          <div class="embed">
+            <img
+              src="../assets/portfolio/images/selflink-socials.webp"
               alt="selflink.co banner"
             />
           </div>
@@ -118,6 +154,7 @@ export default {
   <section class="third-section">
     <div data-aos="fade-up" class="container">
       <h2 class="title">Why Me</h2>
+      <p>These are some reasons why I may be the best fit for you project</p>
       <div>
         <p>
           <i class="fas fa-heart"></i> I will update you daily. I am open to
@@ -140,6 +177,7 @@ export default {
   <section class="third-section">
     <div data-aos="fade-up" class="container">
       <h2 class="title">Testimonials</h2>
+      <p>l always give 100% of me. These are some reviews I earned from the people I worked with</p>
       <div class="testimonial">
         <div class="title">Completed Sucessfully!</div>
         <div class="stars">
@@ -156,6 +194,7 @@ export default {
           freelancer."
         </div>
         <div class="author">Upwork Client</div>
+        <div class="testimonial-brand"></div>
       </div>
       <div class="testimonial">
         <div class="title">Completed Sucessfully!</div>
@@ -172,6 +211,7 @@ export default {
           specified. Would definitely work with him again."
         </div>
         <div class="author">Upwork Client</div>
+        <div class="testimonial-brand"></div>
       </div>
       <div class="testimonial">
         <div class="title">Completed Sucessfully!</div>
@@ -189,6 +229,7 @@ export default {
           with him again."
         </div>
         <div class="author">Upwork Client</div>
+        <div class="testimonial-brand"></div>
       </div>
       <div class="testimonial">
         <div class="title">Completed Sucessfully!</div>
@@ -204,6 +245,7 @@ export default {
           step....would hire again!"
         </div>
         <div class="author">Upwork Client</div>
+        <div class="testimonial-brand"></div>
       </div>
     </div>
   </section>
@@ -293,9 +335,10 @@ export default {
 .dark-mode:root {
   --bgcolor1: #121212;
   --bgcolor2: var(--bgcolor1);
-  --titlecolor: #a9a9b3;
-  --bodytext: #a9a9b3;
+  --titlecolor: rgba(255, 255, 255, 0.87);
+  --bodytext: rgba(255, 255, 255, 0.6);
   --iconcolor: rgba(255, 255, 255, 0.87);
+  --buttonbg2: var(--iconcolor);
   --playercolor: #212121;
   --playercolor2: #212121;
   --boxshadowcolor: rgba(213, 221, 236, 0.1) 1px 1px 1px 1px;
@@ -420,7 +463,7 @@ body {
 
 .secondary-title {
   /*font-size: 1.25rem;*/
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Hey_August", sans-serif;
 }
 
@@ -499,9 +542,11 @@ footer {
   flex-wrap: wrap;
   margin-bottom: 10px;
   justify-content: center;
+  align-items: center;
   padding: 20px;
   width: 30%;
   text-align: center;
+  flex-direction: column;
 }
 
 .stack_icon {
@@ -514,7 +559,6 @@ footer {
 }
 
 .flex {
-  max-width: 400px;
   margin: 0 auto;
   display: flex;
   flex-basis: 30%;
@@ -526,11 +570,10 @@ footer {
 }
 
 .embed {
-  max-height: 300px;
   margin: 10px auto;
-  text-align: center;
-  position: relative;
-  padding-bottom: 56.25%;
+  /* text-align: center;
+  position: relative; */
+  /* padding-bottom: 56.25%; */
 }
 
 iframe {
@@ -711,17 +754,15 @@ video {
 }
 
 .testimonial {
-  background: #000;
-  color: #fff;
+  background: #212121;
   text-align: left;
-  max-width: 640px;
   margin: 50px auto;
   padding: 16px;
 }
 
 .testimonial .stars {
   margin: 10px 0;
-  color: #73bb44;
+  color: var(--iconcolor);
   font-size: 1.25rem;
 }
 
@@ -734,9 +775,20 @@ video {
   font-size: 1.2rem;
   font-family: "francisco-serial", sans-serif;
 }
+
 .testimonial .title {
   margin-bottom: 30px;
   font-family: "francisco-serial";
   font-size: 2rem;
+  color: var(--titlecolor);
+}
+
+.testimonial-brand {
+  margin-top: 50px;
+  background-image: url(../assets/portfolio/images/upwork.svg);
+  height: 30px;
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 </style>
