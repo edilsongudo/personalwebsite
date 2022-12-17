@@ -17,9 +17,7 @@ export default {
       <h1 class="title">I'm Edilson</h1>
       <h2 class="secondary-title">Fullstack Developer</h2>
       <p>
-        "Edilson is a great and humble fullstack developer, always eagle to learn new technologies.
-        He is a master of Vue and python and, utilizes Django as backend framework. 
-        " - <a href="https://www.linkedin.com/in/renzi-fidele-4886151bb">Renzi Fidele</a>
+        Hi I am a developer with solid experience creating scripts, apis and beautiful, otimized and functionality rich web applications. 
       </p>
       <div class="socialmedias">
         <a href="https://linkedin.com/in/cristiangudo"
@@ -31,6 +29,9 @@ export default {
         <a href="https://www.youtube.com/watch?v=XE4ime8hCxE&t=0s"
           ><i class="fab fa-youtube"></i
         ></a>
+        <a href="mailto:edilsongudo@gmail.com"
+          ><i class="fas fa-envelope"></i
+        ></a>
       </div>
     </div>
   </section>
@@ -38,8 +39,7 @@ export default {
   <section>
     <div class="container">
       <h2 class="secondary-title"></h2>
-      <p>Everything is much better with music so built a music player for this website 
-        so you can enjoy some of my favourite songs.</p>
+      <p>Life is better with music so built a music player for you.</p>
       <p>My favourite music genre is dance/electronica.</p>
     </div>
   </section>
@@ -47,13 +47,13 @@ export default {
   <section class="second-section">
     <div class="container" data-aos="fade-up">
       <h2 class="title">Portfolio</h2>
-      <p>Here you can get to know some of my past works</p>
+      <p>Here you can see some of my past works</p>
       <!-- Project -->
       <div class="project" data-aos="fade-up">
         <h5>Online Transcription Tool</h5>
         <p>
           A web app that allows users to drag and drop an audio or video file
-          and export the transcription. Built with Vue.js, Celery and Django
+          and export the transcription.
         </p>
         <!-- <button class="tellmore" id="tm1">Read more</button> -->
         <div>
@@ -73,13 +73,10 @@ export default {
       <div class="project" data-aos="fade-up">
         <h5>Linktree clone</h5>
         <p>
-          selflink.co is powerful link in bio platform powered by Django backend and that
-          integrates with PayPal Subscritions API
-          <br /><a href="https://selflink.co/" target="_blank" rel=""
-            >Live link 🔗</a
-          >
+          <a href="https://selflink.co/" target="_blank" rel="">Selflink</a> 
+          is powerful link in bio platform powered by Django. 
           <br /><a href="https://selflink.co/to/c8d69/" target="_blank" rel=""
-            >Project Demo 🔗</a
+            >🔗Project Demo</a
           >
         </p>
         <!-- <button class="tellmore" id="tm2">Read more</button> -->
@@ -130,11 +127,11 @@ export default {
         <p>
           An app where users only need to create and remember one master
           password to safely store other ones.
-          <br />Uses AES encryption. Built with Vue.js and Django. <br /><a
+          <br /><a
             href="https://selflink.co/to/928de/"
             target="_blank"
             rel=""
-            >Project Demo 🔗</a
+            >🔗 Project Demo</a
           >
         </p>
         <!-- <button class="tellmore" id="tm3">Read more</button> -->
@@ -325,6 +322,8 @@ export default {
   --buttontext: #fff;
   --iconcolor: var(--buttonbg);
   --boxshadowcolor: rgba(213, 221, 236, 0.4) 20px 20px 20px 20px;
+  --playercolor: #ffffff;
+  --playercolor2: #ffffff;
 
   --plyr-color-main: rgba(0, 0, 0, 0.5);
 
@@ -498,6 +497,10 @@ body {
   -webkit-text-fill-color: transparent;*/
 }
 
+.socialmedias * {
+  margin: 0 1px;
+}
+
 .socialmedias a:hover {
   color: var(--buttonbg2);
   transform: rotate(15deg);
@@ -514,6 +517,7 @@ body {
   justify-content: space-around;
   padding: 10px;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .portfolio-gallery-item {
@@ -758,11 +762,12 @@ video {
   text-align: left;
   margin: 50px auto;
   padding: 16px;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .testimonial .stars {
   margin: 10px 0;
-  color: var(--iconcolor);
+  color: rgba(255, 255, 255, 0.87);
   font-size: 1.25rem;
 }
 
@@ -780,7 +785,7 @@ video {
   margin-bottom: 30px;
   font-family: "francisco-serial";
   font-size: 2rem;
-  color: var(--titlecolor);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .testimonial-brand {

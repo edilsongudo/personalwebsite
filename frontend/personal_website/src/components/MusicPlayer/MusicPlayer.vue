@@ -462,7 +462,7 @@ export default {
 }
 
 .play-icon-container {
-  background: var(--iconcolor);
+  background: rgba(255,255,255, 0.87);
   color: var(--bgcolor1);
   border-radius: 50%;
   width: 60px;
@@ -471,6 +471,14 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.play-icon-container i {
+  color: var(--bodytext);
+}
+
+.dark-mode .play-icon-container i {
+  color: #121212;
 }
 
 .not-implemented {
@@ -512,6 +520,10 @@ export default {
   background-image: linear-gradient(0deg, var(--playercolor2), var(--playercolor2));
   color: var(--iconcolor);
   border-radius: 10px;
+}
+
+.collapsed .play-icon-container i {
+  color: var(--iconcolor);
 }
 
 .collapsed .music-container {
