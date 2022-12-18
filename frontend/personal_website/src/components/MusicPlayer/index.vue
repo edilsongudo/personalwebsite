@@ -1,11 +1,11 @@
 <script>
-  import MusicPlayerVue from './MusicPlayer.vue';
-  export default {
-    components: {
-      MusicPlayerVue
-    }
-  }
+import MusicPlayerVue from "./MusicPlayer.vue";
+export default {
+  components: {
+    MusicPlayerVue,
+  },
+};
 </script>
 <template>
-  <MusicPlayerVue/>
+  <MusicPlayerVue />
 </template>

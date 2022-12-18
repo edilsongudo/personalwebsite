@@ -188,34 +188,56 @@ export default {
       document.body.style.top = "";
     },
     handleMediaSession() {
-      if ('mediaSession' in navigator) {
+      if ("mediaSession" in navigator) {
         navigator.mediaSession.metadata = new MediaMetadata({
-        title: this.song['title'],
-        artist: this.song['artist'],
-        album: this.song['album'],
-        artwork: [{src: this.song['artwork']}]
-        })
+          title: this.song["title"],
+          artist: this.song["artist"],
+          album: this.song["album"],
+          artwork: [{ src: this.song["artwork"] }],
+        });
 
         const actionsAndHandlers = [
-          ['play', () => {this.playOrPauseSong()}],
-          ['pause', () => {this.playOrPauseSong()}],
-          ['previoustrack', () => {this.previousSong()}],
-          ['nexttrack', () => {this.nextSong()}],
+          [
+            "play",
+            () => {
+              this.playOrPauseSong();
+            },
+          ],
+          [
+            "pause",
+            () => {
+              this.playOrPauseSong();
+            },
+          ],
+          [
+            "previoustrack",
+            () => {
+              this.previousSong();
+            },
+          ],
+          [
+            "nexttrack",
+            () => {
+              this.nextSong();
+            },
+          ],
           // ['seekbackward', (details) => { /*...*/ }],
           // ['seekforward', (details) => { /*...*/ }],
           // ['seekto', (details) => { /*...*/ }],
           // ['stop', () => { /*...*/ }]
-        ]
-      
+        ];
+
         for (const [action, handler] of actionsAndHandlers) {
           try {
             navigator.mediaSession.setActionHandler(action, handler);
           } catch (error) {
-            console.log(`The media session action, ${action}, is not supported`);
+            console.log(
+              `The media session action, ${action}, is not supported`
+            );
           }
         }
       }
-    }
+    },
   },
   mounted() {
     this.fetchSongs().then((res) => {
@@ -227,9 +249,9 @@ export default {
       this.initialSetup();
       this.loadSong();
 
-      this.audio.onplay = ()=> {
-        this.handleMediaSession()
-      }
+      this.audio.onplay = () => {
+        this.handleMediaSession();
+      };
 
       seekSlider.addEventListener("input", () => {
         this.audio.currentTime = this.seekSlider.value;
