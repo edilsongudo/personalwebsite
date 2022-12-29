@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import NewPostView from "../views/NewPostView.vue";
+import CourseLandingView from "../views/CourseLandingView.vue";
 
 const routes = [
   {
@@ -9,9 +9,9 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/post/new/",
-    name: "post-new",
-    component: NewPostView,
+    path: "/course/",
+    name: "course",
+    component: CourseLandingView,
   },
 ];
 
