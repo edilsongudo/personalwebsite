@@ -10,7 +10,7 @@
 <template>
     <div class="container">
         <div class="image-container">
-            <img class="shadow-lg" src="../assets/portfolio/images/Grey Modern Minimalist Cover Page.jpg" alt="">
+            <img class="shadow-lg" src="../assets/portfolio/images/banner.jpg" alt="">
         </div>
         <div class="info-container">
             <h1>How to make a living freelancing</h1>
