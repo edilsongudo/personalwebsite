@@ -14,16 +14,15 @@
                 <img class="shadow-lg" src="../assets/portfolio/images/banner.jpg" alt="">
             </div>
             <div class="info-container">
-                <h1>How to make a living doing what you love</h1>
-                <p>How to get started with freelancing and make a living with flexibility of location and time.
+                <h1>Proven way to earn a living from your profession <span class="emphasis">without a 9-5 job</span></h1>
+                <p style="margin: 20px auto;">Learn how to get started with freelancing and make a living with flexibility of location and time.
                 </p>
-                <p class="price">$55</p>
-                <button class="go-checkout-btn">Enroll Now <i class="fa-solid fa-cart-shopping"></i></button>
+                <button class="go-checkout-btn">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </div>
         <div class="what-is-freelancer">
             <h2>What is a freelancer?</h2>
-            <p>Freelancing is a type of self-employment. Instead of being employed by a company, freelancers tend to work as self-employed, delivering their services on a contract or project basis.</p>
+            <p>Freelancing is a type of self-employment. Instead of being tied to only one company, freelancers work as self-employed, delivering their services on a contract or project basis.</p>
             <p>Freelancers still work with others. The difference is that they can work for flexible hours, from flexible locations, with flexibles projects</p>
         </div>
         <div class="what-is-freelancer">
@@ -108,8 +107,9 @@
                 <div class="topic-image"><img src="../assets/portfolio/images/mistakes.jpg" alt=""></div>
             </div>
             <div class="cta-container">
+                <!-- <p class="price">$55</p> -->
                 <p>Do not miss this opportunity</p>
-                <button class="go-checkout-btn">Enroll Now <i class="fa-solid fa-cart-shopping"></i></button>
+                <button class="go-checkout-btn">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
             </div>
             <div>
                 <h2>About the Instructor</h2>
@@ -126,7 +126,7 @@
 
             <div class="cta-container">
                 <p>Do not miss this opportunity</p>
-                <button class="go-checkout-btn">Enroll Now <i class="fa-solid fa-cart-shopping"></i></button>
+                <button class="go-checkout-btn">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
             </div>
             <footer>Made with ❤️ by Edilson Gudo</footer>
         </div>
@@ -194,8 +194,13 @@ img {
     width: 300px;
     padding: 15px 25px;
     background: #000;
-    border-radius: 4px;
+    border-radius: 6px;
     font-family: 'Josefin Sans';
+    background: #FF985E;
+}
+
+.emphasis {
+    color: #FF985E;
 }
 
 .what-is-freelancer {
@@ -262,5 +267,14 @@ img {
     margin: 0 auto;
     max-width: 96%;
   }
+  h1 {
+    font-size: 2rem;
+  } 
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.125rem;
+  } 
 }
 </style>
