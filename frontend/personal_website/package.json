@@ -9,8 +9,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@tinymce/tinymce-vue": "^4.0.7",
-    "@vueup/vue-quill": "^1.0.0",
     "aos": "^2.3.4",
     "axios": "^1.2.1",
     "color": "^4.2.3",
@@ -18,10 +16,10 @@
     "core-js": "^3.8.3",
     "highlight.js": "^11.7.0",
     "jquery": "^3.6.1",
-    "quill": "^1.3.6",
+    "libphonenumber-js": "^1.10.15",
+    "maz-ui": "^3.6.7",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.13",
-    "vue-quill-editor": "^3.0.6",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
   },

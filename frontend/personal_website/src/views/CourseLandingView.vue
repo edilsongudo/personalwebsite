@@ -4,6 +4,11 @@
             document.querySelector('html').classList.remove('dark-mode')
             document.querySelector('.music-player-modal').style.display = 'none'
         },
+        methods: {
+            goToCheckoutPage() {
+                this.$router.push({name: 'checkout'})
+            }
+        },
     }
 </script>
 
@@ -14,26 +19,26 @@
                 <img class="shadow-lg" src="../assets/portfolio/images/banner.jpg" alt="">
             </div>
             <div class="info-container">
-                <h1>Proven way to earn a living from your profession <span class="emphasis">without a 9-5 job</span></h1>
-                <p style="margin: 20px auto;">Learn how to get started with freelancing and make a living with flexibility of location and time.
+                <h1>Proven way to earn a living with your profession <span class="emphasis">without a 9-5 job</span></h1>
+                <p style="margin: 20px auto;">Learn how to get your first ten clients working with anything you like and make a living from home or travelling the world.
                 </p>
-                <button class="go-checkout-btn">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
+                <button @click="goToCheckoutPage" class="go-checkout-btn">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </div>
         <div class="what-is-freelancer">
             <h2>What is a freelancer?</h2>
             <p>Freelancing is a type of self-employment. Instead of being tied to only one company, freelancers work as self-employed, delivering their services on a contract or project basis.</p>
-            <p>Freelancers still work with others. The difference is that they can work for flexible hours, from flexible locations, with flexibles projects</p>
+            <p>Freelancers still work with others. The difference is that they can work for flexible hours, from flexible locations, with flexible projects.</p>
         </div>
         <div class="what-is-freelancer">
             <h2>What type of work a freelancer does?</h2>
-            <p> Freelancers can do any type of work. But the most popular work are the ones that can be done remotely, using only a computer.
-                Examples include programming, designing, video editing, writing, translation, social media, teaching, and many others 
+            <p> Freelancers can do any work. But the most popular are the ones that can be done remotely, using only a computer.
+                Examples include lawyer, programming, designing, video editing, writing, translation, social media, teaching, and many others 
             </p>
         </div>
         <div class="what-is-freelancer">
             <h2>Who is this course for?</h2>
-            <p><i class="fas fa-check"></i> This course is for every people that love geographic freedom and would like to have the freedom of choosing where to work from</p>
+            <p><i class="fas fa-check"></i> This course is for every people that love geographic freedom and would like to have the freedom to choose where to work from</p>
             <p><i class="fas fa-check"></i> This course is for every people that would like to make a living in another currency such as USD, Euro or GPD</p>
             <p><i class="fas fa-check"></i> This course is for everyone that wants to learn or already has a skill that does not require a college degree and wants to make a living off it. Eg: A video editing professional</p>
             <p><i class="fas fa-check"></i> This course is for everyone that wants to make an extra income</p>        
@@ -58,7 +63,7 @@
                 <div class="topic-image"><img src="../assets/portfolio/images/client-reply.jpg" alt=""></div>
                 <div class="topic-info">
                     <div>
-                        <h3>2. How to send an amazing first message + message templates</h3>
+                        <h3>2. How to send a persuasive first message + message templates</h3>
                         <p>You will learn how to send a first message that makes the prospects desire to work with you. And how to talk with the prospects until they decide to become your client</p>
                     </div>
                 </div>
@@ -67,7 +72,7 @@
             <div class="topic-container">
                 <div class="topic-info">
                     <div>
-                        <h3>3. How to create an amazing profile and brand yourself</h3>
+                        <h3>3. How to create a good profile and brand yourself</h3>
                         <p>You will learn how to create a very good profile on freelancing and social platforms and how to have a profile that stands out amongst others.
                         <br>I will show what the prospects value the most the moment they decide to choose a freelancer to solve their problems</p>
                     </div>
@@ -109,24 +114,24 @@
             <div class="cta-container">
                 <!-- <p class="price">$55</p> -->
                 <p>Do not miss this opportunity</p>
-                <button class="go-checkout-btn">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
+                <button @click="goToCheckoutPage" class="go-checkout-btn">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
             </div>
             <div>
                 <h2>About the Instructor</h2>
                 <div class="about-me-container">
                     <div class="about-me-image"></div>
                     <div class="about-me-info">
-                        Edilson Gudo is an author and freelancer that worked with dozens of clients from over four continents in the world. 
-                        <br>Some of his clients were based in the USA, Canada, the United Kingdom, Brazil, South Africa, and India.
-                        <br>Being a self-taught software developer, landed his first client eight months after his initial contact with coding.
-                        <br>Some of his passions include Dance/Electronica, learning, traveling, football and games.  
+                        Edilson Gudo is an author and freelancer that worked with dozens of clients from over four continents. 
+                        <br>Some of his clients were from the USA, Canada, the United Kingdom, Brazil, South Africa, and India.
+                        <br>Being a self-taught software developer landed his first client eight months after his initial contact with coding.
+                        <br>His passions include Dance/Electronica, learning, traveling, football and games.  
                     </div>
                 </div>
             </div>
 
             <div class="cta-container">
                 <p>Do not miss this opportunity</p>
-                <button class="go-checkout-btn">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
+                <button @click="goToCheckoutPage" class="go-checkout-btn">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
             </div>
             <footer>Made with ❤️ by Edilson Gudo</footer>
         </div>
@@ -196,11 +201,11 @@ img {
     background: #000;
     border-radius: 6px;
     font-family: 'Josefin Sans';
-    background: #FF985E;
+    background: #34ba08;
 }
 
 .emphasis {
-    color: #FF985E;
+    color: #34ba08;
 }
 
 .what-is-freelancer {
