@@ -16,7 +16,7 @@
     <div class="wrapper">
         <div class="container wrap-reverse">
             <div class="image-container">
-                <img class="shadow-lg" src="../assets/portfolio/images/banner.jpg" alt="">
+                <img class="shadow-lg" src="../assets/portfolio/images/banner.webp" alt="">
             </div>
             <div class="info-container">
                 <h1>Proven way to earn a living with your profession <span class="emphasis">without a 9-5 job</span></h1>
@@ -56,11 +56,11 @@
                         </p>
                     </div>
                 </div>
-                <div class="topic-image"><img src="../assets/portfolio/images/first-job.jpg" alt=""></div>
+                <div class="topic-image"><img src="../assets/portfolio/images/first-job.webp" alt=""></div>
             </div>
             <!-- Topic-->
             <div class="topic-container wrap-reverse">
-                <div class="topic-image"><img src="../assets/portfolio/images/client-reply.jpg" alt=""></div>
+                <div class="topic-image"><img src="../assets/portfolio/images/client-reply.webp" alt=""></div>
                 <div class="topic-info">
                     <div>
                         <h3>2. How to send a persuasive first message + message templates</h3>
@@ -77,11 +77,11 @@
                         <br>I will show what the prospects value the most the moment they decide to choose a freelancer to solve their problems</p>
                     </div>
                 </div>
-                <div class="topic-image"><img src="../assets/portfolio/images/good-prosal-hint.jpg" alt=""></div>
+                <div class="topic-image"><img src="../assets/portfolio/images/good-prosal-hint.webp" alt=""></div>
             </div>
             <!-- Topic-->
             <div class="topic-container wrap-reverse">
-                <div class="topic-image"><img src="../assets/portfolio/images/winner-proposal.jpg" alt=""></div>
+                <div class="topic-image"><img src="../assets/portfolio/images/winner-proposal.webp" alt=""></div>
                 <div class="topic-info">
                     <div>
                         <h3>4. What winner proposals have in common</h3>
@@ -98,7 +98,7 @@
                         <br>I will tell how I would organize my learning and what resources I would use to learn them for free and be able to earn 5 to 6 figures per year</p>
                     </div>
                 </div>
-                <div class="topic-image"><img src="../assets/portfolio/images/skill-to-learn.jpg" alt=""></div>
+                <div class="topic-image"><img src="../assets/portfolio/images/skill-to-learn.webp" alt=""></div>
             </div>
             <!-- Topic-->
             <div class="topic-container">
@@ -109,7 +109,7 @@
                             which ends in a loss of potential money or loss and reputation for the freelancer, so you can successfully avoid them.</p>
                     </div>
                 </div>
-                <div class="topic-image"><img src="../assets/portfolio/images/mistakes.jpg" alt=""></div>
+                <div class="topic-image"><img src="../assets/portfolio/images/mistakes.webp" alt=""></div>
             </div>
             <div class="cta-container">
                 <!-- <p class="price">$55</p> -->

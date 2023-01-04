@@ -183,7 +183,7 @@ body, div, p {
   margin: 20px;
   width: 250px;
   height: 250px;
-  background: url(../assets/portfolio/images/banner.jpg);
+  background: url(../assets/portfolio/images/banner.webp);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
