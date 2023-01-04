@@ -1,19 +1,34 @@
 <script>
 import axios from "axios";
+import { Form, Field, ErrorMessage } from 'vee-validate';
+import * as yup from 'yup';
 export default {
+  setup() {
+    const schema = yup.object({
+      email: yup.string().required().email(),
+      name: yup.string().required(),
+    });
+    return {
+      schema,
+    }
+  },
+  components: {
+    Form,
+    Field,
+    ErrorMessage,
+  },
   data() {
     return {
-      nome: '',
+      name: '',
       email: '',
       infoFilled: false
+      
     }
   },
   methods: {
-    validateInfo() {
-      if (this.nome != '' && this.email != '') {
-        this.infoFilled = true
-      }
-    }
+    handleSubmit(e) {
+      this.infoFilled = true
+    },
   },
   mounted() {
 
@@ -59,9 +74,9 @@ export default {
         axios.post(`${server_base_url}/payments/order/receive/`, {
           transaction_id: transaction.id,
           email: state.email,
-          name: state.nome
+          name: state.name
         }).then((res)=> {
-          
+          state.$router.push({name: 'thankyou'})          
         })
 
       });
@@ -84,28 +99,37 @@ export default {
         </div>
       </div>
       <div v-show="!infoFilled" class="product-mini-description">
-        Learn how to market and sell your services and make more money.
+        Learn how sell your services and make more money with flexibility.
         <!-- <br>Enjoy a 45% discount today -->
       </div>
       <div v-show="infoFilled" class="product-mini-description">
         You are Almost there. You can pay via your PayPal or Debit/Credit Card
       </div>
       <div v-show="!infoFilled" class="costumer-info">
-        <form>
-          <div class="form-group">
-            <input v-model="nome" type="text" class="form-control" id="name" placeholder="Enter your name">
-          </div>
-          <div class="form-group">
-            <input v-model="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email">
-          </div>
-          <button class="continue-to-payment" @click.prevent="validateInfo">Continue to Checkout <i class="fas fa-arrow-right"></i></button>
-        </form>
+      <Form @submit="handleSubmit" :validation-schema="schema">
+        <div class="form-group">
+          <Field v-model="email" class="form-control" name="email" type="email" placeholder="Your email" />
+          <ErrorMessage class="invalid" name="email" />
+        </div>
+        <div class="form-group">
+          <Field v-model="name" class="form-control" name="name" type="text" placeholder="Your name" />
+          <ErrorMessage class="invalid" name="name" />
+        </div>
+        <div class="form-group">
+          <button class="continue-to-payment">Continue <i class="fas fa-arrow-right"></i> </button>
+        </div>
+      </Form>
       </div>
       <div v-show="infoFilled" id="paypal-button-container"></div>
     </div>
 </template>
 
 <style>
+.invalid {
+  color: #dc3545;
+  font-size: 0.8rem;
+}
+
 .costumer-info {
   text-align: left;
   margin-bottom: 50px;

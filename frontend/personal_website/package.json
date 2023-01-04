@@ -19,9 +19,11 @@
     "libphonenumber-js": "^1.10.15",
     "maz-ui": "^3.6.7",
     "register-service-worker": "^1.7.2",
+    "vee-validate": "^4.7.3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
