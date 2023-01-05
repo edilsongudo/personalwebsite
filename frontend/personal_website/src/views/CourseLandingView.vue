@@ -19,7 +19,7 @@
                 <img class="shadow-lg" src="../assets/portfolio/images/banner.webp" alt="">
             </div>
             <div class="info-container">
-                <h1>How to earn a lot of money with your skills <span class="emphasis">without needing a 9-5 job</span></h1>
+                <h1>How to earn a living with your skills <span class="emphasis">without needing a 9-5 job</span></h1>
                 <p style="margin: 20px auto;">Learn how to get your first ten clients working with anything you like and make a living with flexibility of location and time.
                 </p>
                 <button @click="goToCheckoutPage" class="go-checkout-btn">Learn Now <i class="fa-solid fa-arrow-right"></i></button>
@@ -39,8 +39,8 @@
         <div class="what-is-freelancer">
             <h2>This course is guaranteed to help you if you identify with one of those</h2>
             <p><i class="fas fa-check"></i> You are significantly unhappy about your current job</p>
-            <p><i class="fas fa-check"></i> You have tried freelancing platforms but cannot get land a single client</p>
-            <p><i class="fas fa-check"></i> You have a precious skill with something but don't know how to earn money with it</p>
+            <p><i class="fas fa-check"></i> You have tried freelancing platforms but cannot get a single client</p>
+            <p><i class="fas fa-check"></i> You have a precious skill in some niche but don't know how to earn money with it</p>
             <p><i class="fas fa-check"></i> You don't like spending a third of your life in an office working to fulfill someone else dreams</p>
             <p><i class="fas fa-check"></i> You are tired of needing to live in one city and would love to find a remote job so you can work traveling the world</p>
             <p><i class="fas fa-check"></i> You are young and have a lot of free time and want to do something productive with your it and make money</p>                                
