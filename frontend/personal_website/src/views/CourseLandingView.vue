@@ -19,7 +19,7 @@
                 <img class="shadow-lg" src="../assets/portfolio/images/banner.webp" alt="">
             </div>
             <div class="info-container">
-                <h1>How to earn a living with your skills <span class="emphasis">without needing a 9-5 job</span></h1>
+                <h1>How to earn a lot of money with your skills <span class="emphasis">without needing a 9-5 job</span></h1>
                 <p style="margin: 20px auto;">Learn how to get your first ten clients working with anything you like and make a living with flexibility of location and time.
                 </p>
                 <button @click="goToCheckoutPage" class="go-checkout-btn">Learn Now <i class="fa-solid fa-arrow-right"></i></button>
@@ -35,6 +35,15 @@
             <p> Freelancers can do any work. But the most popular are the ones done remotely, using only a computer.
                 Examples include lawyer, programming, designing, video editing, writing, translation, social media, teaching, and many others 
             </p>
+        </div>
+        <div class="what-is-freelancer">
+            <h2>This course is guaranteed to help you if you identify with one of those</h2>
+            <p><i class="fas fa-check"></i> You are significantly unhappy about your current job</p>
+            <p><i class="fas fa-check"></i> You have tried freelancing platforms but cannot get land a single client</p>
+            <p><i class="fas fa-check"></i> You have a precious skill with something but don't know how to earn money with it</p>
+            <p><i class="fas fa-check"></i> You don't like spending a third of your life in an office working to fulfill someone else dreams</p>
+            <p><i class="fas fa-check"></i> You are tired of needing to live in one city and would love to find a remote job so you can work traveling the world</p>
+            <p><i class="fas fa-check"></i> You are young and have a lot of free time and want to do something productive with your it and make money</p>                                
         </div>
         <div class="what-is-freelancer">
             <h2>Who is this course for?</h2>
@@ -105,7 +114,7 @@
                 <div class="topic-info">
                     <div>
                         <h3>6. I will show the errors freelancers make that prevent them from making money</h3>
-                        <p>I will show errors freelancers make disciplining themselves, setting up their profiles, choosing and applying for jobs or talking and negotiating with clients, which ends in a loss of potential money and reputation loss, so you can successfully avoid them.</p>
+                        <p>I will show errors freelancers make in disciplining themselves, setting up their profiles, choosing and applying for jobs, or talking and negotiating with clients, which ends in a loss of potential money and reputation loss, so you can successfully avoid them.</p>
                     </div>
                 </div>
                 <div class="topic-image"><img src="../assets/portfolio/images/mistakes.webp" alt=""></div>
@@ -150,7 +159,7 @@ body, div, p {
 h1 {
     font-size: 3rem;
     font-weight: bold;
-    font-family: "Josefin Sans", serif;
+    font-family: "Josefin Sans";
 }
 
 h2 {

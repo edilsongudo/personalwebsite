@@ -54,7 +54,7 @@ export default {
 
           amount: {
 
-            value: '55' // Can also reference a variable or function
+            value: '67' // Can also reference a variable or function
 
           }
 
@@ -98,7 +98,7 @@ export default {
           <h1>The successful freelancer course</h1>
           <p class="author">Author: Edilson Gudo</p>
           <!-- <p class="old-price">$99</p> -->
-          <p class="price">$55</p>
+          <p class="price">$67</p>
         </div>
       </div>
       <div v-show="!infoFilled" class="product-mini-description">
@@ -186,7 +186,7 @@ body, div, p {
   margin: 20px;
   width: 250px;
   height: 250px;
-  background: url(../assets/portfolio/images/banner.webp);
+  background: url(../assets/portfolio/images/product.webp);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
