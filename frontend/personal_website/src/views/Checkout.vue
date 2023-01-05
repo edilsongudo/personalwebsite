@@ -54,7 +54,7 @@ export default {
 
           amount: {
 
-            value: '67' // Can also reference a variable or function
+            value: '55' // Can also reference a variable or function
 
           }
 
@@ -98,7 +98,7 @@ export default {
           <h1>The successful freelancer course</h1>
           <p class="author">Author: Edilson Gudo</p>
           <!-- <p class="old-price">$99</p> -->
-          <p class="price">$67</p>
+          <p class="price">$55</p>
         </div>
       </div>
       <div v-show="!infoFilled" class="product-mini-description">
