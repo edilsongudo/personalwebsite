@@ -21,13 +21,18 @@ export default {
     return {
       name: '',
       email: '',
-      infoFilled: false
-      
+      infoFilled: false,
+      server_base_url: import.meta.env.VITE_HOST
     }
   },
   methods: {
     handleSubmit(e) {
       this.infoFilled = true
+
+      axios.post(`${this.server_base_url}/payments/checkout/init/`, {
+          email: this.email,
+          name: this.name
+      })
     },
   },
   mounted() {
@@ -69,9 +74,7 @@ export default {
         
         const transaction = orderData.purchase_units[0].payments.captures[0];
 
-        const server_base_url = import.meta.env.VITE_HOST
-
-        axios.post(`${server_base_url}/payments/order/receive/`, {
+        axios.post(`${state.server_base_url}/payments/order/receive/`, {
           transaction_id: transaction.id,
           email: state.email,
           name: state.name
@@ -99,11 +102,11 @@ export default {
         </div>
       </div>
       <div v-show="!infoFilled" class="product-mini-description">
-        Learn how sell your services and make more money with flexibility.
+        Learn everything you need to sell your skills and make money with flexibility.
         <!-- <br>Enjoy a 45% discount today -->
       </div>
       <div v-show="infoFilled" class="product-mini-description">
-        You are Almost there. You can pay via your PayPal or Debit/Credit Card
+        You can pay via PayPal or Debit/Credit Card
       </div>
       <div v-show="!infoFilled" class="costumer-info">
       <Form @submit="handleSubmit" :validation-schema="schema">
@@ -116,7 +119,7 @@ export default {
           <ErrorMessage class="invalid" name="name" />
         </div>
         <div class="form-group">
-          <button class="continue-to-payment">Continue <i class="fas fa-arrow-right"></i> </button>
+          <button class="continue-to-payment">Checkout <i class="fas fa-shopping-cart"></i> </button>
         </div>
       </Form>
       </div>
@@ -124,7 +127,7 @@ export default {
     </div>
 </template>
 
-<style>
+<style scoped>
 .invalid {
   color: #dc3545;
   font-size: 0.8rem;
@@ -207,7 +210,7 @@ h1 {
   background: #000;
   border-radius: 6px;
   font-family: 'Josefin Sans';
-  background: #34ba08;
+  background: #48A9A6;
 }
 
 input[type="text"], input[type="email"] {
