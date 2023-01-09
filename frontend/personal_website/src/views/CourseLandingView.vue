@@ -14,13 +14,13 @@
 
 <template>
     <div class="wrapper">
-        <div class="container wrap-reverse">
+        <div class="containerr wrap-reverse">
             <div class="image-container">
                 <img class="shadow-lg" src="../assets/portfolio/images/banner.webp" alt="">
             </div>
             <div class="info-container">
                 <h1>How to earn a living with your skills <span class="emphasis">without needing a 9-5 job</span></h1>
-                <p style="margin: 20px auto;">Learn how to get your first ten clients working with anything you like and make a living with flexibility of location and time.
+                <p style="margin: 20px auto;">Learn how to get your first ten clients working with anything you like and make a living with it.
                 </p>
                 <button @click="goToCheckoutPage" class="go-checkout-btn">Learn Now <i class="fa-solid fa-arrow-right"></i></button>
             </div>
@@ -32,29 +32,26 @@
         </div>
         <div class="what-is-freelancer">
             <h2>What type of work a freelancer does?</h2>
-            <p> Freelancers can do any work. But the most popular are the ones done remotely, using only a computer.
-                Examples include lawyer, programming, designing, video editing, writing, translation, social media, teaching, and many others 
+            <p> Freelancers can do any work. But the most popular are the ones done remotely.
+                Examples include programming, designing, video editing, writing, translation, social media, or teaching. 
             </p>
         </div>
         <div class="what-is-freelancer">
-            <h2>This course is guaranteed to help you if you identify with one of those</h2>
+            <h2>Do you identify with one of these?</h2>
             <p><i class="fas fa-check"></i> You are significantly unhappy about your current job</p>
             <p><i class="fas fa-check"></i> You have tried freelancing platforms but cannot get a single client</p>
             <p><i class="fas fa-check"></i> You have a precious skill in some niche but don't know how to earn money with it</p>
             <p><i class="fas fa-check"></i> You don't like spending a third of your life in an office working to fulfill someone else dreams</p>
-            <p><i class="fas fa-check"></i> You are tired of needing to live in one city and would love to find a remote job so you can work traveling the world</p>
-            <p><i class="fas fa-check"></i> You are young and have a lot of free time and want to do something productive with your it and make money</p>                                
+            <p><i class="fas fa-check"></i> You are tired of being tied to one city and would love to find a remote job so you can work from anywhere</p>
+            <p><i class="fas fa-check"></i> You have a lot of free time and want to do something productive with it</p>   
         </div>
-        <div class="what-is-freelancer">
-            <h2>Who is this course for?</h2>
-            <p><i class="fas fa-check"></i> This course is for every people that love geographic freedom and would like to have the freedom to choose where to work from</p>
-            <p><i class="fas fa-check"></i> This course is for every people that would like to make a living in another currency such as USD, Euro or GPD</p>
-            <p><i class="fas fa-check"></i> This course is for everyone that wants to learn or already has a skill that does not require a college degree and wants to make a living off it. Eg: A video editing professional</p>
-            <p><i class="fas fa-check"></i> This course is for everyone that wants to make an extra income</p>        
+        <div class="what-is-a-freelancer">
+            <p>If you identify with at least one of these statements, this course will help you.</p>
+            <p>Everything your need is the knowledge that, unfortunately, only 2% of people have</p>                             
         </div>
         <div class="container-topics">
-            <h2>What will you learn in this course?</h2>
-            <p>Some of the things you will learn</p>
+            <h2>You only need to know these things</h2>
+            <!-- <p>Some of the things you will learn</p> -->
             <!-- Topic-->
             <div class="topic-container">
                 <div class="topic-info">
@@ -73,7 +70,7 @@
                 <div class="topic-info">
                     <div>
                         <h3>2. How to send a persuasive first message + message templates</h3>
-                        <p>You will learn how to send a first message that makes the prospects desire to work with you. And how to talk with the prospects until they decide to become your client</p>
+                        <p>You will learn how to send a first message that makes the prospects desire to work with you. And how to talk with them until they decide to become your client</p>
                     </div>
                 </div>
             </div>
@@ -82,7 +79,7 @@
                 <div class="topic-info">
                     <div>
                         <h3>3. How to create a good profile and brand yourself</h3>
-                        <p>You will learn how to create a very good profile on freelancing and social platforms and how to have a profile that stands out amongst others.
+                        <p>You will learn how to create a good profile on freelancing and social platforms. You will learn how to have a profile that stands out amongst others.
                         <br>I will show what the prospects value the most the moment they decide to choose a freelancer to solve their problems</p>
                     </div>
                 </div>
@@ -103,21 +100,38 @@
                 <div class="topic-info">
                     <div>
                         <h3>5. List of hot skills that do not require a college degree and that you can learn for free and monetize in 2-8 months</h3>
-                        <p>I will show what skills anyone can learn at home with 2 hours of daily discipline.
+                        <p>I will show skills anyone can learn at home with 2 hours of daily discipline.
                         <br>I will tell how I would organize my learning and what resources I would use to learn them for free and be able to earn 5 to 6 figures per year</p>
                     </div>
                 </div>
                 <div class="topic-image"><img src="../assets/portfolio/images/skill-to-learn.webp" alt=""></div>
             </div>
             <!-- Topic-->
-            <div class="topic-container">
+            <div class="topic-container wrap-reverse">
+                <div class="topic-image"><img src="../assets/portfolio/images/mistakes.webp" alt=""></div>
                 <div class="topic-info">
                     <div>
                         <h3>6. I will show the errors freelancers make that prevent them from making money</h3>
-                        <p>I will show errors freelancers make in disciplining themselves, setting up their profiles, choosing and applying for jobs, or talking and negotiating with clients, which ends in a loss of potential money and reputation loss, so you can successfully avoid them.</p>
+                        <p>I will show errors freelancers make that make them lose jobs, money, or reputation, so you can successfully avoid them.</p>
                     </div>
                 </div>
-                <div class="topic-image"><img src="../assets/portfolio/images/mistakes.webp" alt=""></div>
+            </div>
+            <!-- Topic-->
+            <div class="topic-container">
+                <div class="topic-info">
+                    <div>
+                        <h3>7. I will show you to get clients over social media</h3>
+                        <p>I will show you how you can get clients over social media and how I got an international freelancing contract with a company starting with a WhatsApp group.</p>
+                    </div>
+                </div>
+                <div class="topic-image"><img src="../assets/portfolio/images/social_media.webp" alt=""></div>
+            </div>
+            <div class="what-is-freelancer">
+            <h2>Is this course for you?</h2>
+            <p><i class="fas fa-check"></i> This course is for every people that love geographic freedom and would like to have the freedom to choose where to work from</p>
+            <p><i class="fas fa-check"></i> This course is for every people that would like to make a living in another currency such as USD, Euro or GPD</p>
+            <p><i class="fas fa-check"></i> This course is for everyone that wants to learn or already has a skill that does not require a college degree and wants to make a living with it</p>
+            <p><i class="fas fa-check"></i> This course is for everyone that wants to make an extra income</p>        
             </div>
             <div class="cta-container">
                 <!-- <p class="price">$55</p> -->
@@ -178,7 +192,7 @@ img {
     width: 100%;
 }
 
-.container {
+.containerr {
     margin-top: 5vh;
     display: flex;
     justify-content: center;
@@ -186,13 +200,13 @@ img {
 }
 
 .image-container {
-    width: 360px;
+    max-width: 500px;
     padding: 20px;
 }
 
 .info-container {
     text-align: left;
-    width: 470px;
+    max-width: 500px;
     padding: 20px;
 }
 
