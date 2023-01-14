@@ -14,15 +14,15 @@
 
 <template>
     <div class="wrapper">
-        <div class="containerr wrap-reverse">
-            <div class="image-container">
-                <img class="shadow-lg" src="../assets/portfolio/images/banner.webp" alt="">
-            </div>
+        <div class="containerr">
             <div class="info-container">
                 <h1>How to earn a living with your skills <span class="emphasis">without needing a 9-5 job</span></h1>
                 <p style="margin: 20px auto;">Learn how to get your first ten clients working with anything you like and make a living with it.
                 </p>
                 <button @click="goToCheckoutPage" class="go-checkout-btn">Learn Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="image-container">
+                <img class="shadow-lg" src="@/assets/portfolio/images/banner.webp" alt="">
             </div>
         </div>
         <div class="what-is-freelancer">
@@ -62,11 +62,11 @@
                         </p>
                     </div>
                 </div>
-                <div class="topic-image"><img src="../assets/portfolio/images/first-job.webp" alt=""></div>
+                <div class="topic-image"><img src="@/assets/portfolio/images/first-job.webp" alt=""></div>
             </div>
             <!-- Topic-->
             <div class="topic-container wrap-reverse">
-                <div class="topic-image"><img src="../assets/portfolio/images/client-reply.webp" alt=""></div>
+                <div class="topic-image"><img src="@/assets/portfolio/images/client-reply.webp" alt=""></div>
                 <div class="topic-info">
                     <div>
                         <h3>2. How to send a persuasive first message + message templates</h3>
@@ -83,11 +83,11 @@
                         <br>I will show what the prospects value the most the moment they decide to choose a freelancer to solve their problems</p>
                     </div>
                 </div>
-                <div class="topic-image"><img src="../assets/portfolio/images/good-prosal-hint.webp" alt=""></div>
+                <div class="topic-image"><img src="@/assets/portfolio/images/good-prosal-hint.webp" alt=""></div>
             </div>
             <!-- Topic-->
             <div class="topic-container wrap-reverse">
-                <div class="topic-image"><img src="../assets/portfolio/images/winner-proposal.webp" alt=""></div>
+                <div class="topic-image"><img src="@/assets/portfolio/images/winner-proposal.webp" alt=""></div>
                 <div class="topic-info">
                     <div>
                         <h3>4. What winner proposals have in common</h3>
@@ -104,11 +104,11 @@
                         <br>I will tell how I would organize my learning and what resources I would use to learn them for free and be able to earn 5 to 6 figures per year</p>
                     </div>
                 </div>
-                <div class="topic-image"><img src="../assets/portfolio/images/skill-to-learn.webp" alt=""></div>
+                <div class="topic-image"><img src="@/assets/portfolio/images/skill-to-learn.webp" alt=""></div>
             </div>
             <!-- Topic-->
             <div class="topic-container wrap-reverse">
-                <div class="topic-image"><img src="../assets/portfolio/images/mistakes.webp" alt=""></div>
+                <div class="topic-image"><img src="@/assets/portfolio/images/mistakes.webp" alt=""></div>
                 <div class="topic-info">
                     <div>
                         <h3>6. I will show the errors freelancers make that prevent them from making money</h3>
@@ -124,7 +124,7 @@
                         <p>I will show you how you can get clients over social media and how I got an international freelancing contract with a company starting with a WhatsApp group.</p>
                     </div>
                 </div>
-                <div class="topic-image"><img src="../assets/portfolio/images/social_media.webp" alt=""></div>
+                <div class="topic-image"><img src="@/assets/portfolio/images/social_media.webp" alt=""></div>
             </div>
             <div class="what-is-freelancer">
             <h2>Is this course for you?</h2>
@@ -163,7 +163,7 @@
 <style scoped>
 @font-face {
   font-family: "Josefin Sans";
-  src: url("../assets/portfolio/fonts/JosefinSans-VariableFont_wght.ttf");
+  src: url("@/assets/portfolio/fonts/JosefinSans-VariableFont_wght.ttf");
 }
 
 body, div, p {
@@ -200,13 +200,13 @@ img {
 }
 
 .image-container {
-    max-width: 500px;
+    max-width: 600px;
     padding: 20px;
 }
 
 .info-container {
     text-align: left;
-    max-width: 500px;
+    max-width: 600px;
     padding: 20px;
 }
 
@@ -280,7 +280,7 @@ img {
     text-align: left;
 }
 .about-me-image {
-    background: url(../assets/portfolio/images/Edilson.webp);
+    background: url(@/assets/portfolio/images/Edilson.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
