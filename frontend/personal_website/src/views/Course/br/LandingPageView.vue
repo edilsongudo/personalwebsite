@@ -172,7 +172,7 @@
 
 @font-face {
   font-family: 'Averta';
-  src: url("@/assets/portfolio/fonts/Averta-VariableFont_wght.ttf");
+  src: url("@/assets/portfolio/fonts/averta/AvertaDemoPECuttedDemoRegular.otf");
 }
 
 @font-face {

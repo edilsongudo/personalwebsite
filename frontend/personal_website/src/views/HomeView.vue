@@ -93,17 +93,17 @@ export default {
 
 @font-face {
   font-family: "Hey_August";
-  src: url("../assets/portfolio/fonts/Hey_August/Hey August.otf");
+  src: url("@/assets/portfolio/fonts/Hey_August/Hey August.otf");
 }
 
 @font-face {
   font-family: "francisco-serial";
-  src: url("../assets/portfolio/fonts/Francisco_Serial/francisco-serial-medium-regular.ttf");
+  src: url("@/assets/portfolio/fonts/Francisco_Serial/francisco-serial-medium-regular.ttf");
 }
 
 @font-face {
   font-family: "Averta";
-  src: url("../assets/portfolio/fonts/averta/AvertaDemoPECuttedDemo-Regular.otf");
+  src: url("@/assets/portfolio/fonts/averta/AvertaDemoPECuttedDemoRegular.otf");
 }
 
 button,
