@@ -21,17 +21,34 @@ export default {
   <PreLoading />
   <Introduction />
 
-  <section>
+  <section class="life-is-better">
     <div class="container">
       <h2 class="secondary-title"></h2>
-      <p>Life is better with music so built a music player for you.</p>
+      <p>Life becomes way better with music. <br> I developed a music player so you can listen to a few songs I am adicted to.</p>
+      <p>Click on the <i class="fas fa-play"></i> icon at the bottom of the screen to start playing</p>
+      <br>
+      <br>
       <p>My favourite music genre is dance/electronica.</p>
+      <p>Some of my favourites artists are Dua Lipa, Sonny Fodera, Neovaii, Kygo, Calvin Harris and Selena Gomez</p>
     </div>
   </section>
 
   <Projects />
   <WhyMe />
   <Testimonials />
+
+  <section class="live-to-fullest">
+    <div class="container">
+      <h2 class="secondary-title"></h2>
+      <p>I never was inspired by the traditional path. Don't live the society dream and pretend it to be yours.
+        <br>It's okay to take risks, it's okay to messup, and, it's okay to do the opposite of what everybody is doing.
+       <br>  Some guys I am inspired by are Jay Alvarrez, Adam Horwitz, Chris Rogers and Sam Kolder.</p>
+      <div class="embed">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GndMmMR3NAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
   <Stacks />
 
   <footer>
@@ -93,17 +110,12 @@ button,
 .cta {
   border: transparent;
   background: transparent;
-  border-color: transparent;
-  margin-bottom: 10px;
-  background: var(--buttonbg2);
-  border-radius: 5px;
-  color: var(--buttontext);
-  padding: 10px;
+  margin: 25px 0;
+  background: #fff;
+  border-radius: 50px;
+  color: #121212;
+  padding: 20px 80px;
   font-family: "Averta";
-}
-
-button,
-.cta {
   font-size: 1.25rem;
   text-decoration: none;
 }
@@ -131,6 +143,9 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 body {
@@ -148,6 +163,18 @@ body {
 .container {
   margin: 0 auto;
   width: 70%;
+}
+
+section.life-is-better {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8),
+                       rgba(0, 0, 0, 0.8)), 
+                       url(@/assets/portfolio/myself/dualipa.webp);
+}
+
+section.live-to-fullest {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8),
+                       rgba(0, 0, 0, 0.8)), 
+                       url(@/assets/portfolio/myself/jay.jpg);
 }
 
 @media only screen and (max-width: 800px) {

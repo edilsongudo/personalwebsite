@@ -23,6 +23,7 @@
     "vue": "^3.2.13",
     "vue-gtag": "^2.0.1",
     "vue-router": "^4.0.3",
+    "vue3-rich-accordion": "^0.0.7",
     "vuex": "^4.0.0",
     "yup": "^0.32.11"
   },

@@ -1,13 +1,15 @@
 <template>
-  <section class="third-section">
+  <section class="why-me-section">
     <div data-aos="fade-up" class="container">
       <h2 class="title">Why Me</h2>
       <p>These are some reasons why I may be the best fit for you project</p>
       <div>
         <p>
-          <i class="fas fa-heart"></i> I will update you daily. I am open to
-          have online meets with you at any moment of the day at the platform of
-          your choice about the progress of the job;
+          <i class="fas fa-heart"></i> I will update you daily about the progress of the project;
+        </p>
+        <p>
+          <i class="fas fa-heart"></i> I am open to
+          have frequent calls with you at any moment of the day
         </p>
         <p>
           <i class="fas fa-heart"></i>
@@ -23,4 +25,8 @@
   </section>
 </template>
 
-<style></style>
+<style>
+.why-me-section {
+  background: #171717;
+}
+</style>

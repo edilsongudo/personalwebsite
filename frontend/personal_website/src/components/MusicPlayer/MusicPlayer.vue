@@ -17,7 +17,6 @@ export default {
   },
   methods: {
     async fetchSongs() {
-      console.log("fetching songs...");
       const res = await axios.get(`${this.server_base_url}/songs/`);
       this.songs = res.data.songs;
       return res.data.songs;
@@ -34,19 +33,19 @@ export default {
       document.body.appendChild(audio);
       this.audio = audio;
 
-      if (localStorage.songPlaying) {
-        console.log("Searching localstorage...");
+      if (localStorage.songPlaying !== 'undefined') {
         const index = this.songs.findIndex(
           (item) =>
             item.filename === JSON.parse(localStorage.songPlaying).filename
         );
         if (index) {
           this.songIndex = index;
-          console.log("Loadied last song from localstorage...");
         }
+      } else {
+        this.songIndex = 0;
+        this.audio.currentTime = 0
       }
 
-      console.log("initial setup ran.");
     },
     loadSong() {
       this.reset();
@@ -57,7 +56,7 @@ export default {
       const filename = this.song["filename"];
       this.audio.src = this.song["file"];
 
-      if (localStorage.currentTime) {
+      if (localStorage.currentTime !== 'undefined') {
         this.audio.currentTime = JSON.parse(localStorage.currentTime);
       }
 
@@ -77,7 +76,6 @@ export default {
 
         const colorThief = new ColorThief();
         const palette = colorThief.getPalette(cover);
-        console.log(palette);
 
         function arrayToRgb(value) {
           const r = value[0];
@@ -151,13 +149,16 @@ export default {
         "0" + seconds
       ).slice(-2)}`;
 
-      const minutes2 = Math.floor(duration / 60);
-      const seconds2 = Math.floor(duration % 60);
-      durationDiv.innerHTML = `${("0" + minutes2).slice(-2)}:${(
-        "0" + seconds2
-      ).slice(-2)}`;
+      if (this.audio.readyState >= 1) {
+        const minutes2 = Math.floor(duration / 60);
+        const seconds2 = Math.floor(duration % 60);
+        durationDiv.innerHTML = `${("0" + minutes2).slice(-2)}:${(
+          "0" + seconds2
+        ).slice(-2)}`;
 
-      const progressPercent = (currentTime / duration) * 100;
+        const progressPercent = (currentTime / duration) * 100;
+      }
+
     },
     setSeekSliderMax() {
       this.seekSlider.max = Math.floor(this.audio.duration);
@@ -474,9 +475,12 @@ export default {
 
 .music-player-modal button {
   border: transparent;
+  outline: none;
   color: var(--iconcolor);
   font-size: 2rem;
   background: transparent;
+  margin: 10px ;
+  padding: 0;
 }
 
 .button-active {

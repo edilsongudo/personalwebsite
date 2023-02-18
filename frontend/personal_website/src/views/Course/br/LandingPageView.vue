@@ -1,7 +1,6 @@
 <script>
     export default {
         mounted() {
-            document.querySelector('html').classList.remove('dark-mode')
             document.querySelector('.music-player-modal').style.display = 'none'
         },
         methods: {
@@ -17,7 +16,7 @@
         <section>
             <div class="containerr">
                 <div class="info-container">
-                    <h1>Como ganhar mais com suas habilidades tendo liberdade geográfica e de tempo</h1>
+                    <h1>Como ganhar em dólar com suas habilidades apartir de casa</h1>
                     <p style="margin: 20px auto;">Aprenda como conseguir os seus primeiros dez clientes trabalhando remotamente para qualquer parte do Brasil ou do mundo.
                     </p>
                     <button @click="goToCheckoutPage" class="go-checkout-btn">Quero Aprender Agora <i class="fa-solid fa-arrow-right"></i></button>
@@ -172,8 +171,8 @@
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url("@/assets/portfolio/fonts/Exo2-VariableFont_wght.ttf");
+  font-family: 'Averta';
+  src: url("@/assets/portfolio/fonts/Averta-VariableFont_wght.ttf");
 }
 
 @font-face {
@@ -182,24 +181,24 @@
 }
 
 body, div, p {
-    font-family: 'Exo2', 'Josefin Sans', sans-serif;
+    font-family: 'Averta', 'Josefin Sans', sans-serif;
 }
 
 h1 {
     font-size: 3rem;
-    font-family: 'Edo', 'Exo2', 'Josefin Sans';
+    font-weight: bold;
 }
 
 h2 {
     font-size: 2rem;
     font-weight: bold;
-    font-family: 'Exo2';    
+    font-family: 'Averta';    
 }
 
 h3 {
     font-size: 1.25rem;
     font-weight: bold;
-    font-family: 'Exo2';    
+    font-family: 'Averta';    
 }
 
 img {
@@ -238,7 +237,6 @@ section {
 }
 
 .info-container {
-    text-align: left;
     max-width: 700px;
     padding: 20px;
 }
@@ -252,12 +250,11 @@ section {
 }
 
 .go-checkout-btn {
-    max-width: 400px;
-    padding: 15px 25px;
+    padding: 20px 30px;
     background: #000;
     border-radius: 6px;
-    font-family: 'Exo2', 'Josefin Sans';
-    background: #48A9A6;
+    font-family: 'Averta', 'Josefin Sans';
+    background: #0EAD69;
     transition: .1s;
 }
 

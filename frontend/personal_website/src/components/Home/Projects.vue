@@ -2,23 +2,18 @@
   <section class="second-section">
     <div class="container" data-aos="fade-up">
       <h2 class="title">Portfolio</h2>
-      <p>Here you can see some of my past works</p>
+      <p>Here you can watch quick demo videos of some of my projects</p>
       <!-- Project -->
       <div class="project" data-aos="fade-up">
         <h5>Online Transcription Tool</h5>
         <p>
-          A web app that allows users to drag and drop an audio or video file
-          and export the transcription.
+          This is a web app that allows users to drag and drop an audio or video file
+          and export the transcripted audio.
         </p>
         <!-- <button class="tellmore" id="tm1">Read more</button> -->
         <div>
-          <div>
-            <video width="320" height="240" controls>
-              <source
-                src="../../assets/portfolio/videos/199839219-45d0fc04-f5a5-4123-93cc-5fd119af3075.mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
+          <div class="embed">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hKqjzEPljdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -28,49 +23,16 @@
       <div class="project" data-aos="fade-up">
         <h5>Linktree clone</h5>
         <p>
-          <a href="https://selflink.co/" target="_blank" rel="">Selflink</a>
-          is powerful link in bio platform powered by Django.
-          <br /><a href="https://selflink.co/to/c8d69/" target="_blank" rel=""
+          <a href="https://selflink.co/" target="_blank" rel="">This</a>
+          is powerful link in bio platform and URL shortener.
+          <!-- <br /><a href="https://selflink.co/to/c8d69/" target="_blank" rel=""
             >🔗Project Demo</a
-          >
+          > -->
         </p>
         <!-- <button class="tellmore" id="tm2">Read more</button> -->
         <div>
           <div class="embed">
-            <img
-              src="../../assets/portfolio/images/selflink-selenagomez.webp"
-              alt="selflink.co banner"
-            />
-          </div>
-          <div class="embed">
-            <img
-              src="../../assets/portfolio/images/selflink-customize.webp"
-              alt="selflink.co banner"
-            />
-          </div>
-          <div class="embed">
-            <img
-              src="../../assets/portfolio/images/selflink-settings.webp"
-              alt="selflink.co banner"
-            />
-          </div>
-          <div class="embed">
-            <img
-              src="../../assets/portfolio/images/selflink-dash.webp"
-              alt="selflink.co banner"
-            />
-          </div>
-          <div class="embed">
-            <img
-              src="../../assets/portfolio/images/selflink-dash2.webp"
-              alt="selflink.co banner"
-            />
-          </div>
-          <div class="embed">
-            <img
-              src="../../assets/portfolio/images/selflink-socials.webp"
-              alt="selflink.co banner"
-            />
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/EZ2W-aZiDW8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -80,19 +42,16 @@
       <div class="project" data-aos="fade-up">
         <h5>Password Manager</h5>
         <p>
-          An app where users only need to create and remember one master
+          This is an app where users only need to create and remember one master
           password to safely store other ones.
-          <br /><a href="https://selflink.co/to/928de/" target="_blank" rel=""
+          <!-- <br /><a href="https://selflink.co/to/928de/" target="_blank" rel=""
             >🔗 Project Demo</a
-          >
+          > -->
         </p>
         <!-- <button class="tellmore" id="tm3">Read more</button> -->
         <div>
-          <div>
-            <img
-              src="../../assets/portfolio/images/pass_manager.webp"
-              alt="Password Manager App"
-            />
+          <div class="embed">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/s1PJQxotdJA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -104,9 +63,9 @@
 <style>
 .embed {
   margin: 10px auto;
-  /* text-align: center;
-  position: relative; */
-  /* padding-bottom: 56.25%; */
+  text-align: center;
+  position: relative;
+  padding-bottom: 56.25%;
 }
 
 iframe {

@@ -3,9 +3,29 @@
     <div data-aos="fade-up" class="container">
       <h2 class="title">Testimonials</h2>
       <p>
-        l always give 100% of me. These are some reviews I earned from the
-        people I worked with
+        These are some reviews I earned from my clients on Upwork.com
       </p>
+      <div class="testimonial">
+        <div class="title">Completed Sucessfully!</div>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="message">
+          "I had an amazing experience working with Edilson! 
+          He made sure to ask questions and gain a deep understanding of the specs of this project. 
+          The final product that he delivered was of great quality. 
+          Also, his advice and ideas improved the overall quality of this project beyond my imagination. 
+          Edilson was also flexible and responsive throughout the entire contract. 
+          And he is a very friendly and easy going person to collaborate with. 
+          I cannot wait to work with him again!"
+        </div>
+        <div class="author">Upwork Client</div>
+        <div class="testimonial-brand"></div>
+      </div>
       <div class="testimonial">
         <div class="title">Completed Sucessfully!</div>
         <div class="stars">
