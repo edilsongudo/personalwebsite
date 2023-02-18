@@ -118,6 +118,12 @@ button,
   font-family: "Averta";
   font-size: 1.25rem;
   text-decoration: none;
+  transition: .15s;
+}
+
+.cta:hover {
+  color: #121212;
+  background: lightgray;
 }
 
 a {

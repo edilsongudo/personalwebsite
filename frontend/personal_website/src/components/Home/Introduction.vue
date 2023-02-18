@@ -10,7 +10,7 @@
           beautiful, otimized and functionality rich web applications.
           <div>
             <p>Send me a message so we can schedule a quick call and talk about what you have in mind</p>
-            <button>Send Message</button>
+            <a class="cta" target="_blank" href="https://www.upwork.com/freelancers/~0141883011094530b8">Upwork Profile</a>
           </div>
         </p>
         <div class="socialmedias">
