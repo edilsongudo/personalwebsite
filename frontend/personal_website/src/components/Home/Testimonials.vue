@@ -15,6 +15,38 @@
           <i class="fas fa-star"></i>
         </div>
         <div class="message">
+          "Amazing job! Went above and beyond to understand the product vision. 
+          Provided creative solutions that improved the overall quality of the product. 
+          I look forward to working with Edilson again!"
+        </div>
+        <div class="author">Upwork Client</div>
+        <div class="testimonial-brand"></div>
+      </div>
+      <div class="testimonial">
+        <div class="title">Completed Sucessfully!</div>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="message">
+          "Amazing job as always!!"
+        </div>
+        <div class="author">Upwork Client</div>
+        <div class="testimonial-brand"></div>
+      </div>
+      <div class="testimonial">
+        <div class="title">Completed Sucessfully!</div>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="message">
           "I had an amazing experience working with Edilson! 
           He made sure to ask questions and gain a deep understanding of the specs of this project. 
           The final product that he delivered was of great quality. 
@@ -128,6 +160,7 @@
   margin-bottom: 30px;
   font-family: "francisco-serial";
   font-size: 2rem;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.87);
 }
 

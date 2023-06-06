@@ -3,16 +3,17 @@
     <div class="container">
       <div class="box"><div class="profile-img"></div></div>
       <div class="box">
-        <h1 class="title">Freelancer Developer</h1>
-        <h2 class="secondary-title">Edilson Gudo</h2>
+        <h1 class="title">Boost your business technolgy & AI 🚀</h1>
+        <!-- <h2 class="secondary-title">Edilson Gudo</h2> -->
         <p>
-          Hi, I am an EXPERT developer with solid experience creating scripts, apis and
-          beautiful, otimized and functionality rich web applications.
-          <div>
-            <p>Send me a message so we can schedule a quick call and talk about what you have in mind</p>
-            <a class="cta" target="_blank" href="https://www.upwork.com/freelancers/~0141883011094530b8">Upwork Profile</a>
-          </div>
+          Hey 🖐️, would you like to solve a problem in your business with the power AI or custom code? I can help you!
+          <br>
         </p>
+        <br>
+        <p>I am an EXPERT developer/tech consultant and founder of <a href="https://shakedigital.co">shakedigital.co.</a></p>
+        <br>
+        <p>Drop me a message so we can book a 20min call to talk about what you have in mind 😃</p>
+        <a class="cta" target="_blank" href="https://wa.link/xbec1h"> <i class="fab fa-whatsapp"></i> Send Message</a>
         <div class="socialmedias">
           <a target="_blank" href="https://linkedin.com/in/edilsongudo"
             ><i class="fab fa-linkedin"></i
@@ -75,4 +76,5 @@
   color: var(--buttonbg2);
   transform: rotate(15deg);
 }
+
 </style>

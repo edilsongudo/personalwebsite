@@ -5,6 +5,7 @@ import Projects from "@/components/Home/Projects.vue";
 import WhyMe from "@/components/Home/WhyMe.vue";
 import Stacks from "@/components/Home/Stacks.vue";
 import PreLoading from "@/components/Preloading/PreLoading.vue";
+import TheFooter from "@/components/Home/TheFooter.vue";
 export default {
   components: {
     Introduction,
@@ -13,6 +14,7 @@ export default {
     WhyMe,
     Stacks,
     Testimonials,
+    TheFooter
   },
 };
 </script>
@@ -20,43 +22,11 @@ export default {
 <template>
   <PreLoading />
   <Introduction />
-
-  <section class="life-is-better">
-    <div class="container">
-      <h2 class="secondary-title"></h2>
-      <p>Life becomes way better with music. <br> I developed a music player so you can listen to a few songs I am adicted to.</p>
-      <p>Click on the <i class="fas fa-play"></i> icon at the bottom of the screen to start playing</p>
-      <br>
-      <br>
-      <p>My favourite music genre is dance/electronica.</p>
-      <p>Some of my favourites artists are Dua Lipa, Sonny Fodera, Neovaii, Kygo, Calvin Harris and Selena Gomez</p>
-    </div>
-  </section>
-
-  <Projects />
-  <WhyMe />
+  <!-- <Projects /> -->
+  <!-- <WhyMe /> -->
   <Testimonials />
-
-  <section class="live-to-fullest">
-    <div class="container">
-      <h2 class="secondary-title"></h2>
-      <p>I never was inspired by the traditional path. Don't live the society dream and pretend it to be yours.
-        <br>It's okay to take risks, it's okay to messup, and, it's okay to do the opposite of what everybody is doing.
-       <br>  Some guys I am inspired by are Jay Alvarrez, Adam Horwitz, Chris Rogers and Sam Kolder.</p>
-      <div class="embed">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/GndMmMR3NAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
-
-  <Stacks />
-
-  <footer>
-    <div>
-      Developed with <i class="fas fa-heart"></i> by Edilson Gudo <br />
-      © 2022
-    </div>
-  </footer>
+  <!-- <Stacks /> -->
+  <TheFooter />
 </template>
 
 <style>
@@ -83,8 +53,8 @@ export default {
   --bgcolor1: #121212;
   --bgcolor2: var(--bgcolor1);
   --titlecolor: rgba(255, 255, 255, 0.87);
-  --bodytext: rgba(255, 255, 255, 0.6);
-  --iconcolor: rgba(255, 255, 255, 0.87);
+  --bodytext: #d3d3d3;
+  --iconcolor: #d3d3d3;
   --buttonbg2: var(--iconcolor);
   --playercolor: #212121;
   --playercolor2: #212121;
@@ -92,8 +62,8 @@ export default {
 }
 
 @font-face {
-  font-family: "Hey_August";
-  src: url("@/assets/portfolio/fonts/Hey_August/Hey August.otf");
+  font-family: Inter;
+  src: url(@/assets/portfolio/fonts/Inter-VariableFont_slnt_wght.ttf);
 }
 
 @font-face {
@@ -169,6 +139,7 @@ body {
 .container {
   margin: 0 auto;
   width: 70%;
+  padding: 4%;
 }
 
 section.life-is-better {
@@ -183,15 +154,11 @@ section.live-to-fullest {
                        url(@/assets/portfolio/myself/jay.jpg);
 }
 
-@media only screen and (max-width: 800px) {
-  .container {
-    width: 90%;
-  }
-}
-
-.title {
-  font-family: "Hey_August", sans-serif;
-  font-size: 4rem;
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  margin: 10px auto;
 }
 
 .secondary-title {
@@ -204,11 +171,35 @@ section.live-to-fullest {
   justify-content: center;
 }
 
-footer {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 50px;
+@media only screen and (max-width: 640px) {
+    .container {
+      width: 100%;
+    }
+
+    body {
+    font-size: 16px;
+    }
+    
+    h1 {
+    font-size: 36px;
+    }
+    
+    h2 {
+    font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+    body {
+    font-size: 18px;
+    }
+    
+    h1 {
+    font-size: 48px;
+    }
+    
+    h2 {
+    font-size: 32px;
+    }
 }
 </style>
