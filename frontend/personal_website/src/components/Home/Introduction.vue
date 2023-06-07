@@ -3,16 +3,16 @@
     <div class="container">
       <div class="box"><div class="profile-img"></div></div>
       <div class="box">
-        <h1 class="title">Boost your business technolgy & AI 🚀</h1>
+        <h1 class="title">Boost your business with custom code or AI 🚀</h1>
         <!-- <h2 class="secondary-title">Edilson Gudo</h2> -->
         <p>
-          Hey 🖐️, would you like to solve a problem in your business with the power AI or custom code? I can help you!
+          Hey 🖐️, would you like to solve a problem in your business with Artificial Intelligence or Custom Code? I can help you!
           <br>
         </p>
         <br>
-        <p>I am an EXPERT developer/tech consultant and founder of <a href="https://shakedigital.co">shakedigital.co.</a></p>
+        <p>I am an senior developer, tech consultant and also founder of <a target="_blank" href="https://shakedigital.co">shakedigital.co.</a></p>
         <br>
-        <p>Drop me a message so we can book a 20min call to talk about what you have in mind 😃</p>
+        <p>Drop me a message so we can book a short free call to talk about your business. If I were you I wouldn't miss the opportunity 😃</p>
         <a class="cta" target="_blank" href="https://wa.link/xbec1h"> <i class="fab fa-whatsapp"></i> Send Message</a>
         <div class="socialmedias">
           <a target="_blank" href="https://linkedin.com/in/edilsongudo"
