@@ -6,6 +6,7 @@ import WhyMe from "@/components/Home/WhyMe.vue";
 import Stacks from "@/components/Home/Stacks.vue";
 import PreLoading from "@/components/Preloading/PreLoading.vue";
 import TheFooter from "@/components/Home/TheFooter.vue";
+import ThePopupForm from "@/components/Home/ThePopupForm.vue"
 export default {
   components: {
     Introduction,
@@ -14,13 +15,10 @@ export default {
     WhyMe,
     Stacks,
     Testimonials,
-    TheFooter
+    TheFooter,
+    ThePopupForm
   },
   mounted() {
-    const script = document.createElement('script');
-    script.id = 'mcjs';
-    script.innerHTML = `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/92d6aa82cd7653615cc2c39fa/b70bb01477575d5dd5255fa48.js");`;  
-    document.body.appendChild(script);
   },
 };
 </script>
@@ -33,6 +31,7 @@ export default {
   <Testimonials />
   <!-- <Stacks /> -->
   <TheFooter />
+  <ThePopupForm />
 </template>
 
 <style>
@@ -115,6 +114,7 @@ h4,
 h5,
 h6 {
   color: var(--titlecolor);
+  font-family: "Inter", sans-serif;
 }
 
  {

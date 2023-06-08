@@ -71,9 +71,9 @@
 
 h1 {
     font-weight: bold;
-    font-family: 'OpenSans', sans-serif;
-    font-size: 2rem;
-    text-transform: uppercase;
+    /* font-family: 'OpenSans', sans-serif; */
+    font-size: 2.5rem;
+    /* text-transform: uppercase; */
 }
 
 #one {
