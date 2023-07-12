@@ -7,6 +7,10 @@ import Stacks from "@/components/Home/Stacks.vue";
 import PreLoading from "@/components/Preloading/PreLoading.vue";
 import TheFooter from "@/components/Home/TheFooter.vue";
 import ThePopupForm from "@/components/Home/ThePopupForm.vue"
+
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 export default {
   components: {
     Introduction,
@@ -19,6 +23,7 @@ export default {
     ThePopupForm
   },
   mounted() {
+    AOS.init();
   },
 };
 </script>

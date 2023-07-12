@@ -9,7 +9,7 @@
           Hey there! 🖐️ Are you interested in leveraging <b>artificial intelligence</b> or <b>tailored code</b> to solve a problem in your business? I'm here to assist you!
         </p>
         <!-- <br> -->
-        <p>I am an senior developer, tech consultant and also founder of <a target="_blank" href="https://shakedigital.co">shakedigital.co.</a></p>
+        <p>I am an fullstack developer, tech consultant and also founder of <a target="_blank" href="https://shakedigital.co">shakedigital.co.</a></p>
         <br>
         <p>Feel free to send me a message, and we can schedule a brief call (100% free) to discuss your business needs. Trust me, you won't want to miss out on this opportunity! 😃</p>
         <!-- <a class="cta" target="_blank" href="https://wa.link/xbec1h"> <i class="fab fa-whatsapp"></i> Send Message</a> -->
