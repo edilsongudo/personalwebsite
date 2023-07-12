@@ -666,7 +666,7 @@ export default {
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  background: #fff);
+  background: #fff;
   cursor: pointer;
 }
 /*.slider-container .slider::-webkit-slider-thumb:hover {

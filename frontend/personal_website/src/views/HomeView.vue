@@ -24,14 +24,14 @@ export default {
 </script>
 
 <template>
-  <PreLoading />
+  <!-- <PreLoading /> -->
   <Introduction />
-  <!-- <Projects /> -->
+  <Projects />
   <!-- <WhyMe /> -->
   <Testimonials />
   <!-- <Stacks /> -->
   <TheFooter />
-  <ThePopupForm />
+  <!-- <ThePopupForm /> -->
 </template>
 
 <style>

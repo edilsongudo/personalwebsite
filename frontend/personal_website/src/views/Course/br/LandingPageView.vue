@@ -36,9 +36,9 @@
         <section id="one">
             <div class="containerr">
                 <div class="info-container">
-                    <h1><span style="color: rgba(255,215,0, 0.9)">[Ebook Gratuito]</span> Como ganhar seus primeiros <span style="color: rgb(255,215,0, 0.9)">1000 dólares</span> em casa com freelancing</h1>
+                    <h1>Aprenda gratuitamente como ganhar 10 dólares por hora e receber no PayPal</h1>
                     <p style="margin: 20px auto;">
-                      Aprenda como ir do zero aos 1000 dólares com freelancing. <br>
+                      Aprenda como você pode iniciar no freelancing e ganhar dez ou mais dólares por hora de casa <br>
                     </p>
                     <form @submit="handleSubmit" method="POST" action="">
                       <div class="form-group">
@@ -52,7 +52,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="image-container"><img src="@/assets/portfolio/images/product.webp" alt=""></div>
+                <div class="image-container"><img src="@/assets/portfolio/images/product 2.png" alt=""></div>
             </div>
         </section>
     </div>
@@ -69,21 +69,29 @@
   src: url("@/assets/portfolio/fonts/playlistScript/Playlist_Script.otf");
 }
 
+@font-face {
+  font-family: 'BebasNeue';
+  src: url("@/assets/portfolio/fonts/BebasNeue-Regular.ttf");
+}
+
 h1 {
-    font-weight: bold;
-    /* font-family: 'OpenSans', sans-serif; */
-    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'BebasNeue', sans-serif;
+    font-size: 4rem;
     /* text-transform: uppercase; */
 }
 
 #one {
-    /* background: linear-gradient(to bottom, rgba(179,136,255, 0.9) 0%, rgba(179,215,0, 0.9) 100%), url(@/assets/portfolio/images/2.jpg); */
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.85) 0%, rgba(0,0,0, 0.85) 100%), url(https://2ndskiesforex.com/wp-content/uploads/2018/12/The-4-Stages-To-Becoming-A-Millionaire-Trader.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .wrapper {
+  background: rgb(0, 121, 193);
+  color: #fff;
+  text-align: left;
 }
 
 .wrapper h1 {
@@ -100,7 +108,7 @@ input[type=number] {
   line-height: 1.5;
   padding: 15px 10px;
   border: 1px solid hsl(0, 0%, 10%);
-  border-radius: 6px;
+  border-radius: 50px;
   width: 100%;
   outline: none;
   color: #afafaf;
@@ -132,7 +140,9 @@ section {
 }
 
 .image-container {
-    max-width: 300px;
+    flex-basis: 40%;
+    flex-grow: 1;
+    max-width: 700px;
 }
 
 .info-container {
@@ -148,7 +158,7 @@ section {
   align-items: center;
   background-color: #fee6e3;
   /* border: 2px solid #111; */
-  border-radius: 3px;
+  border-radius: 50px;
   box-sizing: border-box;
   color: #111;
   cursor: pointer;
