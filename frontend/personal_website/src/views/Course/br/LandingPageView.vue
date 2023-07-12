@@ -52,7 +52,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="image-container"><img src="@/assets/portfolio/images/product 2.png" alt=""></div>
+                <div class="image-container"><img src="@/assets/portfolio/images/product.png" alt=""></div>
             </div>
         </section>
     </div>

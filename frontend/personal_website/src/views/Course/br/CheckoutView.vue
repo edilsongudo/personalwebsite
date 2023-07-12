@@ -196,7 +196,7 @@ body, div, p {
   margin: 20px;
   width: 250px;
   height: 250px;
-  background: url(@/assets/portfolio/images/product.webp);
+  background: url(@/assets/portfolio/images/product.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
