@@ -1,11 +1,11 @@
 <template>
   <div>
-    <MusicPlayer />
+    <!-- <MusicPlayer /> -->
     <router-view />
   </div>
 </template>
 
-<script>
+<!-- <script>
 import MusicPlayer from "@/components/MusicPlayer/index.vue";
 export default {
   name: "App",
@@ -13,4 +13,4 @@ export default {
     MusicPlayer,
   },
 };
-</script>
+</script> -->

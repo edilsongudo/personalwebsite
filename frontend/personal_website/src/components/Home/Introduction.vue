@@ -3,15 +3,14 @@
     <div class="container">
       <div class="box"><div class="profile-img"></div></div>
       <div class="box">
-        <h1 class="title">Power up your business with <span class="highlight">tailored code</span> or <span class="highlight">AI</span> 🚀</h1>
+        <h1 class="title">Edilson Gudo</h1>
         <!-- <h2 class="secondary-title">Edilson Gudo</h2> -->
         <p>
-          Hey there! 🖐️ Are you interested in leveraging <b>artificial intelligence</b> or <b>tailored code</b> to solve a problem in your business? I'm here to assist you!
+          Hello! 🖐️ I'm Edilson, a full-stack developer and consultant. 
+          <br> I'm proud to be recognized as a top-rated professional on Upwork, the world's leading freelancing platform, boasting a perfect <b>100% job score.</b> 
+          <br><br> My global clientele spans from the <b> US, UK, to Canada</b>, and they've consistently awarded me an <b>average rating of 5 stars.</b>
+          <br><br>
         </p>
-        <!-- <br> -->
-        <p>I am an fullstack developer, tech consultant and also founder of <a target="_blank" href="https://shakedigital.co">shakedigital.co.</a></p>
-        <br>
-        <p>Feel free to send me a message, and we can schedule a brief call (100% free) to discuss your business needs. Trust me, you won't want to miss out on this opportunity! 😃</p>
         <!-- <a class="cta" target="_blank" href="https://wa.link/xbec1h"> <i class="fab fa-whatsapp"></i> Send Message</a> -->
         <div class="socialmedias">
           <a target="_blank" href="https://linkedin.com/in/edilsongudo"

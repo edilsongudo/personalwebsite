@@ -31,7 +31,7 @@ export default {
 <template>
   <!-- <PreLoading /> -->
   <Introduction />
-  <Projects />
+  <!-- <Projects /> -->
   <!-- <WhyMe /> -->
   <Testimonials />
   <!-- <Stacks /> -->
